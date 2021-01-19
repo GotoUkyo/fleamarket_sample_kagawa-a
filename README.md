@@ -15,6 +15,7 @@
 - has_one :credit
 - belongs_to :address
 - has_many :products
+- has_one :address
 
 ## productsテーブル
 |Column|Type|Options|
@@ -69,5 +70,6 @@
 |block|string|null: false|
 |building|string||
 |phone_number|string||
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
