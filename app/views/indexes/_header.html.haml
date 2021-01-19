@@ -1,0 +1,27 @@
+.body-header
+  .ichidan
+    .logo
+    .Search-bar
+      .Search-bar__inputBox
+        %input.Search-bar__inputBox--text{placeholder: "キーワードから探す", "type": "text"}
+        .Search-bar__inputBox--btn
+          %i.fas.fa-search.fa-lg.Search-bar__inputBox--btn__icon
+  .nidan
+    .Search-menu
+      .Search-menu__category
+        = link_to "", class: "Search-menu__category--btn" do
+          %i.fas.fa-list-ul
+          %span<>
+        = link_to "", class: "Search-menu__category--text" do
+          カテゴリーから探す
+      .Search-menu__brand
+        = link_to "", class: "Search-menu__brand--btn" do
+          %i.fas.fa-tags
+          %span<>
+        = link_to "", class: "Search-menu__brand--text" do
+          ブランドから探す
+    .Btn
+      .Btn__login
+        ログイン
+      .Btn__join
+        新規会員登録

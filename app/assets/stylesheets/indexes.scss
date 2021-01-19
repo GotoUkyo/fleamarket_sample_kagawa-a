@@ -1,3 +1,559 @@
-// Place all the styles related to the indexes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.body-header{
+  padding: 0 100px;
+  height: 100px;
+  background-color: floralwhite;
+
+  .ichidan{
+    height: 55px;
+    display: flex;
+    background-color: darkgreen;
+    .logo{
+      width: 150px;
+      margin-right: 30px;
+      background-color: darkgoldenrod;
+    }
+    .Search-bar{
+      width: calc(100% - 180px);
+      background-color: deepskyblue;
+      &__inputBox{
+        padding-top: 15px;
+        display: flex;
+        &--text{
+          width: calc(100% - 40px);
+          height: 40px;
+          padding-left: 5px;
+        }
+        &--btn{
+          width: 40px;
+          height: 40px;
+          background-color: lightseagreen;
+          position: relative;
+          &__icon{
+            color: white;
+            position: absolute;
+            top: 12px;
+            left: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  .nidan{
+    height: 45px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: firebrick;
+    .Search-menu{
+      width: 340px;
+      display: flex;
+      text-align: center;
+      line-height: 45px;
+      &__category{
+        width: 170px;
+        margin: 0, 30px, 0, 20px;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(37, 80, 109);
+        &--btn{
+          color: lightseagreen;
+          padding-right: 5px;
+        }
+        &--text{
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: none;
+          color: black;
+        }
+      }
+      &__brand{
+        width: 170px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        background-color: greenyellow;
+        &--btn{
+            color: lightseagreen;
+            padding-right: 5px;
+        }
+        &--text{
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+
+    .Btn{
+      width: 210px;
+      display: flex;
+      font-size: 14px;
+      text-align: center;
+      line-height: 32px;
+      &__login{
+        width: 90px;
+        margin: 7px 15px 5px 0;
+        color: dodgerblue;
+        text-decoration: none;
+        border: 1px solid dodgerblue;
+        border-radius: 5px;
+        background-color: floralwhite;
+      }
+      &__join{
+        width: 120px;
+        margin: 7px 0px 5px 0;
+        color: floralwhite;
+        text-decoration: none;
+        border-radius: 5px;
+        background-color: lightseagreen;
+      }
+    }
+}
+
+.body-main{
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: paleturquoise;
+
+  .Top-img{
+    height: 570px;
+    background-color: rgb(226, 226, 189);
+    &__in{
+      padding: 210px 0 0 70px;
+      color: floralwhite;
+      text-shadow: 0 0 7px rgb(66, 66, 66);
+      &--title{
+        font-size: 60px;
+        padding-bottom: 20px;
+      }
+      &--text{
+        line-height: 30px;
+      }
+      &--icon{
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 25px;
+        .icon-link{
+          height: 50px;
+          width: 170px;
+          border-radius: 5px;
+          border: 1px solid grey;
+          background-color: black;
+          &__2{
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .Reason{
+    &__top{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 50px 0 40px 0;
+      &--text{
+        font-size: 26px;
+        font-weight: bold;
+      }
+      &--ber{
+        height: 4px;
+        width: 70px;
+        background-color: lightseagreen;
+        margin: 13px 0 0 10px;
+      }
+    }
+    &__img{
+      display: flex;
+      justify-content: center;
+      &--left{
+        width: 300px;
+        height: 300px;
+        background-color: palevioletred;
+      }
+      &--center{
+        width: 300px;
+        height: 300px;
+        margin: 0 55px;
+        background-color: purple;
+      }
+      &--right{
+        width: 300px;
+        height: 300px;
+        background-color: violet;
+      }
+    }
+    &__title{
+      display: flex;
+      justify-content: center;
+      padding: 30px 0;
+      &--boldleft{
+        display: flex;
+        font-weight: bold;
+        font-size: 23px;
+        &__color{
+          margin-right: 5px;
+          color: lightseagreen;
+        }
+        &__black{
+          color: black;
+        }
+      }
+      &--boldcenter{
+        display: flex;
+        font-weight: bold;
+        font-size: 23px;
+        margin: 0 155px;
+        &__color{
+          margin-right: 5px;
+          color: lightseagreen;
+        }
+        &__black{
+          color: black;
+        }
+      }
+      &--boldright{
+        display: flex;
+        font-weight: bold;
+        font-size: 23px;
+        padding-right: 20px;
+        &__color{
+          margin-left: 5px;
+          color: lightseagreen;
+        }
+        &__black{
+          color: black;
+        }
+      }
+    }
+    &__text{
+      display: flex;
+      justify-content: center;
+      font-size: 17px;
+      padding-bottom: 50px;
+      &--left{
+        width: 300px;
+      }
+      &--center{
+        width: 300px;
+        margin: 0 55px;
+      }
+      &--right{
+        width: 300px;
+        text-align: center
+      }
+    }
+  }
+
+  .Center-img{
+    height: 400px;
+    background-color: chocolate;
+    &__in{
+      padding: 90px 0 0 90px;
+      color: floralwhite;
+      text-shadow: 0 0 7px rgb(66, 66, 66);
+      &--title{
+        font-weight: bold;
+        font-size: 25px;
+        padding-bottom: 20px;
+      }
+      &--text{
+        line-height: 25px;
+        padding-bottom: 5px;
+      }
+      &--icon{
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 25px;
+        .icon-link{
+          height: 50px;
+          width: 170px;
+          border-radius: 5px;
+          border: 1px solid grey;
+          background-color: black;
+          &__2{
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .Feature{
+    height: 650px;
+    background-color: burlywood;
+    &__top{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 50px 0 40px 0;
+      &--text{
+        font-size: 26px;
+        font-weight: bold;
+      }
+      &--ber{
+        height: 4px;
+        width: 70px;
+        background-color: lightseagreen;
+        margin: 13px 0 0 10px;
+      }
+    }
+    &__img{
+      display: flex;
+      justify-content: center;
+      &--left{
+        width: 300px;
+        height: 300px;
+        background-color: palevioletred;
+      }
+      &--center{
+        width: 300px;
+        height: 300px;
+        margin: 0 55px;
+        background-color: purple;
+      }
+      &--right{
+        width: 300px;
+        height: 300px;
+        background-color: violet;
+      }
+    }
+    &__title{
+      display: flex;
+      justify-content: center;
+      padding: 30px 0 10px 0;
+      font-size: 19px;
+      font-weight: bold;
+      &--left{
+        padding-right: 10px;
+      }
+      &--center{
+        margin: 0 130px;
+        padding-right: 15px;
+      }
+      &--right{
+        padding-right: 10px;
+      }
+    }
+    &__text{
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+      padding-bottom: 50px;
+      &--left{
+        width: 290px;
+        text-align: center;
+      }
+      &--center{
+        width: 320px;
+        margin: 0 50px;
+        text-align: center;
+      }
+      &--right{
+        width: 290px;
+        text-align: center
+      }
+    }
+  }
+
+  .PickCategory{
+    font-weight: bold;
+    text-align: center;
+    background-color: darkkhaki;
+    padding-bottom: 20px;
+    &__text{
+      &--title{
+        padding-top: 70px;
+        font-size: 27px;
+        letter-spacing: 1px;
+      }
+      &--new{
+        font-size: 24px;
+        color: lightseagreen;
+      }
+    }
+    &__img{
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      &--new{
+        width: 190px;
+        height: 250px;
+        margin: 0 10px 10px 10px;
+        box-shadow: 0 2px 7px 0 rgb(82, 82, 82);
+        position: relative;
+        background-color: rebeccapurple;
+        .Label{
+          width: 190px;
+          height: 90px;
+          padding-left: 10px;
+          background-color: floralwhite;
+          position: absolute;
+          top: 160px;
+          display: flex;
+          &__text{
+            margin-top: 12px;
+            &--name{
+              font-size: 14px;
+              margin-bottom: 5px;
+            }
+            &--price{
+              font-size: 15px;
+              margin-left: 10px;
+              text-align: 10px
+            }
+            &--tax{
+              font-size: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .PickBrand{
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 100px;
+    background-color: silver;
+    &__text{
+      &--title{
+        padding-top: 70px;
+        font-size: 27px;
+        letter-spacing: 1px;
+      }
+      &--arc{
+        font-size: 24px;
+        color: lightseagreen;
+      }
+    }
+    &__img{
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      &--new{
+        width: 190px;
+        height: 250px;
+        margin: 0 10px 10px 10px;
+        box-shadow: 0 2px 7px 0 rgb(82, 82, 82);
+        position: relative;
+        background-color: rosybrown;
+        .Label-arc{
+          width: 190px;
+          height: 90px;
+          padding-left: 10px;
+          background-color: floralwhite;
+          position: absolute;
+          top: 160px;
+          display: flex;
+          &__text{
+            margin-top: 12px;
+            &--name{
+              font-size: 14px;
+              margin-bottom: 5px;
+            }
+            &--price{
+              font-size: 15px;
+              margin-left: 10px;
+              text-align: 10px
+            }
+            &--tax{
+              font-size: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Under-img{
+    height: 350px;
+    background-color: dodgerblue;
+    &__in{
+      padding-top: 90px;
+      color: floralwhite;
+      text-shadow: 0 0 7px rgb(66, 66, 66);
+      text-align: center;
+      &--title{
+        font-size: 23px;
+        padding-bottom: 7px;
+        font-weight: bold;
+      }
+      &--text{
+        font-size: 33px;
+      }
+      &--icon{
+        display: flex;
+        justify-content: center;
+        padding-top: 25px;
+        .icon-link{
+          height: 50px;
+          width: 170px;
+          border-radius: 5px;
+          border: 1px solid grey;
+          background-color: black;
+          &__2{
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .Footer{
+    height: 350px;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    display: flex;
+    justify-content: center;
+    &__left{
+      text-align: center;
+      &--title{
+        font-size: 15px;
+        font-weight: bold;
+        padding: 60px 0 20px 0;
+      }
+      &--text{
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+    &__center{
+      text-align: center;
+      padding: 0 150px;
+      &--title{
+        font-size: 15px;
+        font-weight: bold;
+        padding: 60px 0 20px 0;
+      }
+      &--text{
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+    &__right{
+      text-align: center;
+      &--title{
+        font-size: 15px;
+        font-weight: bold;
+        padding: 60px 0 20px 0;
+      }
+      &--text{
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+    .footer-link{
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
