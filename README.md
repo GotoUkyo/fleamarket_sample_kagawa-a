@@ -13,7 +13,6 @@
 |birthday|date|null: false|
 ### Association
 - has_one :credit
-- belongs_to :address
 - has_many :products
 - has_one :address
 
