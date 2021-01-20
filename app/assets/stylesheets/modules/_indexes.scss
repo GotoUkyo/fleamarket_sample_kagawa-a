@@ -127,7 +127,8 @@
     position: relative;
     &__pict{
       height: 560px;
-      width: 100vw;
+      width: 100%;
+      object-fit: cover;
     }
     &__in{
       top: 210px;
@@ -262,10 +263,18 @@
   .Center-img{
     height: 400px;
     background-color: chocolate;
+    position: relative;
+    &__pict{
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+    }
     &__in{
-      padding: 90px 0 0 90px;
+      top: 90px;
+      left: 90px;
       color: floralwhite;
       text-shadow: 0 0 7px rgb(66, 66, 66);
+      position: absolute;
       &--title{
         font-weight: bold;
         font-size: 25px;
