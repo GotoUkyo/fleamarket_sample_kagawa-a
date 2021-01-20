@@ -492,34 +492,43 @@
   .Under-img{
     height: 350px;
     background-color: dodgerblue;
+    position: relative;
+    &__pict{
+      height: 350px;
+      width: 100%;
+      object-fit: cover;
+    }
     &__in{
-      padding-top: 90px;
+      top: 175px;
+      left: 50%;
+      transform: translate(-50%, -50%);
       color: floralwhite;
       text-shadow: 0 0 7px rgb(66, 66, 66);
       text-align: center;
-      &--title{
-        font-size: 23px;
-        padding-bottom: 7px;
-        font-weight: bold;
-      }
-      &--text{
-        font-size: 33px;
-      }
-      &--icon{
-        display: flex;
-        justify-content: center;
-        padding-top: 25px;
-        .icon-link{
-          height: 50px;
-          width: 170px;
-          border-radius: 5px;
-          border: 1px solid grey;
-          background-color: black;
-          &__2{
-            margin-left: 10px;
+      position: absolute;
+        &--title{
+          font-size: 23px;
+          padding-bottom: 7px;
+          font-weight: bold;
+        }
+        &--text{
+          font-size: 33px;
+        }
+        &--icon{
+          display: flex;
+          justify-content: center;
+          padding-top: 25px;
+          .icon-link{
+            height: 50px;
+            width: 170px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            background-color: black;
+            &__2{
+              margin-left: 10px;
+            }
           }
         }
-      }
     }
   }
 
