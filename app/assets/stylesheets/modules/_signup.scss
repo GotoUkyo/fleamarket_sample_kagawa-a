@@ -1,25 +1,70 @@
 .AccountPage {
-  justify-content: center;
-}
-.AccountPage__title {
-  background-color: blue;
-  width: 700px;
-  height: 97px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .top {
+    margin: auto;
+    height: 128px;
+    display: flex;
+    align-items: center;
+  }
 
-  h2 {
-    font-size: 22px;
+  .logo {
+    width: 185px;
+    height: 49px;
+  }
+
+  .AccountPage__title {
+    // background-color: blue;
+    width: 700px;
+    height: 97px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  .AccountPage__form {
+    width: 700px;
+    height: 1701px;
+    background-color: burlywood;
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    
+    h3 {
+      font-size: 16px;
+    }
   }
 }
-
-.AccountPage__form {
-  width: 700px;
-  height: 1701px;
-  background-color: burlywood;
-  display: block;
-  justify-content: center;
-
-  h3 {
+.FormField {
+  height: 77px;
+  width: 343px;
+  margin: 24px 0 0 0;
+  &__label--normal {
+    font-size: 14px;
+    .label {
+      background-color: #EA352D;
+      color: #ffffff;
+      padding: 2px 4px;
+      font-size: 12px;
+    }
+    .label__any {
+      background-color: #bfbfbf;
+      color: #ffffff;
+      padding: 2px 4px;
+      font-size: 12px;
+    }
+  }
+  &__input--normal {
     font-size: 16px;
+    padding: 8px 0 0 0;
+    input {
+      width: 343px;
+      height: 48px;
+    }
   }
 }
