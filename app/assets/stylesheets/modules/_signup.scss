@@ -1,0 +1,25 @@
+.AccountPage {
+  justify-content: center;
+}
+.AccountPage__title {
+  background-color: blue;
+  width: 700px;
+  height: 97px;
+  text-align: center;
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+.AccountPage__form {
+  width: 700px;
+  height: 1701px;
+  background-color: burlywood;
+  display: block;
+  justify-content: center;
+
+  h3 {
+    font-size: 16px;
+  }
+}
