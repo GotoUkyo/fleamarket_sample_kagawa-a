@@ -68,6 +68,10 @@
         &--btn{
           color: lightseagreen;
           padding-right: 5px;
+          &__icon{
+            width: 14px;
+            height: 13px;
+          }
         }
         &--text{
           font-size: 14px;
@@ -85,6 +89,11 @@
         &--btn{
             color: lightseagreen;
             padding-right: 5px;
+            &__icon{
+              width: 15px;
+              height: 15px;
+              transform: rotate(-135deg);
+            }
         }
         &--text{
           font-size: 14px;
