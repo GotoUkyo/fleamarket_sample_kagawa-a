@@ -608,6 +608,7 @@
     color: white;
     display: flex;
     justify-content: center;
+    position: relative;
     &__left{
       text-align: center;
       &--title{
@@ -648,6 +649,28 @@
     .footer-link{
       color: white;
       text-decoration: none;
+    }
+    &__logo{
+      position: absolute;
+      top: 230px;
+      padding-right: 30px;
+      &--img{
+        height: 45px;
+        width: 155px;  
+      }
+      &--text{
+        display: flex;
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        &__c{
+          font-size: 22px;
+          margin-right: 5px;
+        }
+        &__name{
+          padding-top: 3px;
+        }
+      }
     }
   }
 }
