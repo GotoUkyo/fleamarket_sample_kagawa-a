@@ -383,20 +383,32 @@
       display: flex;
       justify-content: center;
       &--left{
-        width: 300px;
-        height: 300px;
+        width: 220px;
+        height: 330px;
         background-color: palevioletred;
+        &__pict{
+          width: 220px;
+          height: 330px;
+        }
       }
       &--center{
-        width: 300px;
-        height: 300px;
-        margin: 0 55px;
+        width: 220px;
+        height: 330px;
+        margin: 0 140px;
         background-color: purple;
+        &__pict{
+          width: 220px;
+          height: 330px;
+        }
       }
       &--right{
-        width: 300px;
-        height: 300px;
+        width: 220px;
+        height: 330px;
         background-color: violet;
+        &__pict{
+          width: 220px;
+          height: 330px;
+        }
       }
     }
     &__title{
