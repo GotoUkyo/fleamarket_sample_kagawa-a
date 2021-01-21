@@ -15,4 +15,5 @@
  */
 
 @import "reset";
-@import "modules/indexes";
+@import "modules/header";
+@import "modules/main"
