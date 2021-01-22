@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+:root{
+  --main-color: rgb(56, 204, 197);
+  --white-color: white;
+}
+
+.body-header{
+  padding: 0 80px;
+  height: 110px;
+  background-color: var(--white-color);
+  position: relative;
+
+  .up{
+    height: 60px;
+    display: flex;
+    .logo{
+      width: 140px;
+      margin-right: 41px;
+      &__img{
+        width: 140px;
+        margin-top: 15px;
+      }
+    }
+    .Search-bar{
+      width: calc(100% - 180px);
+      &__inputBox{
+        padding-top: 20px;
+        display: flex;
+        &--text{
+          width: calc(100% - 40px);
+          height: 37px;
+          padding-left: 5px;
+        }
+        &--btn{
+          width: 37px;
+          height: 37px;
+          background-color: var(--main-color);
+          position: relative;
+          &__icon{
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .under{
+    height: 50px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    .Search-menu{
+      width: 340px;
+      display: flex;
+      text-align: center;
+      line-height: 55px;
+      &__category{
+        width: 170px;
+        display: flex;
+        justify-content: center;
+        &--btn{
+          padding-right: 5px;
+          margin-left: 10px;
+          &__icon{
+            width: 14px;
+            height: 13px;
+          }
+        }
+        &--text{
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: none;
+          color: black;
+        }
+      }
+      &__brand{
+        width: 170px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        &--btn{
+            padding-right: 5px;
+            margin-left: 10px;
+            &__icon{
+              width: 15px;
+              height: 15px;
+              transform: rotate(-135deg);
+            }
+        }
+        &--text{
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+
+    .Btn{
+      width: 210px;
+      display: flex;
+      font-size: 14px;
+      text-align: center;
+      line-height: 32px;
+      &__login{
+        width: 90px;
+        margin: 7px 15px 9px 0;
+        color: dodgerblue;
+        text-decoration: none;
+        border: 1px solid dodgerblue;
+        border-radius: 5px;
+        background-color: var(--white-color);
+      }
+      &__join{
+        width: 120px;
+        margin: 7px 0px 9px 0;
+        color: var(--white-color);
+        text-decoration: none;
+        border-radius: 5px;
+        background-color: var(--main-color);
+      }
+    }
+  }
+  .Exhibit{
+    width: 120px;
+    height: 120px;
+    background-color: var(--main-color);
+    position: fixed;
+    z-index: 1;
+    border-radius: 5px;
+    text-decoration: none;
+    bottom: 30px;
+    right: 30px;
+    &__text{
+      font-size: 18px;
+      color: var(--white-color);
+      text-align: center;
+      margin: 15px 0 5px 0;
+    }
+    &__icon{
+      display: flex;
+      justify-content: center;
+      &--pict{
+        width: 55px;
+        height: 55px;
+      }
+    }
+  }
+}
