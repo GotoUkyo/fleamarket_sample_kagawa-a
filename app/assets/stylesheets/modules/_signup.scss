@@ -32,7 +32,7 @@
 
   .AccountPage__form {
     width: 700px;
-    height: 1701px;
+    height: 1750px;
     background-color: white;
     justify-content: center;
     margin: 0 auto;
@@ -164,8 +164,18 @@
     font-size: 12px;
     text-align: center;
   }
+  .footer_button {
+    color: black;
+    text-decoration: none;
+  }
   p.buttom {
     font-size: smaller;
     text-align: center;
   }
+  // a {
+  //   color: black;
+  //   text-decoration: none;
+  //   margin: 0 8px ;
+  // }
 }
+
