@@ -1,7 +1,7 @@
-<<<<<<< Updated upstream
 .AccountPage
   .top
-    =image_tag src="/assets/logo/logo.png", class:"logo"
+    = link_to "" ,class: "top_btn" do
+      = image_tag src = "/assets/logo/logo.png", class:"logo"
   .AccountPage__title
     %h2 会員情報入力
   .AccountPage__form
@@ -24,8 +24,8 @@
           = f.label :パスワード
           %span.label 必須
           - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} characters minimum)
+            -# %em
+            -#   (#{@minimum_password_length} characters minimum)
         .FormField__input--normal
           = f.password_field :password,placeholder: "６文字以上の半角英数字",  autocomplete: "new-password"
       .FormField
@@ -35,9 +35,7 @@
         .FormField__input--normal
           = f.password_field :password_confirmation,placeholder: "上記と同じものを入力してください",  autocomplete: "new-password"
       %h3 本人確認
-      %p 安心・安全にご利用いただくために、お客さまの本人
-      %br情報の登録にご協力ください。他のお客様に公開さ
-      %brれることはありません。
+      %p.str 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客様に公開されることはありません。
       .FormField
         .FormField__label--normal
           = f.label :お名前（全角）
@@ -57,9 +55,13 @@
           = f.label :生年月日
           %span.label 必須
         .FormField__input--date
-          = f.text_field :email, autofocus: true, autocomplete: "ニックネーム"
-          = f.text_field :email, autofocus: true, autocomplete: "ニックネーム"
-          = f.text_field :email, autofocus: true, autocomplete: "ニックネーム"
+          = f.select :email,['1911','1912']
+          %p.day 年
+          = f.select :email,['1','2']
+          %p.day 月
+          = f.select :email,['1','2']
+          %p.day 日
+      %p.date ※　本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       %h3 配送先住所
       .FormField
         .FormField__label--normal
@@ -72,7 +74,7 @@
           = f.label :都道府県
           %span.label 必須
         .FormField__input--normal
-          = f.text_field :email, autofocus: true, autocomplete: "ニックネーム"
+          = f.select :email,['北海道','沖縄']
       .FormField
         .FormField__label--normal
           = f.label :市区町村
@@ -97,7 +99,14 @@
           %span.label 必須
         .FormField__input--normal
           = f.text_field :email,placeholder: "電話番号", autofocus: true, autocomplete: "ニックネーム"
-        
       .actions
-        = f.submit "登録する"
-    = render "devise/shared/links"
+        = f.submit "登録する", class: 'Button'
+    -# = render "devise/shared/links"
+  .AccountPage__footer
+    .AccountPage__footer--btn
+      = link_to "プライバシーポリシー"
+      = link_to "フリマ利用規約"
+      = link_to "特定商取引に関する表記"
+    =image_tag src="/assets/logo/logo-white.png", class:"logo-footer"
+    %p.buttom ©FYRIMA
+    
