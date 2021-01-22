@@ -2,10 +2,15 @@
   box-sizing: border-box;
 }
 
+:root{
+  --main-color: rgb(56, 204, 197);
+  --white-color: white;
+}
+
 .body-header{
   padding: 0 80px;
   height: 110px;
-  background-color: white;
+  background-color: var(--white-color);
   position: relative;
 
   .up{
@@ -32,7 +37,7 @@
         &--btn{
           width: 37px;
           height: 37px;
-          background-color: lightseagreen;
+          background-color: var(--main-color);
           position: relative;
           &__icon{
             width: 21px;
@@ -61,7 +66,6 @@
         display: flex;
         justify-content: center;
         &--btn{
-          color: lightseagreen;
           padding-right: 5px;
           margin-left: 10px;
           &__icon{
@@ -82,7 +86,6 @@
         display: flex;
         justify-content: center;
         &--btn{
-            color: lightseagreen;
             padding-right: 5px;
             margin-left: 10px;
             &__icon{
@@ -113,22 +116,22 @@
         text-decoration: none;
         border: 1px solid dodgerblue;
         border-radius: 5px;
-        background-color: white;
+        background-color: var(--white-color);
       }
       &__join{
         width: 120px;
         margin: 7px 0px 9px 0;
-        color: white;
+        color: var(--white-color);
         text-decoration: none;
         border-radius: 5px;
-        background-color: lightseagreen;
+        background-color: var(--main-color);
       }
     }
   }
   .Exhibit{
     width: 120px;
     height: 120px;
-    background-color: lightseagreen;
+    background-color: var(--main-color);
     position: fixed;
     z-index: 1;
     border-radius: 5px;
@@ -136,7 +139,7 @@
     right: 30px;
     &__text{
       font-size: 18px;
-      color: white;
+      color: var(--white-color);
       text-align: center;
       margin: 15px 0 5px 0;
     }

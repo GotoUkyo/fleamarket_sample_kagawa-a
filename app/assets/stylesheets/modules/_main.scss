@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:root{
+  --main-color: rgb(56, 204, 197);
+  --white-color: white;
+}
+
 .body-main{
   width: 100%;
   height: calc(100% - 100px);
@@ -16,7 +21,7 @@
     &__in{
       top: 200px;
       left: 70px;
-      color: white;
+      color: var(--white-color);
       text-shadow: 0 0 7px rgb(66, 66, 66);
       position: absolute;
       &--title{
@@ -57,7 +62,7 @@
       &--ber{
         height: 4px;
         width: 70px;
-        background-color: lightseagreen;
+        background-color: var(--main-color);
         margin: 13px 0 0 10px;
       }
     }
@@ -77,10 +82,10 @@
           height: 55px;
           border-radius: 3px;
           position: absolute;
-          background-color: lightseagreen;
+          background-color: var(--main-color);
           &__one{
             font-size: 26px;
-            color: white;
+            color: var(--white-color);
             text-align: center;
             line-height: 55px;
           }
@@ -100,10 +105,10 @@
           height: 55px;
           border-radius: 3px;
           position: absolute;
-          background-color: lightseagreen;
+          background-color: var(--main-color);
           &__two{
             font-size: 26px;
-            color: white;
+            color: var(--white-color);
             text-align: center;
             line-height: 55px;
           }
@@ -122,10 +127,10 @@
           height: 55px;
           border-radius: 3px;
           position: absolute;
-          background-color: lightseagreen;
+          background-color: var(--main-color);
           &__three{
             font-size: 26px;
-            color: white;
+            color: var(--white-color);
             text-align: center;
             line-height: 55px;
           }
@@ -142,7 +147,7 @@
         font-size: 23px;
         &__color{
           margin-right: 5px;
-          color: lightseagreen;
+          color: var(--main-color);
         }
         &__black{
           color: black;
@@ -155,7 +160,7 @@
         margin: 0 155px;
         &__color{
           margin-right: 5px;
-          color: lightseagreen;
+          color: var(--main-color);
         }
         &__black{
           color: black;
@@ -168,7 +173,7 @@
         padding-right: 20px;
         &__color{
           margin-left: 5px;
-          color: lightseagreen;
+          color: var(--main-color);
         }
         &__black{
           color: black;
@@ -205,7 +210,7 @@
     &__in{
       top: 90px;
       left: 90px;
-      color: white;
+      color: var(--white-color);
       text-shadow: 0 0 7px rgb(66, 66, 66);
       position: absolute;
       &--title{
@@ -249,7 +254,7 @@
       &--ber{
         height: 4px;
         width: 70px;
-        background-color: lightseagreen;
+        background-color: var(--main-color);
         margin: 13px 0 0 10px;
       }
     }
@@ -333,7 +338,7 @@
       }
       &--new{
         font-size: 24px;
-        color: lightseagreen;
+        color: var(--main-color);
       }
     }
     &__img{
@@ -351,7 +356,7 @@
           width: 190px;
           height: 90px;
           padding-left: 10px;
-          background-color: white;
+          background-color: var(--white-color);
           position: absolute;
           top: 160px;
           display: flex;
@@ -388,7 +393,7 @@
       }
       &--arc{
         font-size: 24px;
-        color: lightseagreen;
+        color: var(--main-color);
       }
     }
     &__img{
@@ -406,7 +411,7 @@
           width: 190px;
           height: 90px;
           padding-left: 10px;
-          background-color: white;
+          background-color: var(--white-color);
           position: absolute;
           top: 160px;
           display: flex;
@@ -442,7 +447,7 @@
       top: 175px;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
+      color: var(--white-color);
       text-shadow: 0 0 7px rgb(66, 66, 66);
       text-align: center;
       position: absolute;
@@ -475,7 +480,7 @@
   .Footer{
     height: 350px;
     background-color: rgb(37, 37, 37);
-    color: white;
+    color: var(--white-color);
     display: flex;
     justify-content: center;
     position: relative;
@@ -517,7 +522,7 @@
       }
     }
     .footer-link{
-      color: white;
+      color: var(--white-color);
       text-decoration: none;
     }
     &__logo{
