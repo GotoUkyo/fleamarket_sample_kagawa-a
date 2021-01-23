@@ -1,23 +1,23 @@
 .body-header
   .up
     .logo
-      = image_tag src="/assets/logo/logo.png", class: "logo__img"
+      = image_tag src="/images/logo/logo.png", class: "logo__img"
     .Search-bar
       .Search-bar__inputBox
         %input.Search-bar__inputBox--text{placeholder: "キーワードから探す", "type": "text"}
         .Search-bar__inputBox--btn
-          = image_tag src="/assets/icon/icon-search_1.png", class: "Search-bar__inputBox--btn__icon"
+          = image_tag src="/images/icon/icon-search_1.png", class: "Search-bar__inputBox--btn__icon"
   .under
     .Search-menu
       .Search-menu__category
         = link_to "#", class: "Search-menu__category--btn" do
-          = image_tag src="/assets/icon/icon_category.png", class: "Search-menu__category--btn__icon"
+          = image_tag src="/images/icon/icon_category.png", class: "Search-menu__category--btn__icon"
           %span<>
         = link_to "#", class: "Search-menu__category--text" do
           カテゴリーから探す
       .Search-menu__brand
         = link_to "#", class: "Search-menu__brand--btn" do
-          = image_tag src="/assets/icon/icon_brand.png", class: "Search-menu__brand--btn__icon"
+          = image_tag src="/images/icon/icon_brand.png", class: "Search-menu__brand--btn__icon"
           %span<>
         = link_to "#", class: "Search-menu__brand--text" do
           ブランドから探す
@@ -30,4 +30,4 @@
   = link_to "#", class: "Exhibit" do
     .Exhibit__text 出品する
     .Exhibit__icon
-      = image_tag src="/assets/icon/icon_camera.png", class: "Exhibit__icon--pict"
+      = image_tag src="/images/icon/icon_camera.png", class: "Exhibit__icon--pict"
