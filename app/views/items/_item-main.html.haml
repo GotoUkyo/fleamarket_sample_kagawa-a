@@ -21,3 +21,23 @@
       %p 商品の説明をここに表示
       %p とりあえず何行か書いてみる
       %p わっふるわっふる
+    %table.Table
+      %tr
+        %td.Table__title 出品者
+        %td
+          = link_to "#", class: "color" do
+            出品者名
+      %tr
+        %td{rowspan: "1", class: "Table__title"} カテゴリー
+        %td.category.category-top
+          = link_to "#", class: "color" do
+            カテゴリー名
+        %td.category
+          = link_to "#", class: "color" do
+            >カテゴリー名2
+        %td.category.category-bottom
+          = link_to "#", class: "color" do
+            >カテゴリー名3
+      %tr
+        %td.Table__title ブランド
+        %td ブランド名
