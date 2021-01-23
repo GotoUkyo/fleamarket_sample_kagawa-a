@@ -1,5 +1,4 @@
 .AccountPage
-  -# .top
   = render "header"
   .AccountPage__title
     %h2 会員情報入力
@@ -100,11 +99,4 @@
           = f.text_field :email,placeholder: "電話番号", autofocus: true, autocomplete: "ニックネーム"
       .actions
         = f.submit "登録する", class: 'Button'
-  -# .AccountPage__footer
-  -#   .AccountPage__footer--btn
-  -#     = link_to "プライバシーポリシー"
-  -#     = link_to "フリマ利用規約"
-  -#     = link_to "特定商取引に関する表記"
-  -#     = link_to image_tag("/assets/logo/logo-white.png", class:"logo-footer"),root_path
-  -#     %p.buttom ©FYRIMA
   = render "footer"
