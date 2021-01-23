@@ -15,6 +15,6 @@
  */
 
 @import "reset";
-@import "modules/header";
-@import "modules/main";
-@import "modules/detail-main";
+@import "tops/header";
+@import "tops/main";
+@import "items/item-main";
