@@ -6,3 +6,31 @@
   --main-color: rgb(56, 204, 197);
   --white-color: white;
 }
+
+.body{
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  .Top-bar{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    border-top: 1px solid rgb(223, 223, 223);
+    box-shadow: 0 4px 4px rgb(223, 223, 223);
+    &__link{
+      font-size: 14px;
+      margin: 0 10px 0 100px;
+      text-decoration: none;
+      color: black;
+    }
+    &__bold{
+      font-size: 14px;
+      font-weight: bold;
+      margin-right: 10px
+    }
+    &__bold2{
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}
