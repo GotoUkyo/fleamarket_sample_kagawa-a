@@ -1,9 +1,16 @@
 *{box-sizing: border-box;}
+
+:root{
+  --main-color: whitesmoke;
+  --white-color: #ffffff;
+  --black-color: black;
+}
+
 .AccountPage {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: var(--main-color);
   .top {
     margin: auto;
     height: 128px;
@@ -23,7 +30,7 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    background-color: white;
+    background-color:　var(--white-color);
     h2 {
       font-size: 22px;
       font-weight: bold;
@@ -33,7 +40,7 @@
   .AccountPage__form {
     width: 700px;
     height: 1750px;
-    background-color: white;
+    background-color: var(--white-color);
     justify-content: center;
     margin: 0 auto;
     padding: 40px 40px 64px;
@@ -66,7 +73,7 @@
     font-weight: bold;
     .label {
       background-color: #EA352D;
-      color: #ffffff;
+      color: var(--white-color);
       padding: 2px 4px;
       font-size: 12px;
       font-weight: normal;
@@ -76,7 +83,7 @@
     }
     .label__any {
       background-color: #bfbfbf;
-      color: #ffffff;
+      color: var(--white-color);
       padding: 2px 4px;
       font-size: 12px;
       margin: 8px;
@@ -141,13 +148,13 @@
   border: 1px solid #3ccace;
   border-radius: 4px;
   margin-top: 40px;
-  color: #fff;
+  color: 　var(--white-color);
   justify-content: center;
   font-size: 14px;
 }
 
 .AccountPage__footer {
-  background-color: whitesmoke;
+  background-color: var(--main-color);
   width: 456px;
   height: 220px;
   margin: 0 auto;
@@ -165,7 +172,7 @@
     text-align: center;
   }
   .footer_button {
-    color: black;
+    color: var(--black-color);
     text-decoration: none;
   }
   p.buttom {
@@ -173,7 +180,7 @@
     text-align: center;
   }
   a {
-    color: black;
+    color: var(--black-color);
     text-decoration: none;
     margin: 0 8px ;
   }
