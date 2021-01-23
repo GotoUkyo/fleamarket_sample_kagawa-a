@@ -1,0 +1,44 @@
+.LoginPage
+  .LoginPage__header
+    = link_to image_tag src="/assets/logo.png", size: "185x50"
+  
+  .LoginPage__body
+    .LoginPage__body__top
+      .LoginPage__body__top__content
+        %p.LoginPage__body__top__content__text
+          アカウントをお持ちでない方はこちら
+        %a.LoginPage__body__top__content__registration-link{ href: '#' }
+          新規会員登録
+
+    .LoginPage__body__middle
+      .LoginPage__body-middle__content
+        = button_to '仮：Googleでログイン'
+        = button_to '仮：Facebookでログイン'
+        = button_to '仮：Appleでログイン'
+
+    .LoginPage__body__bottom
+      .LoginPage__body__bottom__content
+        .LoginPage__body__bottom__content__form
+          %div.LoginPage__body__bottom__content__form__email
+            %input.LoginPage__body__bottom__content__form__email__text-form{type: "text", placeholder: "　メールアドレス"}
+          %div.LoginPage__body__bottom__content__form__password
+            %input.LoginPage__body__bottom__content__form__password__text-form{type: "text", placeholder: "　パスワード"}
+          //= email_field :user, :address, class: "email" こっちの方が良い？？
+          //= password_field_tag :password, "#", class: "password" こっちの方が良い？
+        = button_to "ログイン", "#", class: "LoginPage__body__bottom__content__login-btn"
+        %a.LoginPage__body__bottom__content__link{ href: '#' }
+          パスワードをお忘れの方
+    
+  .LoginPage__footer
+    .LoginPage__footer__content
+      .LoginPage__footer__content__link
+        %a.LoginPage__footer__content__link__text1{ href: '#' }
+          プライバシーポリシー
+        %a.LoginPage__footer__content__link__text2{ href: '#' }
+          フリマ利用規約
+        %a.LoginPage__footer__content__link__text3{ href: '#' }
+          特定商取引に関する表記
+      .LoginPage__footer__content__logo
+        = link_to image_tag src="/assets/logo.png", size: "185x50", class: "LoginPage__footer__content__logo__img"
+        %p.LoginPage__footer__content__logo__text
+          ©︎FURIMA
