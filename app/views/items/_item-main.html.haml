@@ -23,12 +23,12 @@
       %p わっふるわっふる
     %table.Table
       %tr
-        %td.Table__title 出品者
+        %th.Table__title 出品者
         %td
           = link_to "#", class: "color" do
             出品者名
       %tr
-        %td{rowspan: "1", class: "Table__title"} カテゴリー
+        %th{rowspan: "1", class: "Table__title"} カテゴリー
         %td.category.category-top
           = link_to "#", class: "color" do
             カテゴリー名
@@ -39,5 +39,10 @@
           = link_to "#", class: "color" do
             >カテゴリー名3
       %tr
-        %td.Table__title ブランド
-        %td ブランド名
+        %th.Table__title ブランド
+        %td
+          .Table__title--text ブランド名
+      %tr
+        %th.Table__title 商品の状態
+        %td
+          .Table__title--text 新品、未使用等

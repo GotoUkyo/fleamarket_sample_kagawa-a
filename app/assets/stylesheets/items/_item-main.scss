@@ -39,7 +39,7 @@
 
   .Item{
     width: 700px;
-    height: 1000px;
+    height: 1500px;
     margin: 40px auto 0 auto;
     background-color: rosybrown;
     &__title{
@@ -112,26 +112,35 @@
     .Table{
       margin: 0 auto 0 auto;
       border: 1px solid rgb(247, 247, 247);
+      font-size: 14px;
       &__title{
+        width: 150px;
+        background-color: rgb(196, 196, 196);
         border-right: 1px solid rgb(247, 247, 247);
+        text-align: center;
+        &--text{
+          margin-left: 15px;
+          width: 460px;
+        }
       }
       tr{
         height: 60px;
         border-bottom: 1px solid rgb(247, 247, 247);
-        .color{
-          text-decoration: none;
-          color: dodgerblue;
-        }
-        .category-top{
-          margin-top: 15px;
-        }
-        .category{
-          display: flex;
-          flex-direction: column;
-        }
-        .category-bottom{
-          margin-bottom: 15px;
-        }
+      }
+      .color{
+        text-decoration: none;
+        color: dodgerblue;
+        margin-left: 15px;
+      }
+      .category-top{
+        margin-top: 15px;
+      }
+      .category{
+        display: flex;
+        flex-direction: column;
+      }
+      .category-bottom{
+        margin-bottom: 15px;
       }
     }
   }
