@@ -118,10 +118,10 @@
         background-color: rgb(196, 196, 196);
         border-right: 1px solid rgb(247, 247, 247);
         text-align: center;
-        &--text{
-          margin-left: 15px;
-          width: 460px;
-        }
+      }
+      &__text{
+        margin-left: 15px;
+        width: 460px;
       }
       tr{
         height: 60px;
