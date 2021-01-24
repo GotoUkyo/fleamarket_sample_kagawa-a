@@ -63,5 +63,10 @@
         %td
           .Table__text 4〜7日で発送
     .Item__btn
-      .Item__btn--favorite お気に入り
-      .Item__btn--report 不適切な商品の通報
+      .Item__btn--favorite
+        = icon('fas', 'star', class: "star-icon")
+        お気に入り
+        .count 0
+      .Item__btn--report
+        = icon('fas', 'flag', class: "flag-icon")
+        不適切な商品の通報
