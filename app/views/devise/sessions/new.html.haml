@@ -1,17 +1,42 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.LoginPage
+  .AccountPage
+    = render "devise/registrations/header"
+  .LoginPage__body
+    .Logintop
+      .Logintop__body
+        %p.Logintop__body--text
+          アカウントをお持ちでない方はこちら
+        %a.Logintop__body--registration-link{ href: '#' }
+          %p.text新規会員登録
+    .Loginmiddle
+      .Loginmiddle__body
+        = button_to '仮：Googleでログイン',"#",class: "Loginmiddle__body--gbtn"
+        = button_to '仮：Facebookでログイン',"#",class: "Loginmiddle__body--fbtn"
+        = button_to '仮：Appleでログイン',"#",class: "Loginmiddle__body--ibtn"
+    .Loginbottom
+      .Loginbottom__body
+        %div.Loginbottom__body--form
+          %input.Loginbottom__body--input{type: "text", placeholder: "　メールアドレス"}
+        %div.Loginbottom__body--form
+          %input.Loginbottom__body--input{type: "text", placeholder: "　パスワード"}
+        = button_to "ログイン", "#", class: "Loginbottom__body--btn"
+        %a.Loginbottom__body--content{ href: '#' }
+          パスワードをお忘れの方
+  -# %h2 Log in
+  -# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  -#   .field
+  -#     = f.label :email
+  -#     %br/
+  -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+  -#   .field
+  -#     = f.label :password
+  -#     %br/
+  -#     = f.password_field :password, autocomplete: "current-password"
+  -#   - if devise_mapping.rememberable?
+  -#     .field
+  -#       = f.check_box :remember_me
+  -#       = f.label :remember_me
+  -#   .actions
+  -#     = f.submit "Log in"
+  -# = render "devise/shared/links"
+  = render "devise/registrations/footer"
