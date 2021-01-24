@@ -1,0 +1,188 @@
+*{box-sizing: border-box;}
+
+:root{
+  --main-color: whitesmoke;
+  --white-color: #ffffff;
+  --black-color: black;
+}
+
+.AccountPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--main-color);
+  .top {
+    margin: auto;
+    height: 128px;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 185px;
+    height: 49px;
+  }
+
+  .AccountPage__title {
+    width: 700px;
+    height: 97px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: var(--white-color);
+    h2 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+
+  .AccountPage__form {
+    width: 700px;
+    height: 1750px;
+    background-color: var(--white-color);
+    justify-content: center;
+    margin: 0 auto;
+    padding: 40px 40px 64px;
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      width: 343px;
+      height: 24px;
+      margin: 0 auto 24px;
+    }
+    p.str {
+      width: 343px;
+      height: 63px;
+      margin: 8px auto 24px auto;
+    }
+    p.date {
+      width: 343px;
+      height: 63px;
+      margin: 8px auto 24px auto;
+      color: #888888;
+    }
+  }
+}
+.FormField {
+  height: 77px;
+  width: 343px;
+  margin: 0 auto 24px auto;
+  &__label--normal {
+    font-size: 14px;
+    font-weight: bold;
+    .label {
+      background-color: #EA352D;
+      color: var(--white-color);
+      padding: 2px 4px;
+      font-size: 12px;
+      font-weight: normal;
+      width: 32px;
+      height: 18px;
+      margin: 8px;
+    }
+    .label__any {
+      background-color: #bfbfbf;
+      color: var(--white-color);
+      padding: 2px 4px;
+      font-size: 12px;
+      margin: 8px;
+    }
+  }
+  &__input--normal {
+    font-size: 16px;
+    padding: 8px 0 0 0;
+    input {
+      width: 343px;
+      height: 48px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      padding: 10px 16px 8px;
+    }
+    select {
+      width: 343px;
+      height: 48px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin: 8px 7.5px 0 0;
+      padding: 10px 16px 8px;
+    }
+  }
+  &__input--name {
+    display: flex;
+    padding: 8px 0 0 0;
+    input {
+      width: 166.5px;
+      height: 48px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin: 8px 7.5px 0 0;
+      padding: 10px 16px 8px;
+    }
+  }
+  &__input--date {
+    display: flex;
+    padding: 8px 0 0 0;
+    p.day {
+      width: 16px;
+      height: 48px;
+      font-size: 14px;
+      align-items: center;
+      display: flex;
+    }
+    select {
+      width: 98.33px;
+      height: 48px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.Button {
+  width: 343px;
+  height: 48px;
+  display: flex;
+  margin: 0 auto;
+  background-color: #3ccace;
+  border: 1px solid #3ccace;
+  border-radius: 4px;
+  margin-top: 40px;
+  color: 　var(--white-color);
+  justify-content: center;
+  font-size: 14px;
+}
+
+.AccountPage__footer {
+  background-color: var(--main-color);
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  .logo-footer {
+    width: 185px;
+    height: 50px;
+    margin: 40px auto 0 auto;
+    display: flex;
+  }
+  &--btn {
+    width: 456px;
+    height: 18px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .footer_button {
+    color: var(--black-color);
+    text-decoration: none;
+  }
+  p.buttom {
+    font-size: smaller;
+    text-align: center;
+  }
+  a {
+    color: var(--black-color);
+    text-decoration: none;
+    margin: 0 8px ;
+  }
+}
+
