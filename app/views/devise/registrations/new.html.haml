@@ -96,7 +96,8 @@
           = f.label :電話番号
           %span.label 必須
         .FormField__input--normal
-          = f.text_field :email,placeholder: "電話番号", autofocus: true, autocomplete: "ニックネーム"
+          = f.text_field :email,placeholder: "例）0878220111", autofocus: true, autocomplete: "ニックネーム"
       .actions
         = f.submit "登録する", class: 'Button'
   = render "footer"
+  
