@@ -10,9 +10,15 @@
           %p.text新規会員登録
     .Loginmiddle
       .Loginmiddle__body
-        = button_to 'Googleでログイン',"#",class: "Loginmiddle__body--gbtn"
-        = button_to 'Facebookでログイン',"#",class: "Loginmiddle__body--fbtn"
-        = button_to 'Appleでログイン',"#",class: "Loginmiddle__body--ibtn"
+        = link_to "#",class: "Loginmiddle__body--gbtn" do
+          = icon('fab', 'google',class: "Loginmiddle__body--icon")
+          %P.com Googleでログイン
+        = link_to "#",class: "Loginmiddle__body--fbtn" do
+          = icon('fab', 'facebook-square fa-lg',class: "Loginmiddle__body--icon")
+          %P.com Facebookでログイン
+        = link_to "#",class: "Loginmiddle__body--ibtn" do
+          = icon('fab', 'apple fa-lg',class: "Loginmiddle__body--icon")
+          %P.com Appleでログイン
     .Loginbottom
       .Loginbottom__body
         %div.Loginbottom__body--form
@@ -22,21 +28,4 @@
         = button_to "ログイン", "#", class: "Loginbottom__body--btn"
         %a.Loginbottom__body--content{ href: '#' }
           パスワードをお忘れの方
-  -# %h2 Log in
-  -# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  -#   .field
-  -#     = f.label :email
-  -#     %br/
-  -#     = f.email_field :email, autofocus: true, autocomplete: "email"
-  -#   .field
-  -#     = f.label :password
-  -#     %br/
-  -#     = f.password_field :password, autocomplete: "current-password"
-  -#   - if devise_mapping.rememberable?
-  -#     .field
-  -#       = f.check_box :remember_me
-  -#       = f.label :remember_me
-  -#   .actions
-  -#     = f.submit "Log in"
-  -# = render "devise/shared/links"
   = render "devise/registrations/footer"

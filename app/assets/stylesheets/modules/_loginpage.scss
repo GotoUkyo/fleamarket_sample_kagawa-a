@@ -52,28 +52,53 @@
   &__body {
     margin: 40px 64px;
     &--gbtn {
+      text-decoration: none;
+      color: var(--black-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 4px;
       border: 1px solid #979797;
       width: 100%;
       height: 52px;
       margin-top: 16px;
       background-color: var(--white-color);
+      position: relative;
     }
     &--fbtn {
+      text-decoration: none;
+      color: var(--white-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 4px;
       border: 1px solid transparent;
       width: 100%;
       height: 52px;
       margin-top: 16px;
       background-color: #385185;
+      position: relative;
+    }
+    &--icon {
+      position: absolute;
+      left: 16px;
     }
     &--ibtn {
+      text-decoration: none;
+      color: var(--white-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 4px;
       border: 1px solid transparent;
       width: 100%;
       height: 52px;
       margin-top: 16px;
       background-color: #000;
+      position: relative;
+    }
+    .com {
+      font-size: 14px;
     }
   }
 }
