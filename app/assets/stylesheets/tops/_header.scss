@@ -3,7 +3,7 @@
 }
 
 :root{
-  --main-color: rgb(56, 204, 197);
+  --header-main-color: rgb(56, 204, 197);
   --white-color: white;
 }
 
@@ -37,7 +37,7 @@
         &--btn{
           width: 37px;
           height: 37px;
-          background-color: var(--main-color);
+          background-color: var(--header-main-color);
           position: relative;
           &__icon{
             width: 21px;
@@ -124,14 +124,14 @@
         color: var(--white-color);
         text-decoration: none;
         border-radius: 5px;
-        background-color: var(--main-color);
+        background-color: var(--header-main-color);
       }
     }
   }
   .Exhibit{
     width: 120px;
     height: 120px;
-    background-color: var(--main-color);
+    background-color: var(--header-main-color);
     position: fixed;
     z-index: 1;
     border-radius: 5px;
