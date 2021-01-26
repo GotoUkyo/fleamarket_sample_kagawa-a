@@ -16,9 +16,11 @@
  */
 
 @import "reset";
-@import "modules/header";
-@import "modules/main";
 @import "modules/signup";
 @import "modules/loginpage";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "tops/header";
+@import "tops/main";
+@import "tops/footer";
+@import "items/item-main";
