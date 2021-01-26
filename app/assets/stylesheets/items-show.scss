@@ -1,3 +1,4 @@
+//商品購入確認ページのscss
 *{box-sizing: border-box;}
 
 :root{
@@ -6,14 +7,12 @@
   --items-show-blue: #0099e8;
 }
 
-
-.p-c-main
+.items-show-main
 {
   width: 700px;
   height: 755px;
   background-color: var(--items-show-white);
   margin: auto;
-
   .top
   {
     width: 375px;
@@ -22,7 +21,6 @@
     border-bottom: solid 1px var(--items-show-gray);
     font-size: 24px;
     font-weight: bold;
-
   }
   .middle-1
   {
@@ -30,35 +28,29 @@
     height: 150px;
     margin: auto;
     border-bottom: solid 1px var(--items-show-gray);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
     &__img
     {
       width: 80px;
       height: 80px;
       background-color: lightgreen;
     }
-
     &__texts
     {
       width: 280px;
       height: 80px;
-
       &--item-name
       {
         width: 100%;
         font-size: 14px;
       }
-
       &--prices
       {
         width: 100%;
         display: flex;
         align-items: center;
-
         .fee
         {
           font-size: 12px;
@@ -73,14 +65,12 @@
       }
     }
   }
-
   .middle-2
   {
     width: 375px;
     height: 120px;
     margin: auto;
     border-bottom: solid 1px var(--items-show-gray);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,7 +95,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     &__text
     {
       font-size: 14px;
@@ -118,16 +107,13 @@
       text-decoration: none;
     }
   }
-
   .middle-4
   {
     width: 375px;
     height: 125px;
     margin: auto;
     border-bottom: solid 1px var(--items-show-gray);
-
     display: block;
-
     &__top
     {
       display: flex;
@@ -135,7 +121,6 @@
       align-items: center;
       padding-top: 15px;
       margin: 0px 0px 10px 0px;
-      
       &--text
       {
         font-size: 14px;
@@ -152,17 +137,14 @@
       font-size: 14px;
     }
   }
-
   .bottom
   {
     width: 375px;
     height: 110px;
     margin: auto;
     border-bottom: solid 1px var(--items-show-gray);
-
     display: flex;
     align-items: center;
-
     &__message
     {
       width: 100%;
