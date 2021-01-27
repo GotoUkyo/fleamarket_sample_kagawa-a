@@ -61,42 +61,43 @@
           %p.day 日
       %p.date ※　本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       %h3 配送先住所
-      .FormField
-        .FormField__label--normal
-          = f.label :郵便番号
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email, placeholder: "例）760-0019"
-      .FormField
-        .FormField__label--normal
-          = f.label :都道府県
-          %span.label 必須
-        .FormField__input--normal
-          = f.select :email,['北海道','沖縄']
-      .FormField
-        .FormField__label--normal
-          = f.label :市区町村
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）高松市"
-      .FormField
-        .FormField__label--normal
-          = f.label :番地
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）サンポート２−１"
-      .FormField
-        .FormField__label--normal
-          = f.label :建物名
-          %span.label__any 任意
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）高松シンボルタワー　タワー棟４・５階"
-      .FormField
-        .FormField__label--normal
-          = f.label :電話番号
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）0878220111"
+      = f.fields_for :address do |f|
+        .FormField
+          .FormField__label--normal
+            = f.label :郵便番号
+            %span.label 必須
+          .FormField__input--normal
+            = f.text_field :postcode, placeholder: "例）760-0019"
+        .FormField
+          .FormField__label--normal
+            = f.label :都道府県
+            %span.label 必須
+          .FormField__input--normal
+            = f.select :prefecture_id,['北海道','沖縄']
+        .FormField
+          .FormField__label--normal
+            = f.label :市区町村
+            %span.label 必須
+          .FormField__input--normal
+            = f.text_field :city,placeholder: "例）高松市"
+        .FormField
+          .FormField__label--normal
+            = f.label :番地
+            %span.label 必須
+          .FormField__input--normal
+            = f.text_field :block,placeholder: "例）サンポート２−１"
+        .FormField
+          .FormField__label--normal
+            = f.label :建物名
+            %span.label__any 任意
+          .FormField__input--normal
+            = f.text_field :building,placeholder: "例）高松シンボルタワー　タワー棟４・５階"
+        .FormField
+          .FormField__label--normal
+            = f.label :電話番号
+            %span.label 必須
+          .FormField__input--normal
+            = f.text_field :phone_number,placeholder: "例）0878220111"
       .actions
         = f.submit "登録する", class: 'Button'
   = render "footer"
