@@ -22,9 +22,9 @@
         = link_to "#", class: "Search-menu__brand--text" do
           ブランドから探す
     .Btn
-      = link_to "/users/sign_in", class: "Btn__login" do
+      = link_to new_user_session_path, class: "Btn__login" do
         ログイン
-      = link_to "/users/sign_up", class: "Btn__join" do
+      = link_to new_user_registration_path, class: "Btn__join" do
         新規会員登録
         
   .Exhibit
