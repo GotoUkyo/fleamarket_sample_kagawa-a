@@ -1,0 +1,52 @@
+//商品購入確認ページのビューファイル
+.AccountPage
+  = render "items-show-header"
+
+  .items-show-main
+    .top
+      購入内容の確認
+
+    .middle-1 
+      .middle-1__img
+        = image_tag src="/images/icon/appbtn.svg", size: "80x80"
+      .middle-1__texts
+        .middle-1__texts--item-name
+          商品名
+        .middle-1__texts--prices
+          .fee
+            送料込み（税込み）
+          .price
+            ¥1,000
+
+    .middle-2
+      .middle-2__text
+        支払い金額
+      .middle-2__price
+        ¥1,000
+
+    .middle-3
+      .middle-3__text
+        支払い方法
+      = link_to "#", class: "middle-3__link" do
+        = icon('fa', 'plus-circle')
+        登録してください。
+
+    .middle-4
+      .middle-4__top
+        .middle-4__top--text
+          配送先
+        = link_to "#", class: "middle-4__top--link" do
+          変更する>
+      .middle-4__bottom
+        .middle-4__bottom--postal-code
+          〒xxx-xxxx
+        .middle-4__bottom--address
+          香川県高松市---
+        .middle-4__bottom--user-name
+          コード キャンプ太郎
+
+    .bottom
+      .bottom__message
+        カード情報を登録してください。
+
+  = render "items-show-footer"
