@@ -22,10 +22,11 @@
         = link_to "#", class: "Search-menu__brand--text" do
           ブランドから探す
     .Btn
-      .Btn__login
+      = link_to "/users/sign_in", class: "Btn__login" do
         ログイン
-      .Btn__join
+      = link_to "/users/sign_up", class: "Btn__join" do
         新規会員登録
+        
   .Exhibit
   = link_to "#", class: "Exhibit" do
     .Exhibit__text 出品する
