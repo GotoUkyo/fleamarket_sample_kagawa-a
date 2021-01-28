@@ -74,7 +74,7 @@
             = f.label :都道府県
             %span.label 必須
           .FormField__input--normal
-            = f.select :prefecture_id,['北海道','沖縄']
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
         .FormField
           .FormField__label--normal
             = f.label :市区町村
