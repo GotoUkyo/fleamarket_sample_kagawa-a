@@ -53,12 +53,13 @@
           = f.label :生年月日
           %span.label 必須
         .FormField__input--date
-          = f.select :birthday,['1911','1912']
-          %p.day 年
-          = f.select :birthday,['1','2']
-          %p.day 月
-          = f.select :birthday,['1','2']
-          %p.day 日
+          -# = f.select :birthday,['1911','1912']
+          -# %p.day 年
+          -# = f.select :birthday,['1','2']
+          -# %p.day 月
+          -# = f.select :birthday,['1','2']
+          -# %p.day 日
+          != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
       %p.date ※　本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       %h3 配送先住所
       = f.fields_for :address do |f|
