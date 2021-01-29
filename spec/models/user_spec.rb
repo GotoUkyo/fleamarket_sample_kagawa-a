@@ -102,13 +102,5 @@ describe User do
       user.valid?
       expect(user.errors[:birthday]).to include("を入力してください")
     end
-
-   
-
-    
-
-
-
-
   end
 end

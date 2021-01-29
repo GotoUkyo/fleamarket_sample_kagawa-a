@@ -11,16 +11,19 @@ describe Address do
       address.valid?
       expect(address.errors[:postcode]).to include("を入力してください", "は不正な値です")
     end
+
     it "prefecture_idがない場合は登録できないこと" do
       address = build(:address, prefecture_id: "")
       address.valid?
       expect(address.errors[:prefecture_id]).to include("を入力してください")
     end
+
     it "cityがない場合は登録できないこと" do
       address = build(:address, city: "")
       address.valid?
       expect(address.errors[:city]).to include("を入力してください")
     end
+    
     it "blockがない場合は登録できないこと" do
       address = build(:address, block: "")
       address.valid?
