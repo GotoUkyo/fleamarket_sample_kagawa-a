@@ -1,4 +1,46 @@
 .AccountPage
   = render "credits-new-header"
-  テスト
+  
+  .Body
+    .Body__top
+      支払い方法
+
+    .Body__middle-1
+      = form_with url: "#" do |f|
+        = f.label :カード番号
+        %span.label 必須
+        = f.text_field :hoge, placeholder: "1234 5678 1234 5678"
+      = image_tag src="/images/pict/pict-reason-01.jpg", class: "Reason__img--left__pict", size: "20x20"
+      = image_tag src="/images/pict/pict-reason-01.jpg", class: "Reason__img--left__pict", size: "20x20"
+      = image_tag src="/images/pict/pict-reason-01.jpg", class: "Reason__img--left__pict", size: "20x20"
+
+    .Body__middle-2
+      = form_with url: "#" do |f|
+        = f.label :有効期限
+        %span.label 必須
+        = f.select :hoge, ['---','01']
+        月
+        = f.select :hoge, ['---','21']
+        年
+
+    .Body__middle-3
+      = form_with url: "#" do |f|
+        = f.label :セキュリティーコード
+        %span.label 必須
+        = f.text_field :hoge, placeholder: "カード背面4桁もしくは３桁の番号"
+
+    .Body__middle-4
+      = link_to "#" do
+        = icon("fas","book")
+        カード裏面の番号とは？
+
+    .Body__middle-5
+      = form_with url: "#" do |f|
+        = f.submit "登録する", class: "aaa"
+
+    .Body__bottom
+      = link_to "#" do
+        もどる
+
+
   = render "credits-new-footer"
