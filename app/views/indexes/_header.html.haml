@@ -29,9 +29,12 @@
           マイページ
       - else
         .Btn__login
-          ログイン
+          = link_to new_user_session_path, class: "Btn__login" do
+            ログイン
         .Btn__join
-          新規会員登録
+          = link_to new_user_registration_path, class: "Btn__join" do
+            新規会員登録
+
   .Exhibit
   = link_to "#", class: "Exhibit" do
     .Exhibit__text 出品する

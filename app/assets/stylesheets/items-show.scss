@@ -1,0 +1,154 @@
+//商品購入確認ページのscss
+*{box-sizing: border-box;}
+
+:root{
+  --items-show-gray: #f5f5f5;
+  --items-show-white: #ffffff;
+  --items-show-blue: #0099e8;
+}
+
+.items-show-main
+{
+  width: 700px;
+  height: 755px;
+  background-color: var(--items-show-white);
+  margin: auto;
+  .top
+  {
+    width: 375px;
+    height: 100px;
+    justify-content: center;
+    border-bottom: solid 1px var(--items-show-gray);
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .middle-1
+  {
+    width: 375px;
+    height: 150px;
+    margin: auto;
+    border-bottom: solid 1px var(--items-show-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__img
+    {
+      width: 80px;
+      height: 80px;
+      background-color: lightgreen;
+    }
+    &__texts
+    {
+      width: 280px;
+      height: 80px;
+      &--item-name
+      {
+        width: 100%;
+        font-size: 14px;
+      }
+      &--prices
+      {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .fee
+        {
+          font-size: 12px;
+          margin: 0 0 0 100px;
+        }
+        .price
+        {
+          font-size: 15px;
+          font-weight: bold;
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+  }
+  .middle-2
+  {
+    width: 375px;
+    height: 120px;
+    margin: auto;
+    border-bottom: solid 1px var(--items-show-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__text
+    {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &__price
+    {
+      //margin: 0px 0px 0px 140px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+  .middle-3
+  {
+    width: 375px;
+    height: 125px;
+    margin: auto;
+    border-bottom: solid 1px var(--items-show-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__text
+    {
+      font-size: 14px;
+    }
+    &__link
+    {
+      display: block;
+      font-size: 14px;
+      color: var(--items-show-blue);
+      text-decoration: none;
+    }
+  }
+  .middle-4
+  {
+    width: 375px;
+    height: 125px;
+    margin: auto;
+    border-bottom: solid 1px var(--items-show-gray);
+    display: block;
+    &__top
+    {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      margin: 0px 0px 10px 0px;
+      &--text
+      {
+        font-size: 14px;
+      }
+      &--link
+      {
+        font-size: 14px;
+        color: var(--items-show-blue);
+        text-decoration: none;
+      }
+    }
+    &__bottom
+    {
+      font-size: 14px;
+    }
+  }
+  .bottom
+  {
+    width: 375px;
+    height: 110px;
+    margin: auto;
+    border-bottom: solid 1px var(--items-show-gray);
+    display: flex;
+    align-items: center;
+    &__message
+    {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+}
