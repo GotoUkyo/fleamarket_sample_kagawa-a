@@ -9,17 +9,13 @@ class User < ApplicationRecord
             format: { with: /\A\S+@\S+\.\S+\z/}
   validates :password, presence: true, length:{ minimum: 7 }, confirmation: true
   validates :last_name, presence: true,
-            format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/,
-            message: "全角で入力して下さい"}
+            format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/}
   validates :first_name, presence: true,
-            format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/,
-            message: "全角で入力して下さい"}
+            format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/}
   validates :last_name_kana, presence: true,
-            format: { with: /\A[ァ-ヶー－]+\z/,
-            message: "全角カナで入力して下さい"}
+            format: { with: /\A[ァ-ヶー－]+\z/}
   validates :first_name_kana, presence: true,
-            format: { with: /\A[ァ-ヶー－]+\z/,
-            message: "全角カナで入力して下さい"}
+            format: { with: /\A[ァ-ヶー－]+\z/}
   validates :birthday, presence: true
   has_one :address
   accepts_nested_attributes_for :address
