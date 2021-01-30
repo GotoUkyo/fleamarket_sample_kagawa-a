@@ -6,8 +6,7 @@
       .Logintop__body
         %p.Logintop__body--text
           アカウントをお持ちでない方はこちら
-        %a.Logintop__body--registration-link{ href: '#' }
-          %p.text新規会員登録
+        = link_to "新規登録画面", new_user_registration_path, class:"btn"
     .Loginmiddle
       .Loginmiddle__body
         = link_to "#",class: "Loginmiddle__body--gbtn" do
@@ -21,11 +20,11 @@
           %P.com Appleでログイン
     .Loginbottom
       .Loginbottom__body
-        %div.Loginbottom__body--form
-          %input.Loginbottom__body--input{type: "text", placeholder: "　メールアドレス"}
-        %div.Loginbottom__body--form
-          %input.Loginbottom__body--input{type: "text", placeholder: "　パスワード"}
-        = button_to "ログイン", "#", class: "Loginbottom__body--btn"
-        %a.Loginbottom__body--content{ href: '#' }
-          パスワードをお忘れの方
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .Loginbottom__body--input
+            = f.email_field :email,placeholder: "メールアドレス", autofocus: true
+          .Loginbottom__body--input
+            = f.password_field :password,placeholder: "パスワード", autocomplete: "off"
+          = f.submit "ログイン", class: "Loginbottom__body--btn"
+        = link_to "パスワードをお忘れの方","#",class:"Loginbottom__body--content"
   = render "devise/registrations/footer"
