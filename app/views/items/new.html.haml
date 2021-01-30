@@ -1,0 +1,13 @@
+.body
+  .Top-logo
+    = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
+  .Data
+    .Image-space
+      .Image-space__text
+        .text 出品画像
+        .label 必須
+      .Image-space__detail 最大5枚までアップロードできます
+      .Image-space__box
+        .Image-space__box--in
+          =icon('fas', 'camera', class: "camera-icon")
+          %p クリックしてファイルをアップロード

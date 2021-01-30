@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+:root{
+  --white-color: white;
+  --back-color: rgb(245, 245, 245);
+  --label-red: red;
+}
+
+.body{
+  width: 100%;
+  background-color: var(--back-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Top-logo{
+  margin: 45px 0 35px 0;
+  &__img{
+    width: 180px;
+    height: 47px;
+  }
+}
+
+.Data{
+  width: 700px;
+  height: 1000px;
+  background-color: lightblue;
+}
+
+.Image-space{
+  height: 300px;
+  padding-left: 40px;
+  background-color: var(--white-color);
+  margin-bottom: 2px;
+  &__text{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      color: var(--white-color);
+      font-weight: bold;
+      font-size: 12px;
+      background-color: var(--label-red);
+      padding: 0 5px;
+      margin: 35px 0 17px 0;
+      border-radius: 3px;
+    }
+  }
+  &__detail{
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  &__box{
+    width: 620px;
+    height: 150px;
+    background-color: var(--back-color);
+    border: dashed 1px rgb(206, 206, 206);
+    &--in{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .camera-icon{
+        font-size: 20px;
+        margin: 50px 0 7px 0;
+      }
+      p{
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
