@@ -23,17 +23,11 @@
           ブランドから探す
     .Btn
       - if user_signed_in?
-        .Btn__login
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn"
-        .Btn__join
-          マイページ
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Btn__login"
+        = link_to "マイページ", "#", class: "Btn__join"
       - else
-        .Btn__login
-          = link_to new_user_session_path, class: "Btn__login" do
-            ログイン
-        .Btn__join
-          = link_to new_user_registration_path, class: "Btn__join" do
-            新規会員登録
+        = link_to "ログイン", new_user_session_path, class: "Btn__login"
+        = link_to "新規会員登録", new_user_registration_path, class: "Btn__join"
 
   .Exhibit
   = link_to "#", class: "Exhibit" do

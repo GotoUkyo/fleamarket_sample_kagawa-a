@@ -26,6 +26,5 @@
           .Loginbottom__body--input
             = f.password_field :password,placeholder: "パスワード", autocomplete: "off"
           = f.submit "ログイン", class: "Loginbottom__body--btn"
-        %a.Loginbottom__body--content{ href: '#' }
-          パスワードをお忘れの方
+        = link_to "パスワードをお忘れの方","#",class:"Loginbottom__body--content"
   = render "devise/registrations/footer"
