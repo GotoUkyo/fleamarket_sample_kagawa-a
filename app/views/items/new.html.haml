@@ -11,3 +11,22 @@
         .Image-space__box--in
           =icon('fas', 'camera', class: "camera-icon")
           %p クリックしてファイルをアップロード
+    .Item
+      .Item__name
+        .text 商品名
+        .label 必須
+      %input.Item__input{placeholder: "40文字まで", "type": "text"}
+      .Item__detail
+        .text 商品の説明
+        .label 必須
+      .Item__text
+      = form_with html: {class: "form"} do |f|
+        = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）", class: "Item__text--form"
+    .Detail
+     %p 商品の詳細
+      .Detail__category
+        .text カテゴリー
+        .label 必須
+      .Detail__brand
+        .text ブランド
+        .graylabel 任意

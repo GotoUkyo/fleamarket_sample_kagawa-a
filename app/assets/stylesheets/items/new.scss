@@ -6,6 +6,7 @@
   --white-color: white;
   --back-color: rgb(245, 245, 245);
   --label-red: red;
+  --new-border-color: rgb(206, 206, 206);
 }
 
 .body{
@@ -34,7 +35,6 @@
   height: 300px;
   padding-left: 40px;
   background-color: var(--white-color);
-  margin-bottom: 2px;
   &__text{
     display: flex;
     .text{
@@ -60,7 +60,7 @@
     width: 620px;
     height: 150px;
     background-color: var(--back-color);
-    border: dashed 1px rgb(206, 206, 206);
+    border: dashed 1px var(--new-border-color);
     &--in{
       display: flex;
       align-items: center;
@@ -74,6 +74,65 @@
         font-weight: bold;
         letter-spacing: 1px;
       }
+    }
+  }
+}
+
+.Item{
+  height: 420px;
+  padding-left: 40px;
+  margin-top: 1px;
+  background-color: var(--white-color);
+  &__name{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      color: var(--white-color);
+      font-weight: bold;
+      font-size: 12px;
+      background-color: var(--label-red);
+      padding: 0 5px;
+      margin: 35px 0 17px 0;
+      border-radius: 3px;
+    }
+  }
+  &__input{
+      width: 620px;
+      height: 50px;
+      font-size: 15px;
+      padding-left: 10px;
+      border: 1px solid var(--new-border-color);
+      border-radius: 5px;
+  }
+  &__detail{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 0 0;
+    }
+    .label{
+      color: var(--white-color);
+      font-weight: bold;
+      font-size: 12px;
+      background-color: var(--label-red);
+      padding: 0 5px;
+      margin: 35px 0 2px 0;
+      border-radius: 3px;
+    }
+  }
+  &__text{
+    font-size: 14px;
+    &--form{
+      width: 620px;
+      height: 160px;
+      padding: 10px 0 0 10px;
+      border: 1px solid var(--new-border-color);
+      border-radius: 5px;
     }
   }
 }
