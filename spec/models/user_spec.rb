@@ -31,12 +31,6 @@ describe User do
       expect(user.errors[:password]).to include("を入力してください", "は7文字以上で入力してください")
     end
 
-    it "passwordが7文字以上であれば登録できること" do
-      user = build(:user, password: "1234567", password_confirmation: "1234567")
-      user.valid?
-      expect(user).to be_valid
-    end
- 
     it "passwordが6文字以下である場合は登録できないこと" do
       user = build(:user, password: "123456", password_confirmation: "123456")
       user.valid?
