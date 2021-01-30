@@ -22,11 +22,15 @@
       .Item__text
       = form_with html: {class: "form"} do |f|
         = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）", class: "Item__text--form"
+      .count 0/1000
     .Detail
-     %p 商品の詳細
+      %p 商品の詳細
       .Detail__category
         .text カテゴリー
         .label 必須
       .Detail__brand
         .text ブランド
-        .graylabel 任意
+        .gray-label 任意
+      .Detail__state
+        .text 商品の状態
+        .label 必須

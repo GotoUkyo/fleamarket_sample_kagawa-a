@@ -7,6 +7,7 @@
   --back-color: rgb(245, 245, 245);
   --label-red: red;
   --new-border-color: rgb(206, 206, 206);
+  --font-gray: rgb(156, 156, 156);
 }
 
 .body{
@@ -81,7 +82,7 @@
 .Item{
   height: 420px;
   padding-left: 40px;
-  margin-top: 1px;
+  margin: 1px 0;
   background-color: var(--white-color);
   &__name{
     display: flex;
@@ -133,6 +134,72 @@
       padding: 10px 0 0 10px;
       border: 1px solid var(--new-border-color);
       border-radius: 5px;
+    }
+  }
+  .count{
+    font-size: 11px;
+    padding: 10px 0 0 580px;
+    color: var(--font-gray)
+  }
+}
+
+.Detail{
+  background-color: var(--white-color);
+  padding: 40px 0 0 40px;
+  p{
+    color: var(--font-gray);
+    font-size: 13px;
+    font-weight: bold;
+  }
+  &__category{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      color: var(--white-color);
+      font-weight: bold;
+      font-size: 12px;
+      background-color: var(--label-red);
+      padding: 0 5px;
+      margin: 35px 0 17px 0;
+      border-radius: 3px;
+    }
+  }
+  &__brand{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .gray-label{
+      color: var(--white-color);
+      font-weight: bold;
+      font-size: 12px;
+      background-color: rgb(194, 194, 194);
+      padding: 0 5px;
+      margin: 35px 0 17px 0;
+      border-radius: 3px;
+    }
+  }
+  &__state{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      color: var(--white-color);
+      font-weight: bold;
+      font-size: 12px;
+      background-color: var(--label-red);
+      padding: 0 5px;
+      margin: 35px 0 17px 0;
+      border-radius: 3px;
     }
   }
 }
