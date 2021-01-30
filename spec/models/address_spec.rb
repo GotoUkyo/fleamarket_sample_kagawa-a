@@ -9,7 +9,7 @@ describe Address do
     it "postcodeがない場合は登録できないこと" do
       address = build(:address, postcode: "")
       address.valid?
-      expect(address.errors[:postcode]).to include("を入力してください", "は不正な値です")
+      expect(address.errors[:postcode]).to include("を入力してください")
     end
 
     it "prefecture_idがない場合は登録できないこと" do

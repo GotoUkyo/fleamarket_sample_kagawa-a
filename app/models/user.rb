@@ -3,20 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # validates :nick_name, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday, presence: true
-  validates :nick_name, presence: true
-  validates :email, presence: true, uniqueness:true,
-            format: { with: /\A\S+@\S+\.\S+\z/}
-  validates :password, presence: true, length:{ minimum: 7 }, confirmation: true
-  validates :last_name, presence: true,
-            format: { with: /\A[ぁ-んァ-ン一-龥]/}
-  validates :first_name, presence: true,
-            format: { with: /\A[ぁ-んァ-ン一-龥]/}
-  validates :last_name_kana, presence: true,
-            format: { with: /\A[ァ-ヶー－]+\z/}
-  validates :first_name_kana, presence: true,
-            format: { with: /\A[ァ-ヶー－]+\z/}
-  validates :birthday, presence: true
+  with_options presence: true do        
+    validates :nick_name
+    validates :email, uniqueness:true, format: { with: /\A\S+@\S+\.\S+\z/}
+    validates :password, length:{ minimum: 7 }, confirmation: true
+    validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]/}
+    validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]/}
+    validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/}
+    validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/}
+    validates :birthday
+  end
   has_one :address
   accepts_nested_attributes_for :address
 end

@@ -2,8 +2,10 @@ class Address < ApplicationRecord
   belongs_to :user, optional: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-  validates :postcode, presence: true
-  validates :prefecture_id, presence: true
-  validates :city, presence: true
-  validates :block, presence: true
+  with_options presence: true do
+    validates :postcode
+    validates :prefecture_id
+    validates :city
+    validates :block
+  end
 end
