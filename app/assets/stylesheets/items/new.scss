@@ -4,16 +4,24 @@
 
 :root{
   --white-color: white;
-  --back-color: rgb(245, 245, 245);
   --label-red: red;
   --new-border-color: rgb(206, 206, 206);
   --font-gray: rgb(156, 156, 156);
   --font-blue: dodgerblue;
 }
 
+@mixin label(){
+  color: var(--white-color);
+  font-weight: bold;
+  font-size: 12px;
+  padding: 0 5px;
+  margin: 35px 0 17px 0;
+  border-radius: 3px;
+}
+
 .body{
   width: 100%;
-  background-color: var(--back-color);
+  background-color: rgb(245, 245, 245);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -22,8 +30,8 @@
 .Top-logo{
   margin: 45px 0 35px 0;
   &__img{
-    width: 180px;
-    height: 47px;
+    width: 185px;
+    height: 52px;
   }
 }
 
@@ -43,13 +51,8 @@
       margin: 35px 15px 15px 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
   &__detail{
@@ -59,7 +62,7 @@
   &__box{
     width: 620px;
     height: 150px;
-    background-color: var(--back-color);
+    background-color: rgb(245, 245, 245);
     border: dashed 1px var(--new-border-color);
     &--in{
       display: flex;
@@ -91,13 +94,8 @@
       margin: 35px 15px 15px 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
   &__input{
@@ -116,13 +114,8 @@
       margin: 35px 15px 0 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 2px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
   &__text{
@@ -158,13 +151,8 @@
       margin: 35px 15px 15px 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
   &__brand{
@@ -175,13 +163,8 @@
       margin: 35px 15px 15px 0;
     }
     .gray-label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: rgb(194, 194, 194);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
   &__state{
@@ -192,13 +175,8 @@
       margin: 35px 15px 15px 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
 }
@@ -231,13 +209,8 @@
       margin: 35px 15px 15px 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
   &__area{
@@ -248,13 +221,8 @@
       margin: 35px 15px 15px 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
   &__days{
@@ -265,13 +233,8 @@
       margin: 35px 15px 15px 0;
     }
     .label{
-      color: var(--white-color);
-      font-weight: bold;
-      font-size: 12px;
       background-color: var(--label-red);
-      padding: 0 5px;
-      margin: 35px 0 17px 0;
-      border-radius: 3px;
+      @include label()
     }
   }
 }
@@ -312,13 +275,8 @@
         margin: 35px 15px 15px 0;
       }
       .label{
-        color: var(--white-color);
-        font-weight: bold;
-        font-size: 12px;
         background-color: var(--label-red);
-        padding: 0 5px;
-        margin: 35px 0 17px 0;
-        border-radius: 3px;
+        @include label()
       }
     }
     &--value{
@@ -335,7 +293,8 @@
         height: 50px;
         border: 1px solid var(--new-border-color);
         border-radius: 5px;
-        padding-left: 245px;
+        font-size: 14px;
+        text-align: right;
       }
     }
   }

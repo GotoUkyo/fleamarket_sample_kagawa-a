@@ -1,6 +1,7 @@
 .body
   .Top-logo
-    = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
+    = link_to "#" do
+      = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
   .Data
     .Image-space
       .Image-space__text
@@ -99,3 +100,4 @@
         = link_to "#", class: "color" do
           加盟店規約
         %p に同意したことになります。
+  = render "items-show-footer"
