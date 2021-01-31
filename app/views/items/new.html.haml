@@ -34,3 +34,17 @@
       .Detail__state
         .text 商品の状態
         .label 必須
+    .Sending
+      .Sending__title
+        %p 発送について
+        = link_to "#" do
+          =icon('far', 'question-circle', class: "question")
+      .Sending__burden
+        .text 発送料の負担
+        .label 必須
+      .Sending__area
+        .text 発送元の地域
+        .label 必須
+      .Sending__days
+        .text 発送までの日数
+        .label 必須
