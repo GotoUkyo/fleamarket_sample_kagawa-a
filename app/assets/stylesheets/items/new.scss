@@ -28,7 +28,6 @@
 
 .Data{
   width: 700px;
-  background-color: lightblue;
 }
 
 .Image-space{
@@ -272,6 +271,106 @@
       padding: 0 5px;
       margin: 35px 0 17px 0;
       border-radius: 3px;
+    }
+  }
+}
+
+.Price{
+  background-color: var(--white-color);
+  padding: 40px 0 0 40px;
+  margin-top: 1px;
+  &__title{
+    display: flex;
+    position: relative;
+    p{
+      color: var(--font-gray);
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .number{
+      color: var(--font-gray);
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .question{
+      font-size: 14px;
+      color: dodgerblue;
+      position: absolute;
+      top: 2px;
+      left: 170px;
+    }
+  }
+  &__set{
+    display: flex;
+    justify-content: space-between;
+    &--title{
+      display: flex;
+      .text{
+        font-weight: bold;
+        font-size: 14px;
+        margin: 35px 15px 15px 0;
+      }
+      .label{
+        color: var(--white-color);
+        font-weight: bold;
+        font-size: 12px;
+        background-color: var(--label-red);
+        padding: 0 5px;
+        margin: 35px 0 17px 0;
+        border-radius: 3px;
+      }
+    }
+    &--value{
+      display: flex;
+      align-items: center;
+      padding-right: 40px;
+      margin-top: 15px;
+      .mark{
+        margin-right: 10px;
+        font-size: 13px
+      }
+      &__bar{
+        width: 285px;
+        height: 50px;
+        border: 1px solid var(--new-border-color);
+        border-radius: 5px;
+        padding-left: 245px;
+      }
+    }
+  }
+  &__fee{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    .text{
+      display: flex;
+      p{
+        font-size: 14px;
+      }
+      .rate{
+        font-size: 13px;
+      }
+    }
+    .display{
+      padding-right: 40px;
+    }
+  }
+  &__bar{
+    background-color: rgb(221, 221, 221);
+    height: 1px;
+    width: 620px;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+  }
+  &__profit{
+    display: flex;
+    justify-content: space-between;
+    p{
+      font-size: 14px;
+    }
+    .display{
+      padding-right: 40px;
     }
   }
 }

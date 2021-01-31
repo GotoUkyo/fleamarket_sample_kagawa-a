@@ -48,3 +48,25 @@
       .Sending__days
         .text 発送までの日数
         .label 必須
+    .Price
+      .Price__title
+        %p 価格
+        .number （¥300〜9,999,999）
+        = link_to "#" do
+          =icon('far', 'question-circle', class: "question")
+      .Price__set
+        .Price__set--title
+          .text 販売価格
+          .label 必須
+        .Price__set--value
+          %p.mark ¥
+          %input.Price__set--value__bar{type: "number", value: "0", min: "300", max: "9999999"}
+      .Price__fee
+        .text
+          %p 販売手数料
+          .rate （10%）
+        .display ー
+      .Price__bar
+      .Price__profit
+        %p 販売利益
+        .display ー
