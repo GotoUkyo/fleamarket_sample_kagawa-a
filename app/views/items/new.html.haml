@@ -70,3 +70,32 @@
       .Price__profit
         %p 販売利益
         .display ー
+    .Under-menu
+      .Btn-up
+        = link_to "#", class: "exhibit" do
+          出品する
+      .Btn-under
+        = link_to "#", class: "save" do
+          下書きに保存
+      = link_to "#", class: "back" do
+        もどる
+    .Under-text
+      .up
+        %p 禁止されている
+        = link_to "#", class: "color" do
+          行為
+        %p および
+        = link_to "#", class: "color" do
+          出品物
+        %p を必ずご確認ください。
+        = link_to "#", class: "color" do
+          偽ブランド品
+        %p や
+        = link_to "#", class: "color" do
+          盗品物
+        %p などの販売は犯罪であり、法
+      .under
+        %p 律により処罰される可能性があります。 また、出品をもちまして
+        = link_to "#", class: "color" do
+          加盟店規約
+        %p に同意したことになります。

@@ -8,6 +8,7 @@
   --label-red: red;
   --new-border-color: rgb(206, 206, 206);
   --font-gray: rgb(156, 156, 156);
+  --font-blue: dodgerblue;
 }
 
 .body{
@@ -216,7 +217,7 @@
     }
     .question{
       font-size: 14px;
-      color: dodgerblue;
+      color: var(--font-blue);
       position: absolute;
       top: 3px;
       left: 88px;
@@ -294,7 +295,7 @@
     }
     .question{
       font-size: 14px;
-      color: dodgerblue;
+      color: var(--font-blue);
       position: absolute;
       top: 2px;
       left: 170px;
@@ -341,7 +342,7 @@
   &__fee{
     display: flex;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 37px;
     .text{
       display: flex;
       p{
@@ -352,6 +353,7 @@
       }
     }
     .display{
+      font-size: 14px;
       padding-right: 40px;
     }
   }
@@ -370,7 +372,71 @@
       font-size: 14px;
     }
     .display{
+      font-size: 14px;
       padding-right: 40px;
     }
+  }
+}
+
+.Under-menu{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--white-color);
+  .Btn-up{
+    padding: 50px 0 25px 0;
+    .exhibit{
+      height: 50px;
+      width: 360px;
+      background-color: rgb(56, 204, 197);
+      color: var(--white-color);
+      font-size: 17px;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+  }
+  .Btn-under{
+    padding-bottom: 25px;
+    .save{
+      height: 50px;
+      width: 360px;
+      background-color: rgb(197, 197, 197);
+      font-size: 17px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+  }
+  .back{
+    font-size: 14px;
+    color: var(--font-blue);
+    text-decoration: none;
+    margin-bottom: 30px;
+  }
+}
+.Under-text{
+  height: 100px;
+  background-color: var(--white-color);
+  padding: 0 40px;
+  font-size: 12px;
+  line-height: 16px;
+  .up{
+    display: flex;
+  }
+  .under{
+    display: flex;
+  }
+  .color{
+    color: var(--font-blue);
+    text-decoration: none;
+    margin: 0 3px;
   }
 }
