@@ -10,13 +10,25 @@
   --font-blue: dodgerblue;
 }
 
-@mixin label(){
+@mixin label {
   color: var(--white-color);
   font-weight: bold;
   font-size: 12px;
   padding: 0 5px;
   margin: 35px 0 17px 0;
   border-radius: 3px;
+}
+
+@mixin btn {
+  height: 50px;
+  width: 360px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
 
 .body{
@@ -52,7 +64,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
   &__detail{
@@ -95,7 +107,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
   &__input{
@@ -115,7 +127,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
   &__text{
@@ -131,7 +143,7 @@
   .count{
     font-size: 11px;
     padding: 10px 0 0 580px;
-    color: var(--font-gray)
+    color: var(--font-gray);
   }
 }
 
@@ -152,7 +164,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
   &__brand{
@@ -164,7 +176,7 @@
     }
     .gray-label{
       background-color: rgb(194, 194, 194);
-      @include label()
+      @include label;
     }
   }
   &__state{
@@ -176,7 +188,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
 }
@@ -210,7 +222,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
   &__area{
@@ -222,7 +234,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
   &__days{
@@ -234,7 +246,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label()
+      @include label;
     }
   }
 }
@@ -276,7 +288,7 @@
       }
       .label{
         background-color: var(--label-red);
-        @include label()
+        @include label;
       }
     }
     &--value{
@@ -286,7 +298,7 @@
       margin-top: 15px;
       .mark{
         margin-right: 10px;
-        font-size: 13px
+        font-size: 13px;
       }
       &__bar{
         width: 285px;
@@ -345,33 +357,17 @@
   .Btn-up{
     padding: 50px 0 25px 0;
     .exhibit{
-      height: 50px;
-      width: 360px;
       background-color: rgb(56, 204, 197);
       color: var(--white-color);
-      font-size: 17px;
-      font-weight: bold;
-      text-decoration: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 5px;
+      @include btn;
     }
   }
   .Btn-under{
     padding-bottom: 25px;
     .save{
-      height: 50px;
-      width: 360px;
       background-color: rgb(197, 197, 197);
-      font-size: 17px;
-      font-weight: bold;
       color: black;
-      text-decoration: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 5px;
+      @include btn;
     }
   }
   .back{
