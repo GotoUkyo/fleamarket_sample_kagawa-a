@@ -35,6 +35,7 @@
   width: 620px;
   height: 50px;
   font-size: 15px;
+  padding-left: 15px;
   border: 1px solid var(--new-border-color);
   border-radius: 5px;
 }
@@ -120,7 +121,6 @@
   }
   &__input{
     @include bar;
-    padding-left: 10px;
   }
   &__detail{
     display: flex;
@@ -134,15 +134,12 @@
       @include label;
     }
   }
-  &__text{
-    font-size: 14px;
-    &--form{
-      width: 620px;
-      height: 160px;
-      padding: 10px 0 0 10px;
-      border: 1px solid var(--new-border-color);
-      border-radius: 5px;
-    }
+  &__form{
+    width: 620px;
+    height: 160px;
+    padding: 15px 0 0 15px;
+    border: 1px solid var(--new-border-color);
+    border-radius: 5px; 
   }
   .count{
     font-size: 11px;
@@ -153,7 +150,7 @@
 
 .Detail{
   background-color: var(--white-color);
-  padding: 40px 0 0 40px;
+  padding: 40px 0 40px 40px;
   p{
     color: var(--font-gray);
     font-size: 14px;
@@ -171,9 +168,8 @@
       @include label;
     }
   }
-  .select{
+  .category-select{
     @include bar;
-    padding-left: 15px;
   }
   &__brand{
     display: flex;
@@ -187,6 +183,9 @@
       @include label;
     }
   }
+  &__input{
+    @include bar;
+  }
   &__state{
     display: flex;
     .text{
@@ -199,11 +198,14 @@
       @include label;
     }
   }
+  .state-select{
+    @include bar;
+  }
 }
 
 .Sending{
   background-color: var(--white-color);
-  padding: 40px 0 0 40px;
+  padding: 40px 0 40px 40px;
   margin-top: 1px;
   &__title{
     display: flex;
@@ -221,6 +223,9 @@
       left: 88px;
     }
   }
+  .sending-select{
+    @include bar;
+  }
   &__burden{
     display: flex;
     .text{
@@ -232,6 +237,9 @@
       background-color: var(--label-red);
       @include label;
     }
+  }
+  .burden-select{
+    @include bar;
   }
   &__area{
     display: flex;
@@ -256,6 +264,9 @@
       background-color: var(--label-red);
       @include label;
     }
+  }
+  .days-select{
+    @include bar;
   }
 }
 
