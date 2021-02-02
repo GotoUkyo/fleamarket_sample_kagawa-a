@@ -10,7 +10,7 @@
   --font-blue: dodgerblue;
 }
 
-@mixin label {
+@mixin label{
   color: var(--white-color);
   font-weight: bold;
   font-size: 12px;
@@ -19,7 +19,7 @@
   border-radius: 3px;
 }
 
-@mixin btn {
+@mixin btn{
   height: 50px;
   width: 360px;
   font-size: 17px;
@@ -28,6 +28,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+}
+
+@mixin bar{
+  width: 620px;
+  height: 50px;
+  font-size: 15px;
+  border: 1px solid var(--new-border-color);
   border-radius: 5px;
 }
 
@@ -111,12 +119,8 @@
     }
   }
   &__input{
-      width: 620px;
-      height: 50px;
-      font-size: 15px;
-      padding-left: 10px;
-      border: 1px solid var(--new-border-color);
-      border-radius: 5px;
+    @include bar;
+    padding-left: 10px;
   }
   &__detail{
     display: flex;
@@ -166,6 +170,10 @@
       background-color: var(--label-red);
       @include label;
     }
+  }
+  .select{
+    @include bar;
+    padding-left: 15px;
   }
   &__brand{
     display: flex;

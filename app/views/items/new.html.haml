@@ -21,7 +21,7 @@
         .text 商品の説明
         .label 必須
       .Item__text
-      = form_with html: {class: "form"} do |f|
+      = form_with do |f|
         = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）", class: "Item__text--form"
       .count 0/1000
     .Detail
@@ -29,6 +29,7 @@
       .Detail__category
         .text カテゴリー
         .label 必須
+      = select_tag 'select', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"]), class: "select"
       .Detail__brand
         .text ブランド
         .gray-label 任意
