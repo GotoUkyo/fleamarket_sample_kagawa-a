@@ -2,43 +2,7 @@
   box-sizing: border-box;
 }
 
-:root{
-  --white-color: white;
-  --label-red: red;
-  --new-border-color: rgb(206, 206, 206);
-  --font-gray: rgb(156, 156, 156);
-  --font-blue: dodgerblue;
-}
-
-@mixin label{
-  color: var(--white-color);
-  font-weight: bold;
-  font-size: 12px;
-  padding: 0 5px;
-  margin: 35px 0 17px 0;
-  border-radius: 3px;
-}
-
-@mixin btn{
-  height: 50px;
-  width: 360px;
-  font-size: 17px;
-  font-weight: bold;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-}
-
-@mixin bar{
-  width: 620px;
-  height: 50px;
-  font-size: 15px;
-  padding-left: 15px;
-  border: 1px solid var(--new-border-color);
-  border-radius: 5px;
-}
+@import "color-mixin";
 
 .body{
   width: 100%;
@@ -72,7 +36,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   //以下は追加実装時にコメントアウトを取る
@@ -116,11 +80,11 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   &__input{
-    @include bar;
+    @include item-main-bar;
   }
   &__detail{
     display: flex;
@@ -131,7 +95,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   &__form{
@@ -165,11 +129,11 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   .category-select{
-    @include bar;
+    @include item-main-bar;
   }
   &__brand{
     display: flex;
@@ -180,11 +144,11 @@
     }
     .gray-label{
       background-color: rgb(194, 194, 194);
-      @include label;
+      @include item-main-label;
     }
   }
   &__input{
-    @include bar;
+    @include item-main-bar;
   }
   &__state{
     display: flex;
@@ -195,11 +159,11 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   .state-select{
-    @include bar;
+    @include item-main-bar;
   }
 }
 
@@ -224,7 +188,7 @@
     }
   }
   .sending-select{
-    @include bar;
+    @include item-main-bar;
   }
   &__burden{
     display: flex;
@@ -235,11 +199,11 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   .burden-select{
-    @include bar;
+    @include item-main-bar;
   }
   &__area{
     display: flex;
@@ -250,7 +214,7 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   &__days{
@@ -262,11 +226,11 @@
     }
     .label{
       background-color: var(--label-red);
-      @include label;
+      @include item-main-label;
     }
   }
   .days-select{
-    @include bar;
+    @include item-main-bar;
   }
 }
 
@@ -307,7 +271,7 @@
       }
       .label{
         background-color: var(--label-red);
-        @include label;
+        @include item-main-label;
       }
     }
     &--value{
@@ -379,7 +343,7 @@
     .exhibit{
       background-color: rgb(56, 204, 197);
       color: var(--white-color);
-      @include btn;
+      @include item-main-btn;
     }
   }
   .Btn-under{
@@ -387,7 +351,7 @@
     .save{
       background-color: rgb(197, 197, 197);
       color: black;
-      @include btn;
+      @include item-main-btn;
     }
   }
   .back{
