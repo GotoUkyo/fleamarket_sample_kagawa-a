@@ -1,0 +1,109 @@
+.body
+  .Top-logo
+    = link_to "#" do
+      = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
+  .Data
+  = form_with do |f|
+    .Image-space
+      .Image-space__text
+        .text 出品画像
+        .label 必須
+      //以下は追加実装時にコメントアウトを取る
+      //.Image-space__detail 最大5枚までアップロードできます
+      .Image-space__box
+        .Image-space__box--in
+          =icon('fas', 'camera', class: "camera-icon")
+          %p クリックしてファイルをアップロード
+    .Item
+      .Item__name
+        .text 商品名
+        .label 必須
+      = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item__input"
+      .Item__detail
+        .text 商品の説明
+        .label 必須
+      = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item__form"
+      .count 0/1000
+    .Detail
+      %p 商品の詳細
+      .Detail__category
+        .text カテゴリー
+        .label 必須
+      = f.select :category, ["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, {class: "category-select"}
+      .Detail__brand
+        .text ブランド
+        .gray-label 任意
+      = f.text_field :brand, placeholder: "例）シャネル", class: "Detail__input"
+      .Detail__state
+        .text 商品の状態
+        .label 必須
+      = f.select :state, ["選択してください", "新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class: "state-select"}
+    .Sending
+      .Sending__title
+        %p 発送について
+        = link_to "#" do
+          =icon('far', 'question-circle', class: "question")
+      .Sending__burden
+        .text 発送料の負担
+        .label 必須
+      = f.select :burden, ["選択してください", "送料込み（出品者負担）", "着払い（購入者負担）"], {}, {class: "burden-select"}
+      .Sending__area
+        .text 発送元の地域
+        .label 必須
+      = f.select :area, ["選択してください", "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県"], {}, {class: "sending-select"}
+      .Sending__days
+        .text 発送までの日数
+        .label 必須
+      = f.select :days, ["選択してください", "1〜2日で発送", "2〜3日で発送", "4〜7日で発送"], {}, {class: "days-select"}
+    .Price
+      .Price__title
+        %p 価格
+        .number （¥300〜9,999,999）
+        = link_to "#" do
+          =icon('far', 'question-circle', class: "question")
+      .Price__set
+        .Price__set--title
+          .text 販売価格
+          .label 必須
+        .Price__set--value
+          %p.mark ¥
+          = f.number_field :price, value: "0", min: "300", max: "9999999", class: "Price__set--value__bar"
+      .Price__fee
+        .text
+          %p 販売手数料
+          .rate （10%）
+        .display ー
+      .Price__bar
+      .Price__profit
+        %p 販売利益
+        .display ー
+    .Under-menu
+      .Btn-up
+        = link_to "#", class: "exhibit" do
+          出品する
+      .Btn-under
+        = link_to "#", class: "save" do
+          下書きに保存
+      = link_to "#", class: "back" do
+        もどる
+    .Under-text
+      .up
+        %p 禁止されている
+        = link_to "#", class: "color" do
+          行為
+        %p および
+        = link_to "#", class: "color" do
+          出品物
+        %p を必ずご確認ください。
+        = link_to "#", class: "color" do
+          偽ブランド品
+        %p や
+        = link_to "#", class: "color" do
+          盗品物
+        %p などの販売は犯罪であり、法
+      .under
+        %p 律により処罰される可能性があります。 また、出品をもちまして
+        = link_to "#", class: "color" do
+          加盟店規約
+        %p に同意したことになります。
+  = render "items-show-footer"
