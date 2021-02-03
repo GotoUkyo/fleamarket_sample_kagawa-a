@@ -13,10 +13,10 @@
 |birthday|date|null: false|
 ### Association
 - has_one :credit
-- has_many :products
+- has_many :items
 - has_one :address
 
-## productsテーブル
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -41,7 +41,7 @@
 |name|string|null: false, unique: true|
 |ancestry|string||
 ### Association
-- has_many :products
+- has_many :items
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -49,7 +49,7 @@
 |name|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :product
+- belongs_to :item
 
 ## creditsテーブル
 |Column|Type|Options|
