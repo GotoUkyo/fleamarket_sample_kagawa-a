@@ -61,8 +61,7 @@
 }
 
 .Image-space{
-  height: 300px;
-  padding-left: 40px;
+  padding: 0 0 40px 40px;
   background-color: var(--white-color);
   &__text{
     display: flex;
@@ -76,15 +75,16 @@
       @include label;
     }
   }
-  &__detail{
-    font-size: 14px;
-    margin-bottom: 15px;
-  }
+  //以下は追加実装時にコメントアウトを取る
+  //&__detail{
+    //font-size: 14px;
+  //}
   &__box{
     width: 620px;
     height: 150px;
     background-color: rgb(245, 245, 245);
     border: dashed 1px var(--new-border-color);
+    margin-top: 15px;
     &--in{
       display: flex;
       align-items: center;
