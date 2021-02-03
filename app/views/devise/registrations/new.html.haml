@@ -10,13 +10,13 @@
           = f.label :ニックネーム
           %span.label 必須
         .FormField__input--normal
-          = f.text_field :email,placeholder: "例）フリマ太郎", autofocus: true, autocomplete: "ニックネーム"
+          = f.text_field :nick_name,placeholder: "例）フリマ太郎", autofocus: true
       .FormField
         .FormField__label--normal
           = f.label :メールアドレス
           %span.label 必須
         .FormField__input--normal
-          = f.email_field :email,placeholder: "PC・携帯どちらでも可", autofocus: true, autocomplete: "email"
+          = f.email_field :email,placeholder: "PC・携帯どちらでも可"
       .FormField
         .FormField__label--normal
           = f.label :パスワード
@@ -25,13 +25,13 @@
             -# %em
             -#   (#{@minimum_password_length} characters minimum)
         .FormField__input--normal
-          = f.password_field :password,placeholder: "６文字以上の半角英数字",  autocomplete: "new-password"
+          = f.password_field :password,placeholder: "7文字以上の半角英数字", autocomplete: "off"
       .FormField
         .FormField__label--normal
           = f.label :パスワード
           %span.label 必須
         .FormField__input--normal
-          = f.password_field :password_confirmation,placeholder: "上記と同じものを入力してください",  autocomplete: "new-password"
+          = f.password_field :password_confirmation,placeholder: "上記と同じものを入力してください", autocomplete: "off"
       %h3 本人確認
       %p.str 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客様に公開されることはありません。
       .FormField
@@ -39,64 +39,61 @@
           = f.label :お名前（全角）
           %span.label 必須
         .FormField__input--name
-          = f.text_field :email,placeholder: "例）香川", autofocus: true, autocomplete: "ニックネーム"
-          = f.text_field :email,placeholder: "例）太郎", autofocus: true, autocomplete: "ニックネーム"
+          = f.text_field :last_name,placeholder: "例）香川"
+          = f.text_field :first_name,placeholder: "例）太郎"
       .FormField
         .FormField__label--normal
           = f.label :お名前（カナ）
           %span.label 必須
         .FormField__input--name
-          = f.text_field :email,placeholder: "例）カガワ", autofocus: true, autocomplete: "ニックネーム"
-          = f.text_field :email,placeholder: "例）タロウ", autofocus: true, autocomplete: "ニックネーム"
+          = f.text_field :last_name_kana,placeholder: "例）カガワ"
+          = f.text_field :first_name_kana,placeholder: "例）タロウ"
       .FormField
         .FormField__label--normal
           = f.label :生年月日
           %span.label 必須
         .FormField__input--date
-          = f.select :email,['1911','1912']
-          %p.day 年
-          = f.select :email,['1','2']
-          %p.day 月
-          = f.select :email,['1','2']
-          %p.day 日
+          != sprintf(f.date_select(:birthday, with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
       %p.date ※　本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       %h3 配送先住所
-      .FormField
-        .FormField__label--normal
-          = f.label :郵便番号
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）760-0019", autofocus: true, autocomplete: "ニックネーム"
-      .FormField
-        .FormField__label--normal
-          = f.label :都道府県
-          %span.label 必須
-        .FormField__input--normal
-          = f.select :email,['北海道','沖縄']
-      .FormField
-        .FormField__label--normal
-          = f.label :市区町村
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）高松市", autofocus: true, autocomplete: "ニックネーム"
-      .FormField
-        .FormField__label--normal
-          = f.label :番地
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）サンポート２−１", autofocus: true, autocomplete: "ニックネーム"
-      .FormField
-        .FormField__label--normal
-          = f.label :建物名
-          %span.label__any 任意
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "例）高松シンボルタワー　タワー棟４・５階", autofocus: true, autocomplete: "ニックネーム"
-      .FormField
-        .FormField__label--normal
-          = f.label :電話番号
-          %span.label 必須
-        .FormField__input--normal
-          = f.text_field :email,placeholder: "電話番号", autofocus: true, autocomplete: "ニックネーム"
+      = f.fields_for :address do |f|
+        .FormField
+          .FormField__label--normal
+            = f.label :郵便番号
+            %span.label 必須
+          .FormField__input--normal
+            = f.text_field :postcode, placeholder: "例）760-0019"
+        .FormField
+          .FormField__label--normal
+            = f.label :都道府県
+            %span.label 必須
+          .FormField__input--normal
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+        .FormField
+          .FormField__label--normal
+            = f.label :市区町村
+            %span.label 必須
+          .FormField__input--normal
+            = f.text_field :city,placeholder: "例）高松市"
+        .FormField
+          .FormField__label--normal
+            = f.label :番地
+            %span.label 必須
+          .FormField__input--normal
+            = f.text_field :block,placeholder: "例）サンポート２−１"
+        .FormField
+          .FormField__label--normal
+            = f.label :建物名
+            %span.label__any 任意
+          .FormField__input--normal
+            = f.text_field :building,placeholder: "例）高松シンボルタワー　タワー棟４・５階"
+        .FormField
+          .FormField__label--normal
+            = f.label :電話番号
+            %span.label__any 任意
+          .FormField__input--normal
+            = f.text_field :phone_number,placeholder: "例）0878220111"
       .actions
         = f.submit "登録する", class: 'Button'
   = render "footer"
+  

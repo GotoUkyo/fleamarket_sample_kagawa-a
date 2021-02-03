@@ -1,0 +1,102 @@
+.body
+  .Top-bar
+    .Top-bar__text
+    = link_to "#", class: "Top-bar__link" do
+      フリマ
+    .Top-bar__bold ＞
+    .Top-bar__bold2 商品名
+  .Item
+    .Item__title 商品名
+    .Item__img
+    .Item__little
+      .Item__little--1
+      .Item__little--2
+      .Item__little--3
+      .Item__little--4
+    .Item__price ¥お値段円
+    .Item__tax （税込） 送料込み
+    .Buy-btn
+      .Buy-btn__text 購入画面へ進む
+    .Item__text
+      %p 商品の説明をここに表示
+      %p とりあえず何行か書いてみる
+      %p わっふるわっふる
+    %table.Table
+      %tr
+        %th.Table__title 出品者
+        %td
+          = link_to "#", class: "color" do
+            出品者名
+      %tr
+        %th{rowspan: "1", class: "Table__title"} カテゴリー
+        %td.category.category-top
+          = link_to "#", class: "color" do
+            カテゴリー名
+        %td.category
+          = link_to "#", class: "color" do
+            >カテゴリー名2
+        %td.category.category-bottom
+          = link_to "#", class: "color" do
+            >カテゴリー名3
+      %tr
+        %th.Table__title ブランド
+        %td
+          .Table__text ブランド名
+      %tr
+        %th.Table__title 商品の状態
+        %td
+          .Table__text 新品、未使用等
+      %tr
+        %th.Table__title 発送料の負担
+        %td
+          .Table__text 送料込み（出品者負担）
+      %tr
+        %th.Table__title 発送の方法
+        %td
+          .Table__text ゆうゆうフリマ便
+      %tr
+        %th.Table__title 発送元の地域
+        %td
+          .Table__text 香川県
+      %tr
+        %th.Table__title 発送の目安
+        %td
+          .Table__text 4〜7日で発送
+    .Item__btn
+      .Item__btn--favorite
+        = icon('fas', 'star', class: "star-icon")
+        お気に入り
+        .count 0
+      .Item__btn--report
+        = icon('fas', 'flag', class: "flag-icon")
+        不適切な商品の通報
+  .Comment
+    = form_with html: {class: "form"} do |f|
+      = f.text_area :comment, class: "Comment__form"
+    .Comment__text
+      %p 相手のことを考え丁寧なコメントを心がけましょう。
+      %p 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    = form_with html: {class: "form-btn"} do |f|
+      =icon('fas', 'comment', class: "comment-icon")    
+      = f.submit "コメントする", class: "comment-btn"
+  .Others
+    .Others__title 出品者さんのその他の出品
+    .Others__img
+      .Others__img--new
+        .Label
+          .Label__name 商品名
+          .Label__price お値段円
+          .Label__tax （税込）
+      .Others__img--new
+      .Others__img--new
+      .Others__img--new
+    .Category カテゴリー名（仮）その他の商品
+    .Category__img
+      .Category__img--new
+        .Label
+          .Label__name 商品名
+          .Label__price お値段円
+          .Label__tax （税込）
+      .Category__img--new
+      .Category__img--new
+      .Category__img--new

@@ -1,17 +1,30 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.LoginPage
+  .AccountPage
+    = render "devise/registrations/header"
+  .LoginPage__body
+    .Logintop
+      .Logintop__body
+        %p.Logintop__body--text
+          アカウントをお持ちでない方はこちら
+        = link_to "新規登録画面", new_user_registration_path, class:"btn"
+    .Loginmiddle
+      .Loginmiddle__body
+        = link_to "#",class: "Loginmiddle__body--gbtn" do
+          = icon('fab', 'google',class: "Loginmiddle__body--icon")
+          %P.com Googleでログイン
+        = link_to "#",class: "Loginmiddle__body--fbtn" do
+          = icon('fab', 'facebook-square fa-lg',class: "Loginmiddle__body--icon")
+          %P.com Facebookでログイン
+        = link_to "#",class: "Loginmiddle__body--ibtn" do
+          = icon('fab', 'apple fa-lg',class: "Loginmiddle__body--icon")
+          %P.com Appleでログイン
+    .Loginbottom
+      .Loginbottom__body
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .Loginbottom__body--input
+            = f.email_field :email,placeholder: "メールアドレス", autofocus: true
+          .Loginbottom__body--input
+            = f.password_field :password,placeholder: "パスワード", autocomplete: "off"
+          = f.submit "ログイン", class: "Loginbottom__body--btn"
+        = link_to "パスワードをお忘れの方","#",class:"Loginbottom__body--content"
+  = render "devise/registrations/footer"

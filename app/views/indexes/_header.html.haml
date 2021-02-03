@@ -22,10 +22,13 @@
         = link_to "#", class: "Search-menu__brand--text" do
           ブランドから探す
     .Btn
-      .Btn__login
-        ログイン
-      .Btn__join
-        新規会員登録
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Btn__login"
+        = link_to "マイページ", "#", class: "Btn__join"
+      - else
+        = link_to "ログイン", new_user_session_path, class: "Btn__login"
+        = link_to "新規会員登録", new_user_registration_path, class: "Btn__join"
+
   .Exhibit
   = link_to "#", class: "Exhibit" do
     .Exhibit__text 出品する
