@@ -16,7 +16,8 @@
       .Item__name
         .text 商品名
         .label 必須
-      %input.Item__input{placeholder: "40文字まで", "type": "text", maxlength: "40"}
+      = form_with do |f|
+        = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item__input"
       .Item__detail
         .text 商品の説明
         .label 必須
@@ -28,15 +29,18 @@
       .Detail__category
         .text カテゴリー
         .label 必須
-      = select_tag 'select', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"]), class: "category-select"
+      = form_with do |f|
+        = f.select :ditail, ["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, {class: "category-select"}
       .Detail__brand
         .text ブランド
         .gray-label 任意
-      %input.Detail__input{placeholder: "例）シャネル", "type": "text"}
+      = form_with do |f|
+        = f.text_field :brand, placeholder: "例）シャネル", class: "Detail__input"
       .Detail__state
         .text 商品の状態
         .label 必須
-      = select_tag 'select', options_for_select(["選択してください", "新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]), class: "state-select"
+      = form_with do |f|
+        = f.select :state, ["選択してください", "新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class: "state-select"}
     .Sending
       .Sending__title
         %p 発送について
@@ -45,15 +49,18 @@
       .Sending__burden
         .text 発送料の負担
         .label 必須
-      = select_tag 'select', options_for_select(["選択してください", "送料込み（出品者負担）", "着払い（購入者負担）"]), class: "burden-select"
+      = form_with do |f|
+        = f.select :burden, ["選択してください", "送料込み（出品者負担）", "着払い（購入者負担）"], {}, {class: "burden-select"}
       .Sending__area
         .text 発送元の地域
         .label 必須
-      = select_tag 'select', options_for_select(["選択してください", "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県"]), class: "sending-select"
+      = form_with do |f|
+        = f.select :area, ["選択してください", "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県"], {}, {class: "sending-select"}
       .Sending__days
         .text 発送までの日数
         .label 必須
-      = select_tag 'select', options_for_select(["選択してください", "1〜2日で発送", "2〜3日で発送", "4〜7日で発送"]), class: "days-select"
+      = form_with do |f|
+        = f.select :days, ["選択してください", "1〜2日で発送", "2〜3日で発送", "4〜7日で発送"], {}, {class: "days-select"}
     .Price
       .Price__title
         %p 価格
@@ -66,7 +73,8 @@
           .label 必須
         .Price__set--value
           %p.mark ¥
-          %input.Price__set--value__bar{type: "number", value: "0", min: "300", max: "9999999"}
+          = form_with do |f|
+            = f.number_field :price, value: "0", min: "300", max: "9999999", class: "Price__set--value__bar"
       .Price__fee
         .text
           %p 販売手数料
