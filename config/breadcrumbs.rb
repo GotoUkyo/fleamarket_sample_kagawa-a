@@ -1,9 +1,11 @@
 crumb :root do
-  link "Home", root_path
+  link "ホーム", root_path
 end
 
 crumb :mypage do
-  link "マイページ", 
+  link "マイページ", user_path
+  parent :root
+end
 
 # crumb :projects do
 #   link "Projects", projects_path
