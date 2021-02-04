@@ -2,17 +2,16 @@
   = render "credits-new-header"
   
   .Body
+  = form_with url: "#" do |f|
     .Body__top
       支払い方法
 
     .Body__middle-1
       .Body__middle-1--texts
-        = form_with url: "#" do |f|
-          = f.label :カード番号
-          %span.label 必須
+        = f.label :カード番号
+        %span.label 必須
       .Body__middle-1--form
-        = form_with url: "#" do |f|
-          = f.text_field :hoge, class: "Body__middle-1--form", placeholder: "1234 5678 1234 5678"
+        = f.text_field :hoge, class: "Body__middle-1--form", placeholder: "1234 5678 1234 5678"
       .Body__middle-1--images
         = image_tag src="/images/credit/credit_visa.svg", size: "44x20"
         = image_tag src="/images/credit/credit_mastercard.svg", size: "44x20"
@@ -24,24 +23,20 @@
 
     .Body__middle-2
       .Body__middle-2--texts
-        = form_with url: "#" do |f|
-          = f.label :有効期限
-          %span.label 必須
+        = f.label :有効期限
+        %span.label 必須
       .Body__middle-2--selects
-        = form_with url: "#" do |f|
-          = f.select :hoge, ['---','01'], {}, class: "month"
-          月
-          = f.select :hoge, ['---','21'], {}, class: "year"
-          年
+        = f.select :hoge, ['---','01'], {}, class: "month"
+        月
+        = f.select :hoge, ['---','21'], {}, class: "year"
+        年
 
     .Body__middle-3
       .Body__middle-3--texts
-        = form_with url: "#" do |f|
-          = f.label :セキュリティーコード
-          %span.label 必須
+        = f.label :セキュリティーコード
+        %span.label 必須
       .Body__middle-3--form
-        = form_with url: "#" do |f|
-          = f.text_field :hoge, class: "Body__middle-3--form", placeholder: "カード背面4桁もしくは３桁の番号"
+        = f.text_field :hoge, class: "Body__middle-3--form", placeholder: "カード背面4桁もしくは３桁の番号"
       .Body__middle-3--link
         = link_to "#", class: "Body__bottom--link" do
           = icon("fas","question-circle")
@@ -49,8 +44,7 @@
 
     .Body__middle-4
       .Body__middle-4--button
-        = form_with url: "#" do |f|
-          = f.submit "登録する", class: "register"
+        = f.submit "登録する", class: "register"
 
     .Body__bottom
       = link_to "もどる", "#", class: "Body__bottom--link"
