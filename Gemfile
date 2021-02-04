@@ -73,4 +73,3 @@ gem 'active_hash'
 gem 'rails-i18n'
 gem "font-awesome-sass"
 gem 'gretel'
-

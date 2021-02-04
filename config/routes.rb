@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   root 'indexes#index'
+  resources :credits, only: [:new, :create]
   resources :items, only: [:index, :show, :new]
   resources :users, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
