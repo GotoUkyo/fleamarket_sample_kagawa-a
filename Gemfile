@@ -72,4 +72,3 @@ gem 'pry-rails'
 gem 'active_hash'
 gem 'rails-i18n'
 gem "font-awesome-sass"
-

@@ -1,0 +1,52 @@
+.AccountPage
+  = render "credits-new-header"
+  
+  .Body
+  = form_with url: "#" do |f|
+    .Body__top
+      支払い方法
+
+    .Body__middle-1
+      .Body__middle-1--texts
+        = f.label :カード番号
+        %span.label 必須
+      .Body__middle-1--form
+        = f.text_field :hoge, class: "Body__middle-1--form", placeholder: "1234 5678 1234 5678"
+      .Body__middle-1--images
+        = image_tag src="/images/credit/credit_visa.svg", size: "44x20"
+        = image_tag src="/images/credit/credit_mastercard.svg", size: "44x20"
+        = image_tag src="/images/credit/credit_saison.svg", size: "44x20"
+        = image_tag src="/images/credit/credit_jcb.svg", size: "44x20"
+        = image_tag src="/images/credit/credit_american_express.svg", size: "20x20"
+        = image_tag src="/images/credit/credit_dinersclub.svg", size: "30x20"
+        = image_tag src="/images/credit/credit_discover.svg", size: "30x20"
+
+    .Body__middle-2
+      .Body__middle-2--texts
+        = f.label :有効期限
+        %span.label 必須
+      .Body__middle-2--selects
+        = f.select :hoge, ['---','01'], {}, class: "month"
+        月
+        = f.select :hoge, ['---','21'], {}, class: "year"
+        年
+
+    .Body__middle-3
+      .Body__middle-3--texts
+        = f.label :セキュリティーコード
+        %span.label 必須
+      .Body__middle-3--form
+        = f.text_field :hoge, class: "Body__middle-3--form", placeholder: "カード背面4桁もしくは３桁の番号"
+      .Body__middle-3--link
+        = link_to "#", class: "Body__bottom--link" do
+          = icon("fas","question-circle")
+          カード裏面の番号とは？
+
+    .Body__middle-4
+      .Body__middle-4--button
+        = f.submit "登録する", class: "register"
+
+    .Body__bottom
+      = link_to "もどる", "#", class: "Body__bottom--link"
+
+  = render "credits-new-footer"
