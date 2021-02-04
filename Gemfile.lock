@@ -107,6 +107,7 @@ GEM
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
     erubi (1.10.0)
     erubis (2.7.0)
     factory_bot (6.1.0)
@@ -335,6 +336,7 @@ DEPENDENCIES
   capistrano3-unicorn
   capybara (>= 2.15)
   devise
+  dotenv
   factory_bot_rails
   font-awesome-sass
   haml-rails (>= 1.0, <= 2.0.1)
