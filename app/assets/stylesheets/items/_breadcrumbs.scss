@@ -1,12 +1,13 @@
 .breadcrumbs {
-  height: 53px;
-  width: 1020px;
-  padding: 16px 0;
-  font-size: 14px;
-  margin: 0 auto;
-  display: block;
   border-top: 1px solid #dfdfdf;
   border-bottom: 1px solid #dfdfdf;
+  &-list {
+    height: 53px;
+    width: 1020px;
+    padding: 16px 0;
+    font-size: 14px;
+    margin: 0 auto;
+  }
   a{
     color: black;
     text-decoration: none;
