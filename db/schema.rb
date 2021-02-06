@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_113716) do
+ActiveRecord::Schema.define(version: 2021_02_06_143221) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postcode", null: false
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 2021_02_03_113716) do
     t.integer "user_id", null: false
     t.string "customer_id", null: false
     t.string "card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.string "brand"
+    t.integer "state_id", null: false
+    t.integer "postage_id", null: false
+    t.integer "area_id", null: false
+    t.integer "day_id", null: false
+    t.integer "price", null: false
+    t.integer "deal_state_id", null: false
+    t.integer "user_id", null: false
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
