@@ -14,12 +14,12 @@
         .Image-space__box--in
           =icon('fas', 'camera', class: "camera-icon")
           %p クリックしてファイルをアップロード
-    .Item
-      .Item__name
+    .Item-new
+      .Item-new__name
         .text 商品名
         .label 必須
       = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item__input"
-      .Item__detail
+      .Item-new__detail
         .text 商品の説明
         .label 必須
       = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item__form"
