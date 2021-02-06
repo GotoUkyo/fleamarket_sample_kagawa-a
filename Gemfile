@@ -74,3 +74,4 @@ gem 'rails-i18n'
 gem "font-awesome-sass"
 gem 'payjp'
 gem 'dotenv'
+gem 'jquery-rails'
