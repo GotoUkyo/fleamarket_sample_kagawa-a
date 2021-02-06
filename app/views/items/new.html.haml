@@ -1,9 +1,10 @@
 .body
+  %script{src: "category.js"}
   .Top-logo
     = link_to "#" do
       = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
   .Data
-  = form_with do |f|
+  = form_with(model: @item, local: true) do |f|
     .Image-space
       .Image-space__text
         .text 出品画像
@@ -18,18 +19,18 @@
       .Item-new__name
         .text 商品名
         .label 必須
-      = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item__input"
+      = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item-new__input"
       .Item-new__detail
         .text 商品の説明
         .label 必須
-      = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item__form"
+      = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item-new__form"
       .count 0/1000
     .Detail
       %p 商品の詳細
       .Detail__category
         .text カテゴリー
         .label 必須
-      = f.select :category, ["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, {class: "category-select"}
+      = f.select :category_id, Category.where(ancestry: nil), :id, :name,{include_blank: "選択してください"}, {}, {class: "category-select"}
       .Detail__brand
         .text ブランド
         .gray-label 任意
