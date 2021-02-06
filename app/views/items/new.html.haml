@@ -22,7 +22,7 @@
       .Item__detail
         .text 商品の説明
         .label 必須
-      = f.text_area :comment, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item__form"
+      = f.text_area :description, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item__form"
       .count 0/1000
     .Detail
       %p 商品の詳細
@@ -37,7 +37,7 @@
       .Detail__state
         .text 商品の状態
         .label 必須
-      = f.select :state, ["選択してください", "新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class: "state-select"}
+      = f.collection_select :state_id, State.all, :id, :name
     .Sending
       .Sending__title
         %p 発送について
@@ -46,15 +46,15 @@
       .Sending__burden
         .text 発送料の負担
         .label 必須
-      = f.select :burden, ["選択してください", "送料込み（出品者負担）", "着払い（購入者負担）"], {}, {class: "burden-select"}
+      = f.collection_select :postage_id, Postage.all, :id, :name
       .Sending__area
         .text 発送元の地域
         .label 必須
-      = f.select :area, ["選択してください", "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県"], {}, {class: "sending-select"}
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name
       .Sending__days
         .text 発送までの日数
         .label 必須
-      = f.select :days, ["選択してください", "1〜2日で発送", "2〜3日で発送", "4〜7日で発送"], {}, {class: "days-select"}
+      = f.collection_select :day_id, Day.all, :id, :name
     .Price
       .Price__title
         %p 価格
