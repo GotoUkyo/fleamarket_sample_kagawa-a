@@ -3,7 +3,7 @@
     = link_to "#" do
       = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
   .Data
-  = form_with do |f|
+  = form_with model:@item do |f|
     .Image-space
       .Image-space__text
         .text 出品画像

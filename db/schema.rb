@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(version: 2021_02_05_073316) do
     t.string "brand"
     t.integer "state_id"
     t.integer "postage_id"
-    t.integer "area_id"
+    t.integer "prefecture_id"
     t.integer "day_id"
     t.integer "price"
     t.integer "deal_state_id"
     t.integer "user_id"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

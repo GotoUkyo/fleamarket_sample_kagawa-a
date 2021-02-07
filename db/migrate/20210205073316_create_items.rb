@@ -6,11 +6,12 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :brand
       t.integer :state_id
       t.integer :postage_id
-      t.integer :area_id
+      t.integer :prefecture_id
       t.integer :day_id
       t.integer :price
       t.integer :deal_state_id
       t.integer :user_id
+      t.string :category
       t.timestamps
     end
   end

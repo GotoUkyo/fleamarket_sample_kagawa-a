@@ -344,6 +344,7 @@
       background-color: rgb(56, 204, 197);
       color: var(--white-color);
       @include item-main-btn;
+      border: none;
     }
   }
   .Btn-under{
