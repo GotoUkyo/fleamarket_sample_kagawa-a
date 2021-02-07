@@ -11,9 +11,11 @@
       //以下は追加実装時にコメントアウトを取る
       //.Image-space__detail 最大5枚までアップロードできます
       .Image-space__box
-        .Image-space__box--in
-          =icon('fas', 'camera', class: "camera-icon")
-          %p クリックしてファイルをアップロード
+        = f.fields_for :images do |image|
+          .Image-space__box--in
+            = image.file_field :name
+            =icon('fas', 'camera', class: "camera-icon")
+            %p クリックしてファイルをアップロード
     .Item
       .Item__name
         .text 商品名
