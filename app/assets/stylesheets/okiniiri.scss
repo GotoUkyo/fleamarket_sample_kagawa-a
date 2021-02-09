@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.a{
+  height: 1000px;
+  width: 1000px;
+  background-color: #e0bfbf;
+}
+
+.b{
+  height: 50px;
+  width: 900px;
+  background-color: gold;
+  margin: 50px;
+  text-align: center;
+}
+
+.c{
+  height: 500px;
+  width: 900px;
+  background-color: green;
+  margin: 50px;
+  text-align: center;
+  display: flex;
+
+  .cc{
+    height: 100px;
+    width: 900px;
+    background-color: grey;
+    text-align: center;
+  }
+
+  .ccc{
+    height: 100px;
+    width: 900px;
+    background-color: grey;
+    text-align: center;
+  }
+    
+}
+  
+.d{
+  height: 300px;
+  width: 900px;
+  background-color: greenyellow;
+  margin: 50px;
+}
