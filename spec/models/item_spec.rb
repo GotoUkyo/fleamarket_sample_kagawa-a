@@ -43,6 +43,12 @@ require 'rails_helper'
         item.valid?
         expect(item.errors[:day_id]).to include("を入力してください")
       end
+
+      it "価格がなければ登録できない" do
+        item = build(:item, price: "")
+        item.valid?
+        expect(item.errors[:price]).to include("を入力してください")
+      end
     end
   end
 

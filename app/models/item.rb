@@ -15,5 +15,6 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :day_id
     validates :price
+    validates :deal_state_id
   end
 end
