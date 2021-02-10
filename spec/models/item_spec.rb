@@ -1,7 +1,7 @@
 require 'rails_helper'
   describe Item do
     describe '#create' do
-      it "全ての項目の入力が存在すれば登録できること" do
+      it "全ての項目（画像も含む）の入力が存在すれば登録できること" do
         user = create(:user) 
         item = build(:item,user_id: user.id)
         image = build(:image)
@@ -18,6 +18,19 @@ require 'rails_helper'
         item = build(:item, description: "")
         item.valid?
         expect(item.errors[:description]).to include("を入力してください")
+      end
+
+      it "商品の説明が1000文字以上だと登録できない" do
+        item = build(:item, description: "a"*1001)
+        item.valid?
+        expect(item.errors[:description]).to include("は1000文字以内で入力してください")
+      end
+
+      it "商品のブランドがなくても登録できる" do
+        user = create(:user) 
+        item = build(:item, user_id: user.id, brand:"")
+        item.valid?
+        expect(item).to be_valid
       end
 
       it "商品の状態がなければ登録できない" do

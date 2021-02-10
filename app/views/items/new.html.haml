@@ -3,8 +3,9 @@
     = link_to "#" do
       = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
   .Data
-  = form_with model:@item do |f|
+  = form_with model:@item, local: true do |f|
     .Image-space
+      = render 'layouts/error_messages', model: f.object
       .Image-space__text
         .text 出品画像
         .label 必須
@@ -39,7 +40,7 @@
       .Detail__state
         .text 商品の状態
         .label 必須
-      = f.collection_select :state_id, State.all, :id, :name
+      = f.collection_select :state_id, State.all, :id, :name,include_blank: "選択してください"
     .Sending
       .Sending__title
         %p 発送について
@@ -48,15 +49,15 @@
       .Sending__burden
         .text 発送料の負担
         .label 必須
-      = f.collection_select :postage_id, Postage.all, :id, :name
+      = f.collection_select :postage_id, Postage.all, :id, :name,include_blank: "選択してください"
       .Sending__area
         .text 発送元の地域
         .label 必須
-      = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name,include_blank: "選択してください"
       .Sending__days
         .text 発送までの日数
         .label 必須
-      = f.collection_select :day_id, Day.all, :id, :name
+      = f.collection_select :day_id, Day.all, :id, :name,include_blank: "選択してください"
     .Price
       .Price__title
         %p 価格

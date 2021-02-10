@@ -9,12 +9,11 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   with_options presence: true do
     validates :name
-    validates :description
+    validates :description, length: { maximum: 1000}
     validates :state_id
     validates :postage_id
     validates :prefecture_id
     validates :day_id
     validates :price
-    validates :deal_state_id
   end
 end
