@@ -49,6 +49,9 @@
     background-color: rgb(245, 245, 245);
     border: dashed 1px var(--new-border-color);
     margin-top: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     &--in{
       display: flex;
       align-items: center;

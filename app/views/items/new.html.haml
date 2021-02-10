@@ -15,8 +15,8 @@
         = f.fields_for :images do |image|
           .Image-space__box--in
             = image.file_field :name
-            =icon('fas', 'camera', class: "camera-icon")
-            %p クリックしてファイルをアップロード
+            -# =icon('fas', 'camera', class: "camera-icon")
+            -# %p クリックしてファイルをアップロード
     .Item
       .Item__name
         .text 商品名
