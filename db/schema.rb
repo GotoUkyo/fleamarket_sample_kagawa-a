@@ -41,6 +41,11 @@ ActiveRecord::Schema.define(version: 2021_02_07_031759) do
     t.integer "deal_state_id", default: 0, null: false
     t.integer "user_id", null: false
     t.string "category"
+
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
