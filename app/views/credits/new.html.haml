@@ -2,8 +2,8 @@
   = render "credits-new-header"
   
   .Body
-  = form_with url: "#" do |f|
-    
+  = form_with url: register_credits_path, method: :post, model: @credit, local: true, html:{name: "inputForm"}, id: 'card_form' do |f|
+
     .Body__top
       支払い方法
 
@@ -12,7 +12,7 @@
         = f.label :カード番号
         %span.label 必須
       .Body__middle-1--form
-        = f.text_field :hoge, class: "Body__middle-1--form", placeholder: "1234 5678 1234 5678"
+        = f.text_field :card_number, name: "card_number", id: "card_number", class: "Body__middle-1--form", placeholder: "1234 5678 1234 5678"
       .Body__middle-1--images
         = image_tag src="/images/credit/credit_visa.svg", size: "44x20"
         = image_tag src="/images/credit/credit_mastercard.svg", size: "44x20"
@@ -27,9 +27,9 @@
         = f.label :有効期限
         %span.label 必須
       .Body__middle-2--selects
-        = f.select :hoge, ['---','01'], {}, class: "month"
+        = f.select :exp_month, ['---','12'], {}, class: "month", name: "exp_month", id:"exp_month"
         月
-        = f.select :hoge, ['---','21'], {}, class: "year"
+        = f.select :exp_year, ['---','2050'], {}, class: "year", name: "exp_year", id:"exp_year"
         年
 
     .Body__middle-3
@@ -37,7 +37,7 @@
         = f.label :セキュリティーコード
         %span.label 必須
       .Body__middle-3--form
-        = f.text_field :hoge, class: "Body__middle-3--form", placeholder: "カード背面4桁もしくは３桁の番号"
+        = f.text_field :cvc, name: "cvc", id:"cvc", class: "Body__middle-3--form", placeholder: "カード背面4桁もしくは３桁の番号"
       .Body__middle-3--link
         = link_to "#", class: "Body__bottom--link" do
           = icon("fas","question-circle")
@@ -45,7 +45,8 @@
 
     .Body__middle-4
       .Body__middle-4--button
-        = f.submit "登録する", class: "register"
+        #card_token
+        = f.submit "登録する", class: "register", id: "info_submit"
 
     .Body__bottom
       = link_to "もどる", "#", class: "Body__bottom--link"
