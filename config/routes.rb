@@ -9,7 +9,26 @@ Rails.application.routes.draw do
   end
 
   root 'indexes#index'
-  resources :items, only: [:index, :show, :new]
-  resources :credits, only: [:new, :create]
+  resources :items, only: [:index, :show, :new] do
+    collection do
+      post 'show', to: 'items#show'
+      post 'buy', to: 'items#buy'
+    end
+  end
+  resources :credits, only: [:new, :show] do
+    collection do
+      post 'show', to: 'credits#show'
+      post 'register', to: 'credits#register'
+      post 'delete', to: 'credits#delete'
+      post 'buy', to: 'credits#buy'
+    end
+  end
+
+  resources :users, only: [:show] do
+    collection do
+      get 'show', to: 'users#show'
+    end
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
