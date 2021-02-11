@@ -6,7 +6,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # 本番環境以外はfaileに保存の条件分岐
+  if Rails.env.production?
+    storage :fog
+  else
+    stotage :file
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -25,15 +30,6 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # 縦横比を維持したまま、縦横を800px以内にリサイズする
   process resize_to_fit: [800, 800]
-
-  if Rails.env.development?
-    storage :file
-  elsif Rails.env.test?
-    storage :file
-  else
-    storage :fog
-  end
-
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
