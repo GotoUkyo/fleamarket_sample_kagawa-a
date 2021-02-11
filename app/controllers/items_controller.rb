@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
 
-  require 'payjp' #これでpayjpのメソッドが使用できます
-
   def index
   end
 
