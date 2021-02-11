@@ -10,7 +10,7 @@ class Item < ApplicationRecord
   # 複数モデルへの同時保存の際にバリデーションを設定
   validates_associated :images
   with_options presence: true do
-    validates :name
+    validates :name, length: { maximum: 40}
     validates :description, length: { maximum: 1000}
     validates :state_id
     validates :postage_id

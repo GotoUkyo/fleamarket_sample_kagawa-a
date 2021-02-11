@@ -26,6 +26,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   # 縦横比を維持したまま、縦横を800px以内にリサイズする
   process resize_to_fit: [800, 800]
 
+  if Rails.env.development?
+    storage :file
+  elsif Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
+
+
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #

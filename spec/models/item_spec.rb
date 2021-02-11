@@ -12,6 +12,12 @@ require 'rails_helper'
         expect(item.errors[:name]).to include("を入力してください")
       end
 
+      it "商品の名前が40文字以上だと登録できない" do
+        item = build(:item, name: "a"*41)
+        item.valid?
+        expect(item.errors[:name]).to include("は40文字以内で入力してください")
+      end
+
       it "商品の説明がなければ登録できない" do
         item = build(:item, description: "")
         item.valid?
