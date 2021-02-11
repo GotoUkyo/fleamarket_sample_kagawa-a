@@ -2,10 +2,7 @@ require 'rails_helper'
   describe Item do
     describe '#create' do
       it "全ての項目（画像も含む）の入力が存在すれば登録できること" do
-        # user = create(:user) 
         item = build(:item)
-        # image = build(:image)
-        # item.valid?
         expect(item).to be_valid
       end
 
@@ -30,7 +27,6 @@ require 'rails_helper'
       it "商品のブランドがなくても登録できる" do
         user = create(:user) 
         item = build(:item, user_id: user.id, brand:"")
-        # item.valid?
         expect(item).to be_valid
       end
 
