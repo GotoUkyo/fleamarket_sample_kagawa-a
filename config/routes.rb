@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
 
   root 'indexes#index'
-  resources :items, only: [:index, :show, :new] do
+
+  resources :items, only: [:index, :show, :new, :create] do
     collection do
       post 'show', to: 'items#show'
       post 'buy', to: 'items#buy'
@@ -29,6 +30,5 @@ Rails.application.routes.draw do
       get 'show', to: 'users#show'
     end
   end
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

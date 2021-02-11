@@ -75,3 +75,6 @@ gem "font-awesome-sass"
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'jquery-rails'
+gem 'gretel'
+gem 'carrierwave'
+gem 'mini_magick'
