@@ -3,11 +3,15 @@ FactoryBot.define do
     name             {"かまくら"}
     description      {"かまくら"}
     brand            {"NIKE"}
-    state_id         { 01 }
-    postage_id       { 01 }
-    prefecture_id    { 01 }
-    day_id           { 01 }
+    state_id         { 1 }
+    postage_id       { 1 }
+    prefecture_id    { 1 }
+    day_id           { 1 }
     price            { 1000 }
     deal_state_id    { 0 }
+    user
+    after(:build) do |item|
+      item.images << build(:image)
+    end
   end
 end
