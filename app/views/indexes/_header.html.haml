@@ -30,7 +30,7 @@
         = link_to "新規会員登録", new_user_registration_path, class: "Btn__join"
 
   .Exhibit
-  = link_to "#", class: "Exhibit" do
+  = link_to new_item_path, class: "Exhibit" do
     .Exhibit__text 出品する
     .Exhibit__icon
       = image_tag src="/images/icon/icon_camera.png", class: "Exhibit__icon--pict"

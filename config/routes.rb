@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   root 'indexes#index'
   resources :credits, only: [:new, :create]
-  resources :items, only: [:index, :show, :new] do
+  resources :items, only: [:index, :show, :new, :create] do
     collection do
       get 'category_children'
       get 'category_grandchildren'

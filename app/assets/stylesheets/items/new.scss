@@ -49,6 +49,9 @@
     background-color: rgb(245, 245, 245);
     border: dashed 1px var(--new-border-color);
     margin-top: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     &--in{
       display: flex;
       align-items: center;
@@ -168,7 +171,7 @@
       @include item-main-label;
     }
   }
-  .state-select{
+  select{
     @include item-main-bar;
   }
 }
@@ -193,7 +196,7 @@
       left: 88px;
     }
   }
-  .sending-select{
+  select{
     @include item-main-bar;
   }
   &__burden{
@@ -350,6 +353,7 @@
       background-color: rgb(56, 204, 197);
       color: var(--white-color);
       @include item-main-btn;
+      border: none;
     }
   }
   .Btn-under{

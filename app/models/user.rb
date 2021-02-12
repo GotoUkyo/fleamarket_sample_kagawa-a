@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   with_options presence: true do        
-    validates :nick_name
-    validates :email, uniqueness:true, format: { with: /\A\S+@\S+\.\S+\z/}
+    validates :nick_name, uniqueness:true
+    validates :email, format: { with: /\A\S+@\S+\.\S+\z/}
     validates :password, length:{ minimum: 7 }, confirmation: true
     validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]/}
     validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]/}
@@ -15,4 +15,5 @@ class User < ApplicationRecord
   end
   has_one :address
   accepts_nested_attributes_for :address
+  has_many :items
 end

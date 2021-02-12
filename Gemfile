@@ -75,3 +75,5 @@ gem "font-awesome-sass"
 gem 'gretel'
 gem 'ancestry'
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'mini_magick'
