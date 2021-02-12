@@ -115,7 +115,7 @@ class CreditsController < ApplicationController
   #--------------------------------#
   def buy
     credit = current_user.credit
-    @item = Item.find(2) # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
+    @item = Item.find(params[:id]) # @item = Item.find(2) # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
     
     if @item.user_id == current_user.id or @item.deal_state_id == 1
       # 商品出品者のidとログインユーザのidが同じもしくは商品が購入済状態（deal_state_id=1）ならば下記を実行
