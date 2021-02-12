@@ -1,4 +1,5 @@
 require 'rails_helper'
+
   describe Item do
     describe '#create' do
       it "全ての項目（画像も含む）の入力が存在すれば登録できること" do

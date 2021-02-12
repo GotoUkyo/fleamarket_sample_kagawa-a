@@ -2,9 +2,18 @@ class ApplicationController < ActionController::Base
   
   # basic認証関連
   before_action :basic_auth, if: :production?
+  
   # サインアップ
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
+  def after_sign_in_path_for(resource)
+    root_path # ログイン後に遷移するpathを設定
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path # ログアウト後に遷移するpathを設定
+  end
+
   # basic認証関連↓
   private
 
@@ -22,7 +31,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nick_name, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday, address_attributes: [:postcode, :prefecture_id, :city, :block, :building, :phone_number]])
   end
-
   # basic認証関連↑
 
 end
