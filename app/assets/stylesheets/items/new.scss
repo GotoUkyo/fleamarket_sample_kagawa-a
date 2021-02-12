@@ -135,6 +135,12 @@
   .category-select{
     @include item-main-bar;
   }
+  &__select-children{
+    margin-top: 15px;
+  }
+  &__select-grandchildren{
+    margin-top: 15px;
+  }
   &__brand{
     display: flex;
     .text{

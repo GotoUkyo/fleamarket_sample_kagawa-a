@@ -10,16 +10,21 @@ Rails.application.routes.draw do
 
   root 'indexes#index'
   resources :credits, only: [:new, :create]
-  resources :items, only: [:index, :show, :new]
+  resources :items, only: [:index, :show, :new] do
+    collection do
+      get 'category_children'
+      get 'category_grandchildren'
+    end
+  end
   resources :users, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get 'api/items/category',to: 'items#get_category'
+  # get 'api/items/category',to: 'items#get_category'
 
-  resources :items do # Ajaxで動くアクションのルート
-    collection do
-      get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
-      get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
-    end
-  end
+  # resources :items do # Ajaxで動くアクションのルート
+  #   collection do
+  #     get 'category_children'
+  #     get 'category_grandchildren'
+  #   end
+  # end
 end

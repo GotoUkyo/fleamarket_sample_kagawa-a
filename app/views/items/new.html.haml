@@ -1,5 +1,4 @@
 .body
-  %script{src: "category.js"}
   .Top-logo
     = link_to "#" do
       = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
@@ -30,7 +29,9 @@
       .Detail__category
         .text カテゴリー
         .label 必須
-      = f.select :category_id, Category.where(ancestry: nil), :id, :name,{include_blank: "選択してください"}, {}, {class: "category-select"}
+      = f.collection_select :category, @category_parent, :id, :name, {prompt: "選択してください"}, {class: "category-select", id: "select_category"}
+      .Detail__select-children
+      .Detail__select-grandchildren
       .Detail__brand
         .text ブランド
         .gray-label 任意
