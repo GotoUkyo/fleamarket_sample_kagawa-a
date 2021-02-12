@@ -34,7 +34,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){
-        console.log(children)  // 送られてきたデータをchildrenに代入
+        // 送られてきたデータをchildrenに代入
         var insertHTML = '';
         children.forEach(function(child){  
   // forEachでchildに一つずつデータを代入｡子のoptionが一つずつ作成される｡
@@ -43,8 +43,8 @@ $(function(){
         appendChildrenBox(insertHTML); 
         $(document).on('change', '#select_category', function(){
   // 通信成功時に親の選択肢を変えたらイベント発火｡子と孫を削除｡selectのidにかけるのではなく､親要素にかけないと残ってしまう
-          $('#children_wrapper').remove(); 
-          $('#grandchildren_wrapper').remove();
+          $('#child_category').remove(); 
+          $('#grandchild_category').remove();
         })
       })
       .fail(function(){
@@ -57,7 +57,7 @@ $(function(){
   // document､もしくは親を指定しないと発火しない
   $(document).on('change', '#child_category', function(){
     var category_id = document.getElementById('child_category').value;
-    if (category_id != ''){
+    if (category_id != '---'){
     $.ajax ({
       url: '/items/category_grandchildren',
       type: 'GET',
@@ -71,7 +71,7 @@ $(function(){
         });
         appendGrandchildrenBox(insertHTML);  
         $(document).on('change', '#child_category',function(){
-          $('#grandchildren_wrapper').remove();
+          $('#grandchild_category').remove();
           })
         })  
         .fail(function(){
