@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   
   # basic認証関連
   before_action :basic_auth, if: :production?
-  
+
   # サインアップ
   before_action :configure_permitted_parameters, if: :devise_controller?
 

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :show, :new, :create] do
     collection do
+      get 'category_children'
+      get 'category_grandchildren'
       post 'show', to: 'items#show'
       post 'buy', to: 'items#buy'
     end
@@ -30,5 +32,7 @@ Rails.application.routes.draw do
       get 'show', to: 'users#show'
     end
   end
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end

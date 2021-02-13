@@ -69,7 +69,7 @@
   }
 }
 
-.Item{
+.Item-new{
   height: 420px;
   padding-left: 40px;
   margin: 1px 0;
@@ -137,6 +137,12 @@
   }
   .category-select{
     @include item-main-bar;
+  }
+  &__select-children{
+    margin-top: 15px;
+  }
+  &__select-grandchildren{
+    margin-top: 15px;
   }
   &__brand{
     display: flex;

@@ -17,12 +17,12 @@
             = image.file_field :name
             -# =icon('fas', 'camera', class: "camera-icon")
             -# %p クリックしてファイルをアップロード
-    .Item
-      .Item__name
+    .Item-new
+      .Item-new__name
         .text 商品名
         .label 必須
-      = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item__input"
-      .Item__detail
+      = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item-new__input"
+      .Item-new__detail
         .text 商品の説明
         .label 必須
       = f.text_area :description, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item__form"
@@ -32,7 +32,9 @@
       .Detail__category
         .text カテゴリー
         .label 必須
-      = f.select :category, ["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {}, {class: "category-select"}
+      = f.collection_select :category, @category_parent, :id, :name, {prompt: "選択してください"}, {class: "category-select", id: "select_category"}
+      .Detail__select-children
+      .Detail__select-grandchildren
       .Detail__brand
         .text ブランド
         .gray-label 任意

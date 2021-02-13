@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
+    @categories = Category.roots
   end
 
   def show
@@ -10,7 +11,17 @@ class ItemsController < ApplicationController
     @address = Address.find(current_user.id)
   end
 
-  def new
+  def new 
+    # データベースから親カテゴリーのみ抽出し、配列化
+    @category_parent = Category.where(ancestry: nil)
+  end
+
+  def category_children
+    @category_children = Category.find(params[:category_id]).children
+  end
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:category_id]).children
+    
     @item = Item.new
     @item.images.build
   end
@@ -43,4 +54,5 @@ class ItemsController < ApplicationController
       :user_id,
     ).merge(user_id: current_user.id)
   end
+
 end
