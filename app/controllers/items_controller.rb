@@ -12,6 +12,8 @@ class ItemsController < ApplicationController
   end
 
   def new 
+    @item = Item.new
+    @item.images.build
     # データベースから親カテゴリーのみ抽出し、配列化
     @category_parent = Category.where(ancestry: nil)
   end
@@ -21,13 +23,11 @@ class ItemsController < ApplicationController
   end
   def category_grandchildren
     @category_grandchildren = Category.find(params[:category_id]).children
-    
-    @item = Item.new
-    @item.images.build
   end
 
   def create
     @item = Item.new(item_params)
+    @item.update(deal_state_id: 0)  # 出品ページで値が入力されないdeal_state_idの値をここで代入しておく必要がある
     if @item.valid?
       @item.save
       redirect_to root_path, notice: '商品が投稿されました'
@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
   # 出品時のデータをDBに送るストロングパラメーター
   private
   def item_params
-    params.require(:item).permit(:name,:description,:brand,:state_id,:postage_id,:prefecture_id,:day_id,:price,:category, images_attributes: [:name]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name,:description,:brand,:state_id,:postage_id,:prefecture_id,:day_id,:price,:category_id, images_attributes: [:name]).merge(user_id: current_user.id)
   end
 
   private
