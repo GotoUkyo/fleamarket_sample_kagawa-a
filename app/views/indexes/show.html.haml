@@ -1,0 +1,16 @@
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
+
+-# if:クレジットカード情報が登録されていなければ実行、else:クレジットカード情報が登録されていれば実行
+= current_user.nick_name
+さんのマイページ
+-if ::Credit.where(user_id: current_user.id).exists?
+  = form_tag(controller: :credits, action: :show, method: :post) do
+    %button クレジットカードを削除する
+  = link_to root_path, class: "aaa" do
+    トップページに戻る
+- else
+  = form_tag(controller: :credits, action: :show, method: :post) do
+    %button クレジットカードを登録する
+  = link_to root_path, class: "aaa" do
+    トップページに戻る
