@@ -154,7 +154,7 @@ class CreditsController < ApplicationController
       :brand,
       :state_id,
       :postage_id,
-      :area_id,
+      :prefecture_id,
       :day_id,
       :price,
       :deal_state_id,
