@@ -34,7 +34,8 @@ class CreditsController < ApplicationController
   def register
     # pajpリファレンスの”顧客を作成”に対応
     # 参考URL：https://pay.jp/docs/api/?ruby#%E9%A1%A7%E5%AE%A2%E3%82%92%E4%BD%9C%E6%88%90
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    #Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = Rails.application.credentials.PAYJP[:PAYJP_SECRET_KEY]
     if params['payjp_token'].blank?
       #payjp_tokenが空なら、creditsコントローラーのnewアクションにリダイレクト
       redirect_to action: "new" # redirect_toの参考URL：https://pikawaka.com/rails/redirect_to
@@ -79,7 +80,8 @@ class CreditsController < ApplicationController
       # 処理１：payjpのデータベースを削除
       # リファレンスの”顧客を削除”に対応
       # 参考URL：https://pay.jp/docs/api/?ruby#%E9%A1%A7%E5%AE%A2%E3%81%AE%E3%82%AB%E3%83%BC%E3%83%89%E3%82%92%E5%89%8A%E9%99%A4
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      #Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp.api_key = Rails.application.credentials.PAYJP[:PAYJP_SECRET_KEY]
       customer = Payjp::Customer.retrieve(credit.customer_id)
       customer.delete
       #処理２：creditsテーブルのデータを削除
@@ -103,7 +105,8 @@ class CreditsController < ApplicationController
       # 変数creditsの代入値がnillでないなら、下記を実行
       # リファレンスの”顧客のカード情報を取得”に対応
       # 参考URL：https://pay.jp/docs/api/?ruby#%E9%A1%A7%E5%AE%A2%E3%81%AE%E3%82%AB%E3%83%BC%E3%83%89%E6%83%85%E5%A0%B1%E3%82%92%E5%8F%96%E5%BE%97
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      #Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp.api_key = Rails.application.credentials.PAYJP[:PAYJP_SECRET_KEY]
       customer = Payjp::Customer.retrieve(credit.customer_id)
       @default_card_information = customer.cards.retrieve(credit.card_id)
     end
@@ -127,7 +130,8 @@ class CreditsController < ApplicationController
       # 処理１：支払い処理の実行
       # リファレンスの”支払いを作成”に対応
       # 参考URL：https://pay.jp/docs/api/?ruby#%E9%A1%A7%E5%AE%A2%E3%81%AE%E3%82%AB%E3%83%BC%E3%83%89%E6%83%85%E5%A0%B1%E3%82%92%E5%8F%96%E5%BE%97
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      #Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp.api_key = Rails.application.credentials.PAYJP[:PAYJP_SECRET_KEY]
       charge = Payjp::Charge.create(
         amount: @item.price,              # amountとcurrencyの組み合わせの代わりにproductというのを指定しても良いらしい
         currency: 'jpy',                  # 3文字のISOコード(現状 “jpy” のみサポート)
