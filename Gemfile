@@ -74,7 +74,7 @@ gem 'rails-i18n'
 gem "font-awesome-sass"
 gem 'payjp'
 gem 'dotenv-rails'
-gem 'jquery-rails'
+# gem 'jquery-rails'
 gem 'gretel'
 gem 'ancestry'
 gem 'jquery-rails'
