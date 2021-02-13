@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     collection do
-       get 'show', to: 'user#show'
+       get 'show', to: 'users#show'
     end
   end
   
