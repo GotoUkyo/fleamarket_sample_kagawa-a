@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   root 'indexes#index'
 
+  resources :indexes, only: [:index, :show] do
+    collection do
+      get 'show', to: 'indexes#show'
+    end
+  end
+
   resources :items, only: [:index, :new, :create, :show] do
     collection do
       get 'category_children'
