@@ -1,0 +1,14 @@
+.creditshow
+  %label 登録クレジットカード情報は下記のとおりです。
+  %br
+  = "**** **** **** " + @default_card_information.last4
+  %br
+  - exp_month = @default_card_information.exp_month.to_s
+  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+  = exp_month + " / " + exp_year
+  %br
+  = form_tag(delete_credits_path, method: :post, id: 'card_form',  name: "inputForm") do
+    %input{ type: "hidden", name: "card_id", value: "" }
+    %button クレジットカードを削除する
+  = link_to root_path, class: "aaa" do
+    トップページに戻る

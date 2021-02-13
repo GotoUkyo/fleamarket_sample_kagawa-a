@@ -335,3 +335,8 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
+
+
+# 商品購入機能動作確認ようにitemsテーブルにデータ追加（rails db:seed）
+Item.create!(name: 'お宝', description: '見ちゃだめ', brand: '', state_id: 1, postage_id: 1, area_id: 1, day_id: 1, price: 5000, deal_state_id: 0, user_id: 2, category_id: 1)
+Item.create!(name: '鉛筆', description: 'イタリアで買ったものです', brand: '', state_id: 1, postage_id: 1, area_id: 1, day_id: 1, price: 2000, deal_state_id: 0, user_id: 2, category_id: 1)
