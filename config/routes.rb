@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       #post 'buy', to: 'items#buy'
     end
   end
+
   resources :credits, only: [:new, :show] do
     collection do
       post 'show', to: 'credits#show'
@@ -27,11 +28,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show] do
-    collection do
-      get 'show', to: 'users#show'
-    end
-  end
+  resources :users, only: [:show]
+    # collection do
+    #   get 'show', to: 'users#show'
+    # end
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
