@@ -10,11 +10,11 @@ Rails.application.routes.draw do
 
   root 'indexes#index'
 
-  resources :indexes, only: [:show] do
-    collection do
-      get 'show', to: 'indexes#show'
-    end
-  end
+  # resources :indexes, only: [:show] do
+  #   collection do
+  #     get 'show', to: 'indexes#show'
+  #   end
+  # end
 
   resources :items, only: [:index, :new, :create, :show] do
     collection do
@@ -34,11 +34,11 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :users, only: [:show] do
-  #   collection do
-  #     get 'show', to: 'users#show'
-  #   end
-  # end
+  resources :users, only: [:show] do
+    collection do
+      get 'show', to: 'users#show'
+    end
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
