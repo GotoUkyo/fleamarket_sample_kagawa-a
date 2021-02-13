@@ -47,7 +47,7 @@ class CreditsController < ApplicationController
       customer = Payjp::Customer.create(
         email: current_user.email,            #未指定でも良い
         description: 'test',                  #未指定でも良い
-        # id: 'test',                         #未指定でも良い（未指定の方が無難）→あると本番環境でエラーが出た
+        # id: 'test',                         #未指定でも良い（未指定の方が無難）
         card: params['payjp_token'],          #これは必須
         metadata: {user_id: current_user.id}  #未指定でも良い
       )
@@ -118,7 +118,7 @@ class CreditsController < ApplicationController
   #--------------------------------#
   def buy
     credit = current_user.credit
-    @item = Item.find(2) # @item = Item.find(2) # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
+    @item = Item.last # @item = Item.find(2) # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
     
     if @item.user_id == current_user.id or @item.deal_state_id == 1
       # 商品出品者のidとログインユーザのidが同じもしくは商品が購入済状態（deal_state_id=1）ならば下記を実行
