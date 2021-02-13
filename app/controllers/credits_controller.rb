@@ -47,7 +47,7 @@ class CreditsController < ApplicationController
       customer = Payjp::Customer.create(
         email: current_user.email,            #未指定でも良い
         description: 'test',                  #未指定でも良い
-        # id: 'test',                         #未指定でも良い（未指定の方が無難）
+        # id: 'test',                         #未指定でも良い（未指定の方が無難）→あると本番環境でエラーが出た
         card: params['payjp_token'],          #これは必須
         metadata: {user_id: current_user.id}  #未指定でも良い
       )
