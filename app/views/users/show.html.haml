@@ -1,3 +1,6 @@
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
+
 -# if:クレジットカード情報が登録されていなければ実行、else:クレジットカード情報が登録されていれば実行
 = current_user.nick_name
 さんのマイページ
@@ -11,6 +14,3 @@
     %button クレジットカードを登録する
   = link_to root_path, class: "aaa" do
     トップページに戻る
-
-- breadcrumb :mypage
-= render "layouts/breadcrumbs"
