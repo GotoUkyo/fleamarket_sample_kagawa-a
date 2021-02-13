@@ -24,7 +24,7 @@
 |brand|string||
 |state_id|integer|null: false|
 |postage_id|integer|null: false|
-|area_id|integer|null: false|
+|prefecture_id|integer|null: false|
 |day_id|integer|null: false|
 |price|integer|null: false|
 |deal_state_id|integer|null: false|
