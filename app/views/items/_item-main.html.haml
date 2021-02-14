@@ -1,67 +1,71 @@
 .body
   .Top-bar
     .Top-bar__text
-    = link_to "#", class: "Top-bar__link" do
-      フリマ
-    .Top-bar__bold ＞
-    .Top-bar__bold2 商品名
+      - breadcrumb :item
+      = render "layouts/breadcrumbs"   
   .Item
-    .Item__title 商品名
-    .Item__img
+    .Item__title
+      = @item.name
+    = image_tag @item.images[0].name.url, class:"Item__img"
+
     .Item__little
       .Item__little--1
       .Item__little--2
       .Item__little--3
       .Item__little--4
-    .Item__price ¥お値段円
-    .Item__tax （税込） 送料込み
-    .Buy-btn
-      .Buy-btn__text 購入画面へ進む
+    .Item__price
+      ￥
+      = @item.price
+    .Item__tax 
+      = @item.postage.name
+    -if user_signed_in? && current_user.id == @item.user_id
+      .Buy-btn__edit
+        = link_to "商品を編集する",items_path,class: "Buy-btn__text" 
+      .Buy-btn__delete
+        = link_to "商品を削除する",items_path,class: "Buy-btn__text"
+    -else
+      .Buy-btn
+        = link_to "購入画面へ進む",items_path,class: "Buy-btn__text" 
     .Item__text
-      %p 商品の説明をここに表示
-      %p とりあえず何行か書いてみる
-      %p わっふるわっふる
+      = @item.description
     %table.Table
       %tr
         %th.Table__title 出品者
         %td
-          = link_to "#", class: "color" do
-            出品者名
+          = link_to "#{@item.user.nick_name}", "#", class: "color"
       %tr
         %th{rowspan: "1", class: "Table__title"} カテゴリー
         %td.category.category-top
-          = link_to "#", class: "color" do
-            = @category.name # カテゴリー名
+          = link_to "#{@category_parent.name}","#", class: "color" 
         %td.category
-          = link_to "#", class: "color" do
-            = @child.name # >子カテゴリー名
+          = link_to "#{@category_child.name}","#", class: "color" 
         %td.category.category-bottom
-          = link_to "#", class: "color" do
-            = @grandchild.name # >孫カテゴリー名
+          = link_to "#{@category_grandchild.name}","#", class: "color" 
       %tr
         %th.Table__title ブランド
         %td
-          .Table__text ブランド名
+          .Table__text
+            = @item.brand
       %tr
         %th.Table__title 商品の状態
         %td
-          .Table__text 新品、未使用等
+          .Table__text
+            = @item.state.name
       %tr
         %th.Table__title 発送料の負担
         %td
-          .Table__text 送料込み（出品者負担）
-      %tr
-        %th.Table__title 発送の方法
-        %td
-          .Table__text ゆうゆうフリマ便
+          .Table__text
+            = @item.postage.name
       %tr
         %th.Table__title 発送元の地域
         %td
-          .Table__text 香川県
+          .Table__text
+            = @item.prefecture.name
       %tr
         %th.Table__title 発送の目安
         %td
-          .Table__text 4〜7日で発送
+          .Table__text
+            = @item.day.name
     .Item__btn
       .Item__btn--favorite
         = icon('fas', 'star', class: "star-icon")
