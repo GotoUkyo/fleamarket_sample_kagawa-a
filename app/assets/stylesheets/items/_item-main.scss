@@ -119,11 +119,11 @@
     font-size: 18px;
     word-break: break-all;
   }
-  .Buy-btn__1{
+  .Buy-btn__edit{
     @include buy-item ();
     background-color: #ccc;
   }
-  .Buy-btn__2{
+  .Buy-btn__delete{
     @include buy-item ();
     background-color: red;
   }
