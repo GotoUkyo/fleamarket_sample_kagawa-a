@@ -16,6 +16,17 @@
   flex-direction: column;
 }
 
+@mixin buy-item {
+  width: 630px;
+  height: 50px;
+  margin: 0 auto 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+
 .Top-bar{
   width: 100%;
   height: 50px;
@@ -57,6 +68,7 @@
     height: 300px;
     margin: 0 auto;
     background-color: royalblue;
+    display: flex;
   }
   &__little{
     display: flex;
@@ -93,23 +105,27 @@
     margin-bottom: 28px;
   }
   .Buy-btn{
-    width: 630px;
-    height: 50px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include buy-item ();
     background-color: var(--item-main-color);
-    border-radius: 5px;
     &__text{
       font-size: 14px;
       text-align: center;
       color: var(--white-color);
+      text-decoration: none;
     }
   }
   &__text{
     margin: 10px 35px 20px 35px;
     font-size: 18px;
+    word-break: break-all;
+  }
+  .Buy-btn__1{
+    @include buy-item ();
+    background-color: #ccc;
+  }
+  .Buy-btn__2{
+    @include buy-item ();
+    background-color: red;
   }
   .Table{
     margin: 0 auto 0 auto;
