@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
       @item.save
       redirect_to root_path, notice: '商品が投稿されました'
     else
+      @category_parent = Category.where(ancestry: nil)
       render :new
     end
   end
