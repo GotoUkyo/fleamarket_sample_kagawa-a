@@ -1,0 +1,36 @@
+:root{
+  --main-main-color: rgb(56, 204, 197);
+  --white-color: white;
+}
+
+@mixin top-number-square{
+  width: 55px;
+  height: 55px;
+  border-radius: 3px;
+  position: absolute;
+  background-color: var(--main-main-color);
+}
+
+@mixin top-number-number{
+  font-size: 26px;
+  color: var(--white-color);
+  text-align: center;
+  line-height: 55px;
+}
+
+@mixin top-new-img{
+  width: 190px;
+  height: 250px;
+  box-shadow: 0 1px 7px 0 rgb(122, 122, 122);
+  position: relative;
+}
+
+@mixin top-label{
+  width: 190px;
+  height: 90px;
+  padding-left: 10px;
+  background-color: var(--white-color);
+  position: absolute;
+  top: 160px;
+  display: flex;
+}

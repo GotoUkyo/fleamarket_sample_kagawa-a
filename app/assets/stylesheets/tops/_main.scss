@@ -2,431 +2,392 @@
   box-sizing: border-box;
 }
 
-:root{
-  --main-main-color: rgb(56, 204, 197);
-  --white-color: white;
-}
+@import "tops-main-mixin";
 
 .body-main{
   width: 100%;
   height: calc(100% - 100px);
-  .Top-img{
+}
+
+.Top-img{
+  height: 560px;
+  position: relative;
+  &__pict{
     height: 560px;
-    position: relative;
-    &__pict{
-      height: 560px;
-      width: 100%;
-      object-fit: cover;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__in{
+    top: 200px;
+    left: 70px;
+    color: var(--white-color);
+    text-shadow: 0 0 7px rgb(66, 66, 66);
+    position: absolute;
+    &--title{
+      font-size: 60px;
+      padding-bottom: 20px;
     }
-    &__in{
-      top: 200px;
-      left: 70px;
-      color: var(--white-color);
-      text-shadow: 0 0 7px rgb(66, 66, 66);
-      position: absolute;
-      &--title{
-        font-size: 60px;
-        padding-bottom: 20px;
-      }
-      &--text{
-        line-height: 30px;
-      }
-      &--icon{
-        display: flex;
-        justify-content: flex-start;
-        padding-top: 25px;
-        .icon-app{
-          height: 60px;
-          width: 180px;
-          }
-        .icon-google{
-          height: 60px;
-          width: 180px;
-          margin-left: 10px;
+    &--text{
+      line-height: 30px;
+    }
+    &--icon{
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 25px;
+      .icon-app{
+        height: 60px;
+        width: 180px;
         }
+      .icon-google{
+        height: 60px;
+        width: 180px;
+        margin-left: 10px;
       }
     }
   }
+}
 
-  .Reason{
-    &__top{
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      margin: 50px 0 40px 0;
-      &--text{
-        font-size: 26px;
-        font-weight: bold;
-      }
-      &--ber{
-        height: 4px;
-        width: 70px;
-        background-color: var(--main-main-color);
-        margin: 13px 0 0 10px;
-      }
-    }
-    &__img{
-      display: flex;
-      justify-content: center;
-      &--left{
-        width: 300px;
-        height: 300px;
-        &__pict{
-          width: 300px;
-          height: 300px;
-          position: absolute;
-        }
-        .Number{
-          width: 55px;
-          height: 55px;
-          border-radius: 3px;
-          position: absolute;
-          background-color: var(--main-main-color);
-          &__one{
-            font-size: 26px;
-            color: var(--white-color);
-            text-align: center;
-            line-height: 55px;
-          }
-        }
-      }
-      &--center{
-        width: 300px;
-        height: 300px;
-        margin: 0 55px;
-        &__pict{
-          width: 300px;
-          height: 300px;
-          position: absolute;
-        }
-        .Number{
-          width: 55px;
-          height: 55px;
-          border-radius: 3px;
-          position: absolute;
-          background-color: var(--main-main-color);
-          &__two{
-            font-size: 26px;
-            color: var(--white-color);
-            text-align: center;
-            line-height: 55px;
-          }
-        }
-      }
-      &--right{
-        width: 300px;
-        height: 300px;
-        &__pict{
-          width: 300px;
-          height: 300px;
-          position: absolute;
-        }
-        .Number{
-          width: 55px;
-          height: 55px;
-          border-radius: 3px;
-          position: absolute;
-          background-color: var(--main-main-color);
-          &__three{
-            font-size: 26px;
-            color: var(--white-color);
-            text-align: center;
-            line-height: 55px;
-          }
-        }
-      }
-    }
-    &__title{
-      display: flex;
-      justify-content: center;
-      padding: 30px 0;
-      &--boldleft{
-        display: flex;
-        font-weight: bold;
-        font-size: 23px;
-        &__color{
-          margin-right: 5px;
-          color: var(--main-main-color);
-        }
-        &__black{
-          color: black;
-        }
-      }
-      &--boldcenter{
-        display: flex;
-        font-weight: bold;
-        font-size: 23px;
-        margin: 0 155px;
-        &__color{
-          margin-right: 5px;
-          color: var(--main-main-color);
-        }
-        &__black{
-          color: black;
-        }
-      }
-      &--boldright{
-        display: flex;
-        font-weight: bold;
-        font-size: 23px;
-        padding-right: 20px;
-        &__color{
-          margin-left: 5px;
-          color: var(--main-main-color);
-        }
-        &__black{
-          color: black;
-        }
-      }
-    }
-    &__text{
-      display: flex;
-      justify-content: center;
-      font-size: 17px;
-      padding-bottom: 60px;
-      &--left{
-        width: 300px;
-      }
-      &--center{
-        width: 300px;
-        margin: 0 55px;
-      }
-      &--right{
-        width: 300px;
-        text-align: center
-      }
-    }
-  }
-
-  .Center-img{
-    height: 400px;
-    position: relative;
-    &__pict{
-      height: 400px;
-      width: 100%;
-      object-fit: cover;
-    }
-    &__in{
-      top: 90px;
-      left: 90px;
-      color: var(--white-color);
-      text-shadow: 0 0 7px rgb(66, 66, 66);
-      position: absolute;
-      &--title{
-        font-weight: bold;
-        font-size: 25px;
-        padding-bottom: 20px;
-      }
-      &--text{
-        line-height: 25px;
-        padding-bottom: 5px;
-      }
-      &--icon{
-        display: flex;
-        justify-content: flex-start;
-        padding-top: 25px;
-        .icon-app{
-          height: 60px;
-          width: 180px;
-          }
-        .icon-google{
-          height: 60px;
-          width: 180px;
-          margin-left: 10px;
-        }
-      }
-    }
-  }
-
-  .Feature{
-    height: 650px;
-    &__top{
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      margin: 50px 0 40px 0;
-      &--text{
-        font-size: 26px;
-        font-weight: bold;
-      }
-      &--ber{
-        height: 4px;
-        width: 70px;
-        background-color: var(--main-main-color);
-        margin: 13px 0 0 10px;
-      }
-    }
-    &__img{
-      display: flex;
-      justify-content: center;
-      &--left{
-        width: 220px;
-        height: 330px;
-        &__pict{
-          width: 220px;
-          height: 330px;
-        }
-      }
-      &--center{
-        width: 220px;
-        height: 330px;
-        margin: 0 140px;
-        &__pict{
-          width: 220px;
-          height: 330px;
-        }
-      }
-      &--right{
-        width: 220px;
-        height: 330px;
-        &__pict{
-          width: 220px;
-          height: 330px;
-        }
-      }
-    }
-    &__title{
-      display: flex;
-      justify-content: center;
-      padding: 30px 0 10px 0;
-      font-size: 19px;
+.Reason{
+  &__top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0 40px 0;
+    &--text{
+      font-size: 26px;
       font-weight: bold;
-      &--left{
-        padding-right: 10px;
+    }
+    &--ber{
+      height: 4px;
+      width: 70px;
+      background-color: var(--main-main-color);
+      margin: 13px 0 0 10px;
+    }
+  }
+  &__img{
+    display: flex;
+    justify-content: center;
+    &--left{
+      width: 300px;
+      height: 300px;
+      &__pict{
+        width: 300px;
+        height: 300px;
+        position: absolute;
       }
-      &--center{
-        margin: 0 130px;
-        padding-right: 15px;
-      }
-      &--right{
-        padding-right: 10px;
+      .Number{
+        @include top-number-square;
+        &__one{
+          @include top-number-number;
+        }
       }
     }
-    &__text{
-      display: flex;
-      justify-content: center;
-      font-size: 16px;
-      padding-bottom: 50px;
-      &--left{
-        width: 290px;
-        text-align: center;
+    &--center{
+      width: 300px;
+      height: 300px;
+      margin: 0 55px;
+      &__pict{
+        width: 300px;
+        height: 300px;
+        position: absolute;
       }
-      &--center{
-        width: 320px;
-        margin: 0 50px;
-        text-align: center;
+      .Number{
+        @include top-number-square;
+        &__two{
+          @include top-number-number;
+        }
       }
-      &--right{
-        width: 290px;
-        text-align: center
+    }
+    &--right{
+      width: 300px;
+      height: 300px;
+      &__pict{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+      }
+      .Number{
+        @include top-number-square;
+        &__three{
+          @include top-number-number;
+        }
       }
     }
   }
-
-  .PickCategory{
-    font-weight: bold;
-    text-align: center;
-    background-color: rgb(245, 245, 245);
-    padding-bottom: 20px;
-    &__text{
-      &--title{
-        padding-top: 70px;
-        font-size: 27px;
-        letter-spacing: 1px;
-      }
-      &--new{
-        font-size: 24px;
+  &__title{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    &--boldleft{
+      display: flex;
+      font-weight: bold;
+      font-size: 23px;
+      &__color{
+        margin-right: 5px;
         color: var(--main-main-color);
       }
+      &__black{
+        color: black;
+      }
     }
-    &__img{
+    &--boldcenter{
       display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      &--new{
-        width: 190px;
-        height: 250px;
-        margin: 0 10px 10px 10px;
-        box-shadow: 0 2px 7px 0 rgb(82, 82, 82);
-        position: relative;
-        background-color: rebeccapurple;
-        .main-Label{
-          width: 190px;
-          height: 90px;
-          padding-left: 10px;
-          background-color: var(--white-color);
-          position: absolute;
-          top: 160px;
-          display: flex;
-          &__text{
-            margin-top: 12px;
-            &--name{
-              font-size: 14px;
-              margin-bottom: 5px;
-            }
-            &--price{
-              font-size: 15px;
-              margin-left: 10px;
-              text-align: 10px
-            }
-            &--tax{
-              font-size: 8px;
-            }
+      font-weight: bold;
+      font-size: 23px;
+      margin: 0 155px;
+      &__color{
+        margin-right: 5px;
+        color: var(--main-main-color);
+      }
+      &__black{
+        color: black;
+      }
+    }
+    &--boldright{
+      display: flex;
+      font-weight: bold;
+      font-size: 23px;
+      padding-right: 20px;
+      &__color{
+        margin-left: 5px;
+        color: var(--main-main-color);
+      }
+      &__black{
+        color: black;
+      }
+    }
+  }
+  &__text{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    padding-bottom: 60px;
+    &--left{
+      width: 300px;
+    }
+    &--center{
+      width: 300px;
+      margin: 0 55px;
+    }
+    &--right{
+      width: 300px;
+      text-align: center
+    }
+  }
+}
+
+.Center-img{
+  height: 400px;
+  position: relative;
+  &__pict{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__in{
+    top: 90px;
+    left: 90px;
+    color: var(--white-color);
+    text-shadow: 0 0 7px rgb(66, 66, 66);
+    position: absolute;
+    &--title{
+      font-weight: bold;
+      font-size: 25px;
+      padding-bottom: 20px;
+    }
+    &--text{
+      line-height: 25px;
+      padding-bottom: 5px;
+    }
+    &--icon{
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 25px;
+      .icon-app{
+        height: 60px;
+        width: 180px;
+        }
+      .icon-google{
+        height: 60px;
+        width: 180px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.Feature{
+  height: 650px;
+  &__top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0 40px 0;
+    &--text{
+      font-size: 26px;
+      font-weight: bold;
+    }
+    &--ber{
+      height: 4px;
+      width: 70px;
+      background-color: var(--main-main-color);
+      margin: 13px 0 0 10px;
+    }
+  }
+  &__img{
+    display: flex;
+    justify-content: center;
+    &--left{
+      width: 220px;
+      height: 330px;
+      &__pict{
+        width: 220px;
+        height: 330px;
+      }
+    }
+    &--center{
+      width: 220px;
+      height: 330px;
+      margin: 0 140px;
+      &__pict{
+        width: 220px;
+        height: 330px;
+      }
+    }
+    &--right{
+      width: 220px;
+      height: 330px;
+      &__pict{
+        width: 220px;
+        height: 330px;
+      }
+    }
+  }
+  &__title{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 10px 0;
+    font-size: 19px;
+    font-weight: bold;
+    &--left{
+      padding-right: 10px;
+    }
+    &--center{
+      margin: 0 130px;
+      padding-right: 15px;
+    }
+    &--right{
+      padding-right: 10px;
+    }
+  }
+  &__text{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    padding-bottom: 50px;
+    &--left{
+      width: 290px;
+      text-align: center;
+    }
+    &--center{
+      width: 320px;
+      margin: 0 50px;
+      text-align: center;
+    }
+    &--right{
+      width: 290px;
+      text-align: center
+    }
+  }
+}
+
+.PickCategory{
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  padding-bottom: 20px;
+  &__text{
+    &--title{
+      padding-top: 70px;
+      font-size: 27px;
+      letter-spacing: 1px;
+    }
+    &--new{
+      font-size: 24px;
+      color: var(--main-main-color);
+      margin-bottom: 25px;
+    }
+  }
+  &__img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &--new{
+      @include top-new-img;
+      margin: 10px 10px 10px 10px;
+      background-color: rebeccapurple;
+      .main-Label{
+        @include top-label;
+        &__text{
+          margin-top: 12px;
+          &--name{
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+          &--price{
+            font-size: 15px;
+            margin-left: 10px;
+            text-align: 10px
+          }
+          &--tax{
+            font-size: 8px;
           }
         }
       }
     }
   }
+}
 
-  .PickBrand{
-    font-weight: bold;
-    text-align: center;
-    padding-bottom: 100px;
-    background-color: rgb(245, 245, 245);
-    &__text{
-      &--title{
-        padding-top: 70px;
-        font-size: 27px;
-        letter-spacing: 1px;
-      }
-      &--arc{
-        font-size: 24px;
-        color: var(--main-main-color);
-      }
+.PickBrand{
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 100px;
+  background-color: rgb(245, 245, 245);
+  &__text{
+    &--title{
+      padding-top: 70px;
+      font-size: 27px;
+      letter-spacing: 1px;
     }
-    &__img{
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      &--new{
-        width: 190px;
-        height: 250px;
-        margin: 0 10px 10px 10px;
-        box-shadow: 0 2px 7px 0 rgb(82, 82, 82);
-        position: relative;
-        background-color: rosybrown;
-        .main-Label-arc{
-          width: 190px;
-          height: 90px;
-          padding-left: 10px;
-          background-color: var(--white-color);
-          position: absolute;
-          top: 160px;
-          display: flex;
-          &__text{
-            margin-top: 12px;
-            &--name{
-              font-size: 14px;
-              margin-bottom: 5px;
-            }
-            &--price{
-              font-size: 15px;
-              margin-left: 10px;
-              text-align: 10px
-            }
-            &--tax{
-              font-size: 8px;
-            }
+    &--arc{
+      font-size: 24px;
+      color: var(--main-main-color);
+    }
+  }
+  &__img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    &--new{
+      @include top-new-img;
+      margin: 0 10px 10px 10px;
+      background-color: rosybrown;
+      .main-Label-arc{
+        @include top-label;
+        &__text{
+          margin-top: 12px;
+          &--name{
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+          &--price{
+            font-size: 15px;
+            margin-left: 10px;
+            text-align: 10px
+          }
+          &--tax{
+            font-size: 8px;
           }
         }
       }
