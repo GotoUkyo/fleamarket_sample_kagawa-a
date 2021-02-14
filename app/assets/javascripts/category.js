@@ -1,4 +1,4 @@
-$(function(){
+jQuery(function(){
   function appendOption(category){ // optionの作成
     var html = `<option value="${category.id}">${category.name}</option>`;
     return html;
