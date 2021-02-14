@@ -3,14 +3,9 @@
     .Top-bar__text
       - breadcrumb :item
       = render "layouts/breadcrumbs"   
-    -# = link_to "#", class: "Top-bar__link" do
-    -#   フリマ
-    -# .Top-bar__bold ＞
-    -# .Top-bar__bold2 商品名
   .Item
     .Item__title
       = @item.name
-    -# .Item__img
     = image_tag @item.images[0].name.url, class:"Item__img"
 
     .Item__little
@@ -23,8 +18,6 @@
       = @item.price
     .Item__tax 
       = @item.postage.name
-    -# .Buy-btn
-    -#   .Buy-btn__text 購入画面へ進む
     -if user_signed_in? && current_user.id == @item.user_id
       .Buy-btn__1
         = link_to "商品を編集する",items_path,class: "Buy-btn__text" 
