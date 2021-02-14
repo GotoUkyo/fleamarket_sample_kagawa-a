@@ -7,6 +7,12 @@ crumb :mypage do
   parent :root
 end
 
+crumb :item do |item|
+  item = Item.find(params[:id])
+  link item.name, item_path
+  parent :root
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
