@@ -11,6 +11,10 @@ class ItemsController < ApplicationController
   def show
     @categories = Category.roots
     @item = Item.find(params[:id])
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
     # @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
     # @address = Address.find(current_user.id)
   end
