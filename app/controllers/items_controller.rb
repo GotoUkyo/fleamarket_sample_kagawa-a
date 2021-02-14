@@ -3,12 +3,16 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @categories = Category.roots
+    # @categories = Category.roots  #indexとshowを入れ替え
+    @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
+    @address = Address.find(current_user.id)
   end
 
   def show
-    @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
-    @address = Address.find(current_user.id)
+    @categories = Category.roots
+    @item = Item.find(params[:id])
+    # @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
+    # @address = Address.find(current_user.id)
   end
 
   def new 

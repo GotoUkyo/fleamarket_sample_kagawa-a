@@ -31,13 +31,13 @@
         %th{rowspan: "1", class: "Table__title"} カテゴリー
         %td.category.category-top
           = link_to "#", class: "color" do
-            = @category.name # カテゴリー名
+            -# = @category # カテゴリー名
         %td.category
           = link_to "#", class: "color" do
-            = @child.name # >子カテゴリー名
+            -# = @child.name # >子カテゴリー名
         %td.category.category-bottom
           = link_to "#", class: "color" do
-            = @grandchild.name # >孫カテゴリー名
+            -# = @grandchild.name # >孫カテゴリー名
       %tr
         %th.Table__title ブランド
         %td
