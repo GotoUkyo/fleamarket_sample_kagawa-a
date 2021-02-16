@@ -1,0 +1,13 @@
+.wrapper
+  = render "indexes/header"
+  .search-index
+    .search-index__item    
+      - @items.each do |item|
+        .itemsearch
+          = image_tag item.images[0].name.url, class:"itemsearch__image" 
+          .itemsearch__name
+            = item.name
+          .itemsearch__price
+            ￥
+            = item.price
+  = render "indexes/footer"

@@ -1,0 +1,21 @@
+.search-index{
+  height: 100%;
+  &__item{
+    display: flex;
+    padding: 0 80px;
+  }
+}
+.itemsearch {
+  height: 270px;
+  width: 160px;
+  margin: 0 20px 20px 0;
+  &__name {
+  }
+  &__price {
+  }
+  &__image {
+    width: 160px;
+    height: 160px;  
+  }
+}
+
