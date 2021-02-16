@@ -6,7 +6,9 @@
     .Top-bar__bold ＞
     .Top-bar__bold2 商品名
   .Item
-    .Item__title 商品名
+    .Item__title
+      = @item.name
+    = image_tag @item.images[0].name.url, class:“Item__img”
     .Item__img
     .Item__little
       .Item__little--1
