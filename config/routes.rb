@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     collection do
       get 'category_children'
       get 'category_grandchildren'
+      get 'search'
       #post 'show', to: 'items#show' # この一文を活かすと、商品出品ページで出品ボタンクリック時にshowアクションが走ってしまう・・・
       #post 'buy', to: 'items#buy'
     end

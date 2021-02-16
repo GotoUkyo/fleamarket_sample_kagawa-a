@@ -41,6 +41,11 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   # 出品時のデータをDBに送るストロングパラメーター
   private
   def item_params
