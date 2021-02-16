@@ -2,16 +2,16 @@
   height: 100%;
   &__item{
     display: flex;
-    padding: 0 80px;
+    padding: 10px 80px;
+    flex-wrap: wrap;
   }
 }
 .itemsearch {
   height: 270px;
   width: 160px;
-  margin: 0 20px 20px 0;
+  margin: 0 10px 20px 10px;
   &__name {
-  }
-  &__price {
+    padding-left: 10px;
   }
   &__image {
     width: 160px;
