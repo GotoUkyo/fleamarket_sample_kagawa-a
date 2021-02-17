@@ -16,13 +16,17 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :items, only: [:index, :new, :create, :show] do
+  resources :items, only: [:index, :new, :create, :show, :edit] do
     collection do
-      get 'category_children'
-      get 'category_grandchildren'
-      #post 'show', to: 'items#show' # この一文を活かすと、商品出品ページで出品ボタンクリック時にshowアクションが走ってしまう・・・
-      #post 'buy', to: 'items#buy'
+      get 'category_children', defaults: { format: 'json' }
+      get 'category_grandchildren', defaults: { format: 'json' }
     end
+    member do
+      get 'category_children', defaults: { format: 'json' }
+      get 'category_grandchildren', defaults: { format: 'json' }
+    end
+    # routingにおけるcollectionとmemberの違いは生成するroutingに:idがつくかどうか
+    # 参考URL：https://qiita.com/k152744/items/141345e34fc0095217fe
   end
 
   resources :credits, only: [:new, :show] do
