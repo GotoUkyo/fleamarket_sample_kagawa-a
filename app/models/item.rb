@@ -2,6 +2,14 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :images
 
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :state
   belongs_to_active_hash :postage

@@ -29,22 +29,25 @@
       &__inputBox{
         padding-top: 20px;
         display: flex;
-        &--text{
-          width: calc(100% - 40px);
+        form{
+          width: 100%;
           height: 37px;
           padding-left: 5px;
+          display: flex;
         }
         &--btn{
           width: 37px;
           height: 37px;
           background-color: var(--header-main-color);
           position: relative;
+          border: none;
           &__icon{
             width: 21px;
             height: 21px;
             position: absolute;
-            top: 8px;
+            top: 12px;
             left: 8px;
+            color: white;
           }
         }
       }

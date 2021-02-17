@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index ,:search]
 
   def index
     @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
@@ -41,6 +41,11 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   # 出品時のデータをDBに送るストロングパラメーター
   private
   def item_params
