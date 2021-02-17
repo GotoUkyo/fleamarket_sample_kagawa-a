@@ -1,0 +1,38 @@
+.PickCategory
+  .PickupCategory__text
+    .PickCategory__text--title
+      ピックアップカテゴリー
+    .PickCategory__text--new
+      = link_to "#", class: "PickCategory__text--new" do
+        新規投稿商品
+  .PickCategory__img
+    - @items.each do |item|
+      = link_to item_path(item.id) do
+        .PickCategory__img--new
+          = image_tag item.images[0].name.url, class: "PickCategory__img--new__images"
+          .main-Label
+            .main-Label__text
+              .main-Label__text--name
+                = item.name
+              .main-Label__text--price
+                = "#{item.price}円"
+              .main-Label__text--tax （税込）
+.PickBrand
+  .PickBrand__text
+    .PickBrand__text--title
+      ピックアップブランド
+    .PickBrand__text--arc
+      = link_to "#", class: "PickBrand__text--arc" do
+        アーカイバ
+  .PickBrand__img
+    .PickBrand__img--new
+      .PickBrand__img--new__images
+      .main-Label-arc
+        .main-Label-arc__text
+          .main-Label-arc__text--name 商品名
+          .main-Label-arc__text--price お値段円
+          .main-Label-arc__text--tax （税込）
+    .PickBrand__img--new
+    .PickBrand__img--new
+    .PickBrand__img--new
+    .PickBrand__img--new
