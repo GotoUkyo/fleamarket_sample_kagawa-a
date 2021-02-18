@@ -21,6 +21,7 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name, length: { maximum: 40}
     validates :description, length: { maximum: 1000}
+    validates :category_id
     validates :state_id
     validates :postage_id
     validates :prefecture_id
