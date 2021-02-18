@@ -48,7 +48,12 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+    if @item.user_id == current_user.id
+       @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   # 出品時のデータをDBに送るストロングパラメーター
