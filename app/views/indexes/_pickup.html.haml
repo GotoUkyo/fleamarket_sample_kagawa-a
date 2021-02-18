@@ -10,9 +10,10 @@
       = link_to item_path(item.id) do
         .PickCategory__img--new
           = image_tag item.images[0].name.url, class: "PickCategory__img--new__images"
-          .sold-out
-            .sold-out__text
-              SOLD          
+          - if item.deal_state_id == 1
+            .sold-out
+              .sold-out__text
+                SOLD          
           .main-Label
             .main-Label__text
               .main-Label__text--name
