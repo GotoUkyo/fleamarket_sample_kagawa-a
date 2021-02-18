@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :price, null:false
       t.integer :deal_state_id, null:false
       t.integer :user_id, null:false, foreign_key:true
-      t.integer :category_id, foreign_key:true
+      t.integer :category_id, null:false, foreign_key:true
       t.timestamps
     end
   end

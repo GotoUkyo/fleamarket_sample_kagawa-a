@@ -37,6 +37,13 @@ require 'rails_helper'
         expect(item).to be_valid
       end
 
+      it "商品のカテゴリーがなければ登録できない" do
+        item = build(:item, category_id: "")
+        item.valid?
+        expect(item.errors[:category_id]).to include("を入力してください")
+      end
+
+
       it "商品の状態がなければ登録できない" do
         item = build(:item, state_id: "")
         item.valid?

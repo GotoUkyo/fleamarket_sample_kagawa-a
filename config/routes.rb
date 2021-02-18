@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :items, only: [:index, :new, :create, :show] do
+  resources :items, except: [:edit, :update] do
     collection do
       get 'category_children'
       get 'category_grandchildren'
