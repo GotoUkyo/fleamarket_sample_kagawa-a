@@ -46,6 +46,11 @@ class ItemsController < ApplicationController
     @items = Item.search(params[:keyword])
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+  end
+
   # 出品時のデータをDBに送るストロングパラメーター
   private
   def item_params
