@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:show, :index ,:search]
+  before_action :set_item, only: [:show, :destroy]
+
 
   def index
     @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
@@ -9,7 +11,6 @@ class ItemsController < ApplicationController
 
   def show
     @categories = Category.roots
-    @item = Item.find(params[:id])
     @category_id = @item.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
@@ -47,7 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.user_id == current_user.id
        @item.destroy
       redirect_to root_path
@@ -76,4 +76,7 @@ class ItemsController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
