@@ -1,14 +1,19 @@
 class ItemsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index ,:search]
 
   def index
-    @categories = Category.roots
+    @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
+    @address = Address.find(current_user.id)
   end
 
   def show
-    @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
-    @address = Address.find(current_user.id)
+    @categories = Category.roots
+    @item = Item.find(params[:id])
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def new 
@@ -32,9 +37,15 @@ class ItemsController < ApplicationController
       @item.save
       redirect_to root_path, notice: '商品が投稿されました'
     else
+      @category_parent = Category.where(ancestry: nil)
       render :new
     end
   end
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   # 出品時のデータをDBに送るストロングパラメーター
   private
   def item_params

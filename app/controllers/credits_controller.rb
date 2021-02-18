@@ -124,7 +124,7 @@ class CreditsController < ApplicationController
       # 商品出品者のidとログインユーザのidが同じもしくは商品が購入済状態（deal_state_id=1）ならば下記を実行
       # 商品購入確認ページにリダイレクトし、フラッシュメッセージで'購入できません'と表示
       flash[:alert] = '購入できません'
-      redirect_to controller: :items, action: :show
+      redirect_to controller: :items, action: :index
     else
       # 商品出品者のidとログインユーザのidが異なってかつ商品が未購入状態（deal_state_id=0）ならば下記を実行
       # 処理１：支払い処理の実行
