@@ -10,10 +10,11 @@
       = link_to item_path(item.id) do
         .PickCategory__img--new
           = image_tag item.images[0].name.url, class: "PickCategory__img--new__images"
-          - if item.deal_state_id == 1  # 商品が購入済み（deal_state_idが1）の場合のみSOLDマークを表示
+          - if item.deal_state_id == 0
+          - else item.deal_state_id == 1  # 商品が購入済み（deal_state_idが1）の場合のみSOLDマークを表示
             .sold-out
               .sold-out__text
-                SOLD          
+                SOLD
           .main-Label
             .main-Label__text
               .main-Label__text--name
