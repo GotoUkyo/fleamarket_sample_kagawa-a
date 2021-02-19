@@ -1,0 +1,391 @@
+* {
+  box-sizing: border-box;
+}
+
+@import "color-mixin";
+
+.body{
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Top-logo{
+  margin: 45px 0 35px 0;
+  &__img{
+    width: 185px;
+    height: 52px;
+  }
+}
+
+.Data{
+  width: 700px;
+}
+
+.Image-space{
+  padding: 0 0 40px 40px;
+  background-color: var(--white-color);
+  &__text{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  //以下は追加実装時にコメントアウトを取る
+  //&__detail{
+    //font-size: 14px;
+  //}
+  &__box{
+    width: 620px;
+    height: 150px;
+    background-color: rgb(245, 245, 245);
+    border: dashed 1px var(--new-border-color);
+    margin-top: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    &--in{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .camera-icon{
+        font-size: 20px;
+        margin: 50px 0 7px 0;
+      }
+      p{
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+.Item-new{
+  height: 420px;
+  padding-left: 40px;
+  margin: 1px 0;
+  background-color: var(--white-color);
+  &__name{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  &__input{
+    @include item-main-bar;
+  }
+  &__detail{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 0 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  &__form{
+    width: 620px;
+    height: 160px;
+    padding: 15px 0 0 15px;
+    border: 1px solid var(--new-border-color);
+    border-radius: 5px; 
+  }
+  .count{
+    font-size: 11px;
+    padding: 10px 0 0 580px;
+    color: var(--font-gray);
+  }
+}
+
+.Detail{
+  background-color: var(--white-color);
+  padding: 40px 0 40px 40px;
+  p{
+    color: var(--font-gray);
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &__category{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  .category-select{
+    @include item-main-bar;
+  }
+  &__select-children{
+    margin-top: 15px;
+  }
+  &__select-grandchildren{
+    margin-top: 15px;
+  }
+  &__brand{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .gray-label{
+      background-color: rgb(194, 194, 194);
+      @include item-main-label;
+    }
+  }
+  &__input{
+    @include item-main-bar;
+  }
+  &__state{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  select{
+    @include item-main-bar;
+  }
+}
+
+.Sending{
+  background-color: var(--white-color);
+  padding: 40px 0 40px 40px;
+  margin-top: 1px;
+  &__title{
+    display: flex;
+    position: relative;
+    p{
+      color: var(--font-gray);
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .question{
+      font-size: 14px;
+      color: var(--font-blue);
+      position: absolute;
+      top: 3px;
+      left: 88px;
+    }
+  }
+  select{
+    @include item-main-bar;
+  }
+  &__burden{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  .burden-select{
+    @include item-main-bar;
+  }
+  &__area{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  &__days{
+    display: flex;
+    .text{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 35px 15px 15px 0;
+    }
+    .label{
+      background-color: var(--label-red);
+      @include item-main-label;
+    }
+  }
+  .days-select{
+    @include item-main-bar;
+  }
+}
+
+.Price{
+  background-color: var(--white-color);
+  padding: 40px 0 0 40px;
+  margin-top: 1px;
+  &__title{
+    display: flex;
+    position: relative;
+    p{
+      color: var(--font-gray);
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .number{
+      color: var(--font-gray);
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .question{
+      font-size: 14px;
+      color: var(--font-blue);
+      position: absolute;
+      top: 2px;
+      left: 170px;
+    }
+  }
+  &__set{
+    display: flex;
+    justify-content: space-between;
+    &--title{
+      display: flex;
+      .text{
+        font-weight: bold;
+        font-size: 14px;
+        margin: 35px 15px 15px 0;
+      }
+      .label{
+        background-color: var(--label-red);
+        @include item-main-label;
+      }
+    }
+    &--value{
+      display: flex;
+      align-items: center;
+      padding-right: 40px;
+      margin-top: 15px;
+      .mark{
+        margin-right: 10px;
+        font-size: 13px;
+      }
+      &__bar{
+        width: 285px;
+        height: 50px;
+        border: 1px solid var(--new-border-color);
+        border-radius: 5px;
+        font-size: 14px;
+        text-align: right;
+        padding-right: 15px;
+      }
+    }
+  }
+  &__fee{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 37px;
+    .text{
+      display: flex;
+      p{
+        font-size: 14px;
+      }
+      .rate{
+        font-size: 13px;
+      }
+    }
+    .display{
+      font-size: 14px;
+      padding-right: 40px;
+    }
+  }
+  &__bar{
+    background-color: rgb(221, 221, 221);
+    height: 1px;
+    width: 620px;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+  }
+  &__profit{
+    display: flex;
+    justify-content: space-between;
+    p{
+      font-size: 14px;
+    }
+    .display{
+      font-size: 14px;
+      padding-right: 40px;
+    }
+  }
+}
+
+.Under-menu{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--white-color);
+  .Btn-up{
+    padding: 50px 0 25px 0;
+    .exhibit{
+      background-color: rgb(56, 204, 197);
+      color: var(--white-color);
+      @include item-main-btn;
+      border: none;
+    }
+  }
+  .Btn-under{
+    padding-bottom: 25px;
+    .save{
+      background-color: rgb(197, 197, 197);
+      color: black;
+      @include item-main-btn;
+    }
+  }
+  .back{
+    font-size: 14px;
+    color: var(--font-blue);
+    text-decoration: none;
+    margin-bottom: 30px;
+  }
+}
+.Under-text{
+  height: 100px;
+  background-color: var(--white-color);
+  padding: 0 40px;
+  font-size: 12px;
+  line-height: 16px;
+  .up{
+    display: flex;
+  }
+  .under{
+    display: flex;
+  }
+  .color{
+    color: var(--font-blue);
+    text-decoration: none;
+    margin: 0 3px;
+  }
+}

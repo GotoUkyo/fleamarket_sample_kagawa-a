@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@import "tops-main-mixin";
+
+.body-main{
+  width: 100%;
+  height: calc(100% - 100px);
+}
+
+.Top-img{
+  height: 560px;
+  position: relative;
+  &__pict{
+    height: 560px;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__in{
+    top: 200px;
+    left: 70px;
+    color: var(--white-color);
+    text-shadow: 0 0 7px rgb(66, 66, 66);
+    position: absolute;
+    &--title{
+      font-size: 60px;
+      padding-bottom: 20px;
+    }
+    &--text{
+      line-height: 30px;
+    }
+    &--icon{
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 25px;
+      .icon-app{
+        height: 60px;
+        width: 180px;
+        }
+      .icon-google{
+        height: 60px;
+        width: 180px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.Reason{
+  &__top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0 40px 0;
+    &--text{
+      font-size: 26px;
+      font-weight: bold;
+    }
+    &--ber{
+      height: 4px;
+      width: 70px;
+      background-color: var(--main-main-color);
+      margin: 13px 0 0 10px;
+    }
+  }
+  &__img{
+    display: flex;
+    justify-content: center;
+    &--left{
+      width: 300px;
+      height: 300px;
+      &__pict{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+      }
+      .Number{
+        @include top-number-square;
+        &__one{
+          @include top-number-number;
+        }
+      }
+    }
+    &--center{
+      width: 300px;
+      height: 300px;
+      margin: 0 55px;
+      &__pict{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+      }
+      .Number{
+        @include top-number-square;
+        &__two{
+          @include top-number-number;
+        }
+      }
+    }
+    &--right{
+      width: 300px;
+      height: 300px;
+      &__pict{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+      }
+      .Number{
+        @include top-number-square;
+        &__three{
+          @include top-number-number;
+        }
+      }
+    }
+  }
+  &__title{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    &--boldleft{
+      display: flex;
+      font-weight: bold;
+      font-size: 23px;
+      &__color{
+        margin-right: 5px;
+        color: var(--main-main-color);
+      }
+      &__black{
+        color: black;
+      }
+    }
+    &--boldcenter{
+      display: flex;
+      font-weight: bold;
+      font-size: 23px;
+      margin: 0 155px;
+      &__color{
+        margin-right: 5px;
+        color: var(--main-main-color);
+      }
+      &__black{
+        color: black;
+      }
+    }
+    &--boldright{
+      display: flex;
+      font-weight: bold;
+      font-size: 23px;
+      padding-right: 20px;
+      &__color{
+        margin-left: 5px;
+        color: var(--main-main-color);
+      }
+      &__black{
+        color: black;
+      }
+    }
+  }
+  &__text{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    padding-bottom: 60px;
+    &--left{
+      width: 300px;
+    }
+    &--center{
+      width: 300px;
+      margin: 0 55px;
+    }
+    &--right{
+      width: 300px;
+      text-align: center
+    }
+  }
+}
+
+.Center-img{
+  height: 400px;
+  position: relative;
+  &__pict{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__in{
+    top: 90px;
+    left: 90px;
+    color: var(--white-color);
+    text-shadow: 0 0 7px rgb(66, 66, 66);
+    position: absolute;
+    &--title{
+      font-weight: bold;
+      font-size: 25px;
+      padding-bottom: 20px;
+    }
+    &--text{
+      line-height: 25px;
+      padding-bottom: 5px;
+    }
+    &--icon{
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 25px;
+      .icon-app{
+        height: 60px;
+        width: 180px;
+        }
+      .icon-google{
+        height: 60px;
+        width: 180px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.Feature{
+  height: 650px;
+  &__top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0 40px 0;
+    &--text{
+      font-size: 26px;
+      font-weight: bold;
+    }
+    &--ber{
+      height: 4px;
+      width: 70px;
+      background-color: var(--main-main-color);
+      margin: 13px 0 0 10px;
+    }
+  }
+  &__img{
+    display: flex;
+    justify-content: center;
+    &--left{
+      width: 220px;
+      height: 330px;
+      &__pict{
+        width: 220px;
+        height: 330px;
+      }
+    }
+    &--center{
+      width: 220px;
+      height: 330px;
+      margin: 0 140px;
+      &__pict{
+        width: 220px;
+        height: 330px;
+      }
+    }
+    &--right{
+      width: 220px;
+      height: 330px;
+      &__pict{
+        width: 220px;
+        height: 330px;
+      }
+    }
+  }
+  &__title{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 10px 0;
+    font-size: 19px;
+    font-weight: bold;
+    &--left{
+      padding-right: 10px;
+    }
+    &--center{
+      margin: 0 130px;
+      padding-right: 15px;
+    }
+    &--right{
+      padding-right: 10px;
+    }
+  }
+  &__text{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    padding-bottom: 50px;
+    &--left{
+      width: 290px;
+      text-align: center;
+    }
+    &--center{
+      width: 320px;
+      margin: 0 50px;
+      text-align: center;
+    }
+    &--right{
+      width: 290px;
+      text-align: center
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.body
+  .Top-logo
+    = link_to "#" do
+      = image_tag src="/images/logo/logo.png", class: "Top-logo__img"
+  .Data
+  = form_with model:@item, local: true do |f|
+    .Image-space
+      = render 'layouts/error_messages', model: f.object
+      .Image-space__text
+        .text 出品画像
+        .label 必須
+      //以下は追加実装時にコメントアウトを取る
+      //.Image-space__detail 最大5枚までアップロードできます
+      .Image-space__box
+        = f.fields_for :images do |image|
+          .Image-space__box--in
+            = image.file_field :name
+            -# =icon('fas', 'camera', class: "camera-icon")
+            -# %p クリックしてファイルをアップロード
+    .Item-new
+      .Item-new__name
+        .text 商品名
+        .label 必須
+      = f.text_field :name, placeholder: "40文字まで", maxlength: "40", class: "Item-new__input"
+      .Item-new__detail
+        .text 商品の説明
+        .label 必須
+      = f.text_area :description, placeholder: "商品の説明（必須1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n\r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000", class: "Item-new__form"
+      .count 0/1000
+    .Detail
+      %p 商品の詳細
+      .Detail__category
+        .text カテゴリー
+        .label 必須
+      = f.collection_select :category, @category_parent, :id, :name, {prompt: "選択してください"}, {class: "category-select", id: "select_category"}
+      .Detail__select-children
+      .Detail__select-grandchildren
+      .Detail__brand
+        .text ブランド
+        .gray-label 任意
+      = f.text_field :brand, placeholder: "例）シャネル", class: "Detail__input"
+      .Detail__state
+        .text 商品の状態
+        .label 必須
+      = f.collection_select :state_id, State.all, :id, :name,include_blank: "選択してください"
+    .Sending
+      .Sending__title
+        %p 発送について
+        = link_to "#" do
+          =icon('far', 'question-circle', class: "question")
+      .Sending__burden
+        .text 発送料の負担
+        .label 必須
+      = f.collection_select :postage_id, Postage.all, :id, :name,include_blank: "選択してください"
+      .Sending__area
+        .text 発送元の地域
+        .label 必須
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name,include_blank: "選択してください"
+      .Sending__days
+        .text 発送までの日数
+        .label 必須
+      = f.collection_select :day_id, Day.all, :id, :name,include_blank: "選択してください"
+    .Price
+      .Price__title
+        %p 価格
+        .number （¥300〜9,999,999）
+        = link_to "#" do
+          =icon('far', 'question-circle', class: "question")
+      .Price__set
+        .Price__set--title
+          .text 販売価格
+          .label 必須
+        .Price__set--value
+          %p.mark ¥
+          = f.number_field :price, value: "0", min: "300", max: "9999999", class: "Price__set--value__bar"
+      .Price__fee
+        .text
+          %p 販売手数料
+          .rate （10%）
+        .display ー
+      .Price__bar
+      .Price__profit
+        %p 販売利益
+        .display ー
+    .Under-menu
+      .Btn-up
+        = f.submit "出品する", class: 'exhibit'
+      .Btn-under
+        = link_to "#", class: "save" do
+          下書きに保存
+      = link_to "#", class: "back" do
+        もどる
+    .Under-text
+      .up
+        %p 禁止されている
+        = link_to "#", class: "color" do
+          行為
+        %p および
+        = link_to "#", class: "color" do
+          出品物
+        %p を必ずご確認ください。
+        = link_to "#", class: "color" do
+          偽ブランド品
+        %p や
+        = link_to "#", class: "color" do
+          盗品物
+        %p などの販売は犯罪であり、法
+      .under
+        %p 律により処罰される可能性があります。 また、出品をもちまして
+        = link_to "#", class: "color" do
+          加盟店規約
+        %p に同意したことになります。
+  = render "items-show-footer"

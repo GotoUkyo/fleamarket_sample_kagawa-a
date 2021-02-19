@@ -1,0 +1,105 @@
+.body
+  .Top-bar
+    .Top-bar__text
+      - breadcrumb :item
+      = render "layouts/breadcrumbs"   
+  .Item
+    .Item__title
+      = @item.name
+    = image_tag @item.images[0].name.url, class: "Item__img"
+    .Item__little
+      .Item__little--1
+      .Item__little--2
+      .Item__little--3
+      .Item__little--4
+    .Item__price
+      ￥
+      = @item.price
+    .Item__tax 
+      = @item.postage.name
+    -if user_signed_in? && current_user.id == @item.user_id
+      .Buy-btn__edit
+        = link_to "商品を編集する",items_path,class: "Buy-btn__text" 
+      .Buy-btn__delete
+        = link_to "商品を削除する", @item, method: :delete ,class: "Buy-btn__text"
+    -else
+      .Buy-btn
+        = link_to "購入画面へ進む",items_path,class: "Buy-btn__text" 
+    .Item__text
+      = @item.description
+    %table.Table
+      %tr
+        %th.Table__title 出品者
+        %td
+          = link_to "#{@item.user.nick_name}", "#", class: "color"
+      %tr
+        %th{rowspan: "1", class: "Table__title"} カテゴリー
+        %td.category.category-top
+          = link_to "#{@category_parent.name}", "#", class: "color"
+        %td.category
+          = link_to "#{@category_child.name}", "#", class: "color"
+        %td.category.category-bottom
+          = link_to "#{@category_grandchild.name}", "#", class: "color"
+      %tr
+        %th.Table__title ブランド
+        %td
+          .Table__text
+            = @item.brand
+      %tr
+        %th.Table__title 商品の状態
+        %td
+          .Table__text
+            = @item.state.name
+      %tr
+        %th.Table__title 発送料の負担
+        %td
+          .Table__text
+            = @item.postage.name
+      %tr
+        %th.Table__title 発送元の地域
+        %td
+          .Table__text
+            = @item.prefecture.name
+      %tr
+        %th.Table__title 発送の目安
+        %td
+          .Table__text
+            = @item.day.name
+    .Item__btn
+      .Item__btn--favorite
+        = icon('fas', 'star', class: "star-icon")
+        お気に入り
+        .count 0
+      .Item__btn--report
+        = icon('fas', 'flag', class: "flag-icon")
+        不適切な商品の通報
+  .Comment
+    = form_with html: {class: "form"} do |f|
+      = f.text_area :comment, class: "Comment__form"
+    .Comment__text
+      %p 相手のことを考え丁寧なコメントを心がけましょう。
+      %p 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    = form_with html: {class: "form-btn"} do |f|
+      =icon('fas', 'comment', class: "comment-icon")
+      = f.submit "コメントする", class: "comment-btn"
+  .Others
+    .Others__title 出品者さんのその他の出品
+    .Others__img
+      .Others__img--new
+        .Label
+          .Label__name 商品名
+          .Label__price お値段円
+          .Label__tax （税込）
+      .Others__img--new
+      .Others__img--new
+      .Others__img--new
+    .Category カテゴリー名（仮）その他の商品
+    .Category__img
+      .Category__img--new
+        .Label
+          .Label__name 商品名
+          .Label__price お値段円
+          .Label__tax （税込）
+      .Category__img--new
+      .Category__img--new
+      .Category__img--new
