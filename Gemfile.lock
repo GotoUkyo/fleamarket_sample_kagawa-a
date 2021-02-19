@@ -122,11 +122,6 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     erubis (2.7.0)
-    ffi (1.14.2)
-    font-awesome-sass (5.15.1)
-      sassc (>= 1.11)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
     excon (0.78.1)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -172,7 +167,6 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (1.8.7)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -334,7 +328,6 @@ GEM
     sshkit-interactive (0.3.0)
       sshkit (~> 1.12)
     temple (0.8.2)
-    thor (1.0.1)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -386,7 +379,6 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano3-unicorn
   capybara (>= 2.15)
-  font-awesome-sass
   carrierwave
   devise
   dotenv-rails
