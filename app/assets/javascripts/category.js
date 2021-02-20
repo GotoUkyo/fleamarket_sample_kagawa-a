@@ -5,7 +5,7 @@ jQuery(function(){
   }
   function appendChildrenBox(insertHTML){ // 子セレクトボックスのhtml作成
     var childSelectHtml = '';
-      childSelectHtml = `<select class="category-select" id="child_category" name="item[category_id]">
+    childSelectHtml = `<select class="category-select" id="child_category" name="item[category_id]">
                         <option value="---">選択してください</option>
                         ${insertHTML}
                         </select>`;
@@ -38,12 +38,12 @@ jQuery(function(){
         // 送られてきたデータをchildrenに代入
         var insertHTML = '';
         children.forEach(function(child){  
-        // forEachでchildに一つずつデータを代入｡子のoptionが一つずつ作成される｡
+          // forEachでchildに一つずつデータを代入｡子のoptionが一つずつ作成される｡
           insertHTML += appendOption(child); 
         });
         appendChildrenBox(insertHTML); 
         $(document).on('change', '#select_category', function(){
-        // 通信成功時に親の選択肢を変えたらイベント発火｡子と孫を削除｡selectのidにかけるのではなく､親要素にかけないと残ってしまう
+          // 通信成功時に親の選択肢を変えたらイベント発火｡子と孫を削除｡selectのidにかけるのではなく､親要素にかけないと残ってしまう
           $('#child_category').remove(); 
           $('#grandchild_category').remove();
         })
