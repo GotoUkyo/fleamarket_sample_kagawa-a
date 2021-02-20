@@ -32,7 +32,7 @@ jQuery(function(){
         dataType: 'json'
       })
       .done(function(children){
-        // 親カテゴリに変化があった場合、子カテゴリ、孫カテゴリのセレクトボックスを一旦削除する（商品情報編集機能実装時に追加）
+        // 下記2行：商品情報編集機能実装時に追加（親カテゴリに変化があった場合、子カテゴリ、孫カテゴリのセレクトボックスを一旦削除する）
         $('#child_category').remove(); 
         $('#grandchild_category').remove();
         // 送られてきたデータをchildrenに代入
