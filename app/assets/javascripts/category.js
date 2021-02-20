@@ -20,48 +20,48 @@ jQuery(function(){
     $('.Detail__select-grandchildren').append(grandchildrenSelectHtml);
   }
 
-
-
   $(document).on('change', '#select_category', function(){  // 親セレクトボックスの選択肢を変えたらイベント発火
-    var category_id = document.getElementById('select_category').value; 
+    var parent_Id = document.getElementById('select_category').value; 
   // ↑ category_idに選択した親のvalueを代入
-    if (category_id != ''){
+    if (parent_Id != ''){
   // ↑ category_idが空ではない場合のみAjax通信を行う｡選択肢を初期選択肢に変えると､通信失敗となってしまうため｡
-      $.ajax({
+    $.ajax({
         url: '/items/category_children',
         type: 'GET',
-        data: { category_id: category_id },
+        data: { parent_id: parent_Id },
         dataType: 'json'
       })
       .done(function(children){
+        // 親カテゴリに変化があった場合、子カテゴリ、孫カテゴリのセレクトボックスを一旦削除する（商品情報編集機能実装時に追加）
+        $('#child_category').remove(); 
+        $('#grandchild_category').remove();
         // 送られてきたデータをchildrenに代入
         var insertHTML = '';
         children.forEach(function(child){  
-  // forEachでchildに一つずつデータを代入｡子のoptionが一つずつ作成される｡
+        // forEachでchildに一つずつデータを代入｡子のoptionが一つずつ作成される｡
           insertHTML += appendOption(child); 
         });
         appendChildrenBox(insertHTML); 
         $(document).on('change', '#select_category', function(){
-  // 通信成功時に親の選択肢を変えたらイベント発火｡子と孫を削除｡selectのidにかけるのではなく､親要素にかけないと残ってしまう
+        // 通信成功時に親の選択肢を変えたらイベント発火｡子と孫を削除｡selectのidにかけるのではなく､親要素にかけないと残ってしまう
           $('#child_category').remove(); 
           $('#grandchild_category').remove();
         })
       })
       .fail(function(){
-        alert('カテゴリー取得に失敗しました');
+        alert('aカテゴリー取得に失敗しました');
       })
     }
   });
 
-
   // document､もしくは親を指定しないと発火しない
   $(document).on('change', '#child_category', function(){
-    var category_id = document.getElementById('child_category').value;
-    if (category_id != '---'){
+    var child_Id = document.getElementById('child_category').value;
+    if (child_Id != '---'){
     $.ajax ({
       url: '/items/category_grandchildren',
       type: 'GET',
-      data: { category_id: category_id },
+      data: { child_id: child_Id },
       dataType: 'json'
     })
     .done(function(grandchildren){
@@ -75,7 +75,7 @@ jQuery(function(){
           })
         })  
         .fail(function(){
-          alert('カテゴリー取得に失敗しました');
+          alert('bカテゴリー取得に失敗しました');
         })
     }
   });
