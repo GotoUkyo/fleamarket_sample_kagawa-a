@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :item do
     name             {"かまくら"}
     description      {"かまくら"}
+    category_id      { 1 }
     state_id         { 1 }
     postage_id       { 1 }
     prefecture_id    { 1 }

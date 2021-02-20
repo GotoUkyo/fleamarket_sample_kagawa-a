@@ -4,9 +4,10 @@
       = image_tag src="/images/logo/logo.png", class: "logo__img"
     .Search-bar
       .Search-bar__inputBox
-        %input.Search-bar__inputBox--text{placeholder: "キーワードから探す", "type": "search"}
-        .Search-bar__inputBox--btn
-          = image_tag src="/images/icon/icon-search_1.png", class: "Search-bar__inputBox--btn__icon"
+        = form_with url: search_items_path, method: :get, local: true do |f|
+          = f.text_field :keyword, placeholder:"キーワードから探す",class:"Search-bar__inputBox--text"
+          = button_tag type: 'submit', class: "Search-bar__inputBox--btn" do
+            = icon('fas', 'search fa-lg',class: "Search-bar__inputBox--btn__icon")
   .under
     .Search-menu
       .Search-menu__category
@@ -23,7 +24,7 @@
           ブランドから探す
     .Btn
       - if user_signed_in?
-        = button_to "ログアウト", destroy_user_session_path, method: :delete, class: "Btn__login"
+        = button_to "ログアウト", destroy_user_session_path, method: :delete, class: "Btn__login logout"
         = link_to "マイページ", users_path, class: "Btn__join"
       - else
         = link_to "ログイン", new_user_session_path, class: "Btn__login"

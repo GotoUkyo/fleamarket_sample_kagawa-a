@@ -6,8 +6,7 @@
   .Item
     .Item__title
       = @item.name
-    = image_tag @item.images[0].name.url, class:"Item__img"
-
+    = image_tag @item.images[0].name.url, class: "Item__img"
     .Item__little
       .Item__little--1
       .Item__little--2
@@ -22,10 +21,10 @@
       .Buy-btn__edit
         = link_to "商品を編集する",edit_item_path,class: "Buy-btn__text" 
       .Buy-btn__delete
-        = link_to "商品を削除する",items_path,class: "Buy-btn__text"
+        = link_to "商品を削除する", @item, method: :delete ,class: "Buy-btn__text"
     -else
       .Buy-btn
-        = link_to "購入画面へ進む",items_path,class: "Buy-btn__text" 
+        = link_to "購入画面へ進む",purchase_item_path,class: "Buy-btn__text" 
     .Item__text
       = @item.description
     %table.Table
@@ -36,11 +35,11 @@
       %tr
         %th{rowspan: "1", class: "Table__title"} カテゴリー
         %td.category.category-top
-          = link_to "#{@category_parent.name}","#", class: "color" 
+          = link_to "#{@category_parent.name}", "#", class: "color"
         %td.category
-          = link_to "#{@category_child.name}","#", class: "color" 
+          = link_to "#{@category_child.name}", "#", class: "color"
         %td.category.category-bottom
-          = link_to "#{@category_grandchild.name}","#", class: "color" 
+          = link_to "#{@category_grandchild.name}", "#", class: "color"
       %tr
         %th.Table__title ブランド
         %td

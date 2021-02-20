@@ -1,16 +1,16 @@
 class ItemsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:show, :index]
   before_action :show_all_instance, only: [:edit, :update]     # 商品情報編集機能実装時に追加
+  before_action :authenticate_user!, except: [:show, :index ,:search]
+  before_action :set_item, only: [:show, :destroy]
 
-  def index
-    @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
+  def purchase
+    @item = Item.find(params[:id])
     @address = Address.find(current_user.id)
   end
 
   def show
     @categories = Category.roots
-    @item = Item.find(params[:id])
     @category_id = @item.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
@@ -120,6 +120,19 @@ class ItemsController < ApplicationController
     redirect_to item_path                            # 商品情報編集後は商品詳細ページにリダイレクト
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
+  def destroy
+    if @item.user_id == current_user.id
+       @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   # 出品時のデータをDBに送るストロングパラメーター
   private
   def item_params
@@ -142,5 +155,8 @@ class ItemsController < ApplicationController
     @user = User.find(@item.user_id)                              # 該当商品の出品者情報をインスタンス変数へ代入
     @images = Image.where(item_id: params[:id])                   # 該当商品の画像情報をインスタンス変数へ代入
     #@images_first = Image.where(item_id: params[:id]).first      # 複数枚画像登録の追加実装時に必要かな？
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end

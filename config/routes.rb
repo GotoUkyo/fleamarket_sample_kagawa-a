@@ -20,10 +20,12 @@ Rails.application.routes.draw do
     collection do
       get 'category_children', defaults: { format: 'json' }
       get 'category_grandchildren', defaults: { format: 'json' }
+      get 'search'
     end
     member do
       get 'category_children', defaults: { format: 'json' }
       get 'category_grandchildren', defaults: { format: 'json' }
+      get 'purchase', to: 'items#purchase'
     end
     # routingにおけるcollectionとmemberの違いは生成するroutingに:idがつくかどうか
     # 参考URL：https://qiita.com/k152744/items/141345e34fc0095217fe
@@ -38,7 +40,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :index] do
     collection do
       get 'show', to: 'users#show'
     end
