@@ -50,8 +50,8 @@ class ItemsController < ApplicationController
   # 商品情報編集機能実装時に追加
   #------------------------
   def edit
-    # ログインユーザが出品した商品であればif文に内包された処理を実行
-    if @item.user_id == current_user.id
+    # ログインユーザが出品した商品かつ未購入状態の商品であればif文に内包された処理を実行
+    if @item.user_id == current_user.id and @item.deal_state_id != 1
       # 該当商品の孫・子・親カテゴリーを変数へ代入
       # binding.pryして確認した格納データイメージは下記のとおり
       # 例えば、parentの中身を覗くと・・・
@@ -101,10 +101,10 @@ class ItemsController < ApplicationController
       # 孫カテゴリーを全てインスタンス変数へ代入
       @category_grandchildren_array = Category.where(ancestry: grandchild.ancestry)
     
-    # ログインユーザが出品した商品でない場合はelse文に内包された処理を実行
+    # ログインユーザが出品した商品でない場合もしくは商品が購入済みの状態であればelse文に内包された処理を実行
     else
-      flash[:alert] = 'あなたはこの商品の出品者ではないので商品情報の編集はできません。'     # 商品情報を編集できない旨をフラッシュメッセージで表示
-      redirect_to item_path                                                       # 商品詳細ページにリダイレクト
+      flash[:alert] = 'すでに購入された商品かあなたが出品者の商品ではないため商品情報の編集はできません。'     # 商品情報を編集できない旨をフラッシュメッセージで表示
+      redirect_to item_path                                                                      # 商品詳細ページにリダイレクト
     end
   end
 
