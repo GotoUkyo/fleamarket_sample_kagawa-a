@@ -122,7 +122,7 @@ background-image: image-url(user-bg-92abc43dd6bd62c589748715160c55a1eb8a3900a0bd
         margin-bottom: 30px;
       }
 
-        .under{
+        .underpart{
           height: 50px;
           width: 80%;
           border: solid 1px $color-main;
@@ -149,12 +149,12 @@ background-image: image-url(user-bg-92abc43dd6bd62c589748715160c55a1eb8a3900a0bd
         }
       }
 
-        .under.right{
+        .underpart.right{
           height: 50px;
           background-color: $color-main;
           width: 50%;
         }
  
-        .under.under{
+        .underpart.under{
           width: 50%;
          }
