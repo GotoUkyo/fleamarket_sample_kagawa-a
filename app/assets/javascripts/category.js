@@ -22,10 +22,10 @@ jQuery(function(){
 
   $(document).on('change', '#select_category', function(){  // 親セレクトボックスの選択肢を変えたらイベント発火
     var parent_Id = document.getElementById('select_category').value; 
-  // ↑ category_idに選択した親のvalueを代入
+    // ↑ category_idに選択した親のvalueを代入
     if (parent_Id != ''){
-  // ↑ category_idが空ではない場合のみAjax通信を行う｡選択肢を初期選択肢に変えると､通信失敗となってしまうため｡
-    $.ajax({
+    // ↑ category_idが空ではない場合のみAjax通信を行う｡選択肢を初期選択肢に変えると､通信失敗となってしまうため｡
+      $.ajax({
         url: '/items/category_children',
         type: 'GET',
         data: { parent_id: parent_Id },
@@ -49,7 +49,7 @@ jQuery(function(){
         })
       })
       .fail(function(){
-        alert('aカテゴリー取得に失敗しました');
+        alert('親カテゴリー取得に失敗しました');
       })
     }
   });
@@ -58,25 +58,25 @@ jQuery(function(){
   $(document).on('change', '#child_category', function(){
     var child_Id = document.getElementById('child_category').value;
     if (child_Id != '---'){
-    $.ajax ({
-      url: '/items/category_grandchildren',
-      type: 'GET',
-      data: { child_id: child_Id },
-      dataType: 'json'
-    })
-    .done(function(grandchildren){
-      var insertHTML = '';
-      grandchildren.forEach(function(grandchild){
-        insertHTML += appendOption(grandchild);
+      $.ajax ({
+        url: '/items/category_grandchildren',
+        type: 'GET',
+        data: { child_id: child_Id },
+        dataType: 'json'
+      })
+      .done(function(grandchildren){
+        var insertHTML = '';
+        grandchildren.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild);
         });
         appendGrandchildrenBox(insertHTML);  
         $(document).on('change', '#child_category',function(){
           $('#grandchild_category').remove();
-          })
-        })  
-        .fail(function(){
-          alert('bカテゴリー取得に失敗しました');
         })
+      })  
+      .fail(function(){
+        alert('子カテゴリー取得に失敗しました');
+      })
     }
   });
 });
