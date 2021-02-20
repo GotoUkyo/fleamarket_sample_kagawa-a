@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   #------------------------
   def edit
     # ログインユーザが出品した商品かつ未購入状態の商品であればif文に内包された処理を実行
-    if @item.user_id == current_user.id and @item.deal_state_id != 1
+    if @item.user_id == current_user.id and @item.deal_state_id == 0
       # 該当商品の孫・子・親カテゴリーを変数へ代入
       # binding.pryして確認した格納データイメージは下記のとおり
       # 例えば、parentの中身を覗くと・・・
