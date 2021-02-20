@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
 
-  def index
-    @item = Item.last # @item = Item.find(params[:id])←最終的にこのコードに書き換えます。
+  def purchase
+    @item = Item.find(params[:id])
     @address = Address.find(current_user.id)
   end
 
