@@ -62,7 +62,6 @@
       padding: 60px 0 20px 0;
     }
     &--text{
-      font-size: 12px;
       line-height: 32px;
     }
   }
@@ -75,7 +74,6 @@
       padding: 60px 0 20px 0;
     }
     &--text{
-      font-size: 12px;
       line-height: 32px;
     }
   }
@@ -87,7 +85,6 @@
       padding: 60px 0 20px 0;
     }
     &--text{
-      font-size: 12px;
       line-height: 32px;
     }
   }
@@ -113,8 +110,13 @@
         margin-right: 5px;
       }
       &__name{
-        padding-top: 3px;
+        font-size: 14px;
+        padding-top: 6px;
       }
     }
   }
+}
+
+p{
+  font-size: 12px;
 }
