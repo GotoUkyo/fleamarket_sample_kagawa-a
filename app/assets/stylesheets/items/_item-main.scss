@@ -75,7 +75,6 @@
     &--1{
       width: 75px;
       height: 75px;
-      background-color: skyblue;
     }
     &--2{
       width: 75px;
@@ -129,7 +128,6 @@
   .Table{
     margin: 0 auto 0 auto;
     border: 1px solid var(--border-color);
-    font-size: 14px;
     &__title{
       width: 150px;
       background-color: rgb(240, 240, 240);
@@ -139,14 +137,19 @@
     &__text{
       margin-left: 15px;
       width: 460px;
+      font-size: 14px;
     }
     tr{
       height: 60px;
       border-bottom: 1px solid var(--border-color);
     }
+    th{
+      font-size: 14px;
+    }
     .color{
       text-decoration: none;
       color: dodgerblue;
+      font-size: 14px;
       margin-left: 15px;
     }
     .category-top{

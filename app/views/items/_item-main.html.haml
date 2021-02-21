@@ -8,7 +8,7 @@
       = @item.name
     = image_tag @item.images[0].name.url, class: "Item__img"
     .Item__little
-      .Item__little--1
+      = image_tag @item.images[0].name.url, class: "Item__little--1"
       .Item__little--2
       .Item__little--3
       .Item__little--4
@@ -18,13 +18,13 @@
     .Item__tax 
       = @item.postage.name
     -if user_signed_in? && current_user.id == @item.user_id
-      .Buy-btn__edit
-        = link_to "商品を編集する",edit_item_path,class: "Buy-btn__text" 
-      .Buy-btn__delete
-        = link_to "商品を削除する", @item, method: :delete ,class: "Buy-btn__text"
+      = link_to items_path,class: "Buy-btn__edit" do
+        .Buy-btn__text 商品を編集する
+      = link_to @item, method: :delete ,class: "Buy-btn__delete" do
+        .Buy-btn__text 商品を削除する
     -else
-      .Buy-btn
-        = link_to "購入画面へ進む",purchase_item_path,class: "Buy-btn__text" 
+      = link_to purchase_item_path,class: "Buy-btn" do
+        .Buy-btn__text 購入画面へ進む
     .Item__text
       = @item.description
     %table.Table
@@ -83,7 +83,7 @@
       =icon('fas', 'comment', class: "comment-icon")
       = f.submit "コメントする", class: "comment-btn"
   .Others
-    .Others__title 出品者さんのその他の出品
+    .Others__title #{@item.user.nick_name}さんのその他の出品
     .Others__img
       .Others__img--new
         .Label
@@ -93,7 +93,7 @@
       .Others__img--new
       .Others__img--new
       .Others__img--new
-    .Category カテゴリー名（仮）その他の商品
+    .Category #{@category_grandchild.name}（#{@category_parent.name}）その他の商品
     .Category__img
       .Category__img--new
         .Label
