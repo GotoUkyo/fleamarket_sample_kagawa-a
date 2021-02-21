@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
 
-  before_action :show_all_instance, only: [:edit, :update]     # 商品情報編集機能実装時に追加
   before_action :authenticate_user!, except: [:show, :index ,:search]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def purchase
     @item = Item.find(params[:id])
@@ -50,6 +49,7 @@ class ItemsController < ApplicationController
   # 商品情報編集機能実装時に追加
   #------------------------
   def edit
+    @images = Image.where(item_id: params[:id])
     # ログインユーザが出品した商品かつ未購入状態の商品であればif文に内包された処理を実行
     if @item.user_id == current_user.id and @item.deal_state_id == 0
       # 該当商品の孫・子・親カテゴリーを変数へ代入
@@ -114,10 +114,17 @@ class ItemsController < ApplicationController
   # 商品情報編集機能実装時に追加
   #-----------------------------
   def update
-    @item = Item.find(params[:id])                   # 該当商品に紐付けられた商品情報をitemsテーブルから引っ張ってくる
-    @item.update(update_params)                      # 商品情報を更新
-    flash[:notice] = '商品情報の編集が完了しました。'     # 商品情報を編集できた旨をフラッシュメッセージで表示
-    redirect_to item_path                            # 商品情報編集後は商品詳細ページにリダイレクト
+    if @item.valid?
+      @item.update(item_params)                     # 商品情報を更新
+      flash[:notice] = '商品情報の編集が完了しました。'  # 商品情報を編集できた旨をフラッシュメッセージで表示
+      redirect_to item_path(@item)                  # 商品詳細ページにリダイレクト
+    else
+      @images = Image.where(item_id: params[:id])
+      flash[:notice] = '商品情報の編集に失敗しました。'  # 商品情報の編集に失敗した旨をフラッシュメッセージで表示
+      render :edit                                  # 商品情報編集画面にレンダー
+    end
+    # redirect_toとrenderの違い
+    # 参考URL：https://qiita.com/morikuma709/items/e9146465df2d8a094d78
   end
 
   def search
@@ -136,25 +143,12 @@ class ItemsController < ApplicationController
   # 出品時のデータをDBに送るストロングパラメーター
   private
   def item_params
-    params.require(:item).permit(:name,:description,:brand,:state_id,:postage_id,:prefecture_id,:day_id,:price,:category_id, images_attributes: [:name]).merge(user_id: current_user.id)
-  end
-
-  # 商品情報編集時用のストロングパラメーター
-  def update_params
     params.require(:item).permit(:name,:description,:brand,:state_id,:postage_id,:prefecture_id,:day_id,:price,:category_id, images_attributes: [:name, :id]).merge(user_id: current_user.id)
   end
 
   def address_params
     params.require(:address).permit(:postcode,:prefecture_id,:city,:block,:building,:phone_number,:user_id).merge(user_id: current_user.id)
   end
-
-  def show_all_instance                                           # 商品情報編集機能実装時に追加
-    # インスタンス変数を宣言する順番重要！！
-    # @itemを宣言してからでないと、@userなど宣言できずエラーが出る！！
-    @item = Item.find(params[:id])                                # 該当商品の情報をインスタンス変数へ代入
-    @user = User.find(@item.user_id)                              # 該当商品の出品者情報をインスタンス変数へ代入
-    @images = Image.where(item_id: params[:id])                   # 該当商品の画像情報をインスタンス変数へ代入
-    #@images_first = Image.where(item_id: params[:id]).first      # 複数枚画像登録の追加実装時に必要かな？
 
   def set_item
     @item = Item.find(params[:id])
