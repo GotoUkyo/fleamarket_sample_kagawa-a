@@ -61,8 +61,13 @@
       .nav
         .nav__text 発送元・お届け先住所変更
         .nav__mark >
-      .nav
-        .nav__text 支払い方法
+      .nav-credit
+        -if ::Credit.where(user_id: current_user.id).exists?
+          = form_tag(controller: :credits, action: :show, method: :post) do
+            %button.credit-btn クレジットカードを削除する
+        - else
+          = form_tag(controller: :credits, action: :show, method: :post) do
+            %button.credit-btn クレジットカードを登録する
         .nav__mark >
       .nav
         .nav__text メール/パスワード 
@@ -76,12 +81,3 @@
       = button_to destroy_user_session_path, method: :delete, class: "nav-delete" do
         .nav-delete__text ログアウト
         .nav-delete__mark ＞
-
-      -if ::Credit.where(user_id: current_user.id).exists?
-        = form_tag(controller: :credits, action: :show, method: :post) do
-          %button クレジットカードを削除する
-      - else
-        = form_tag(controller: :credits, action: :show, method: :post) do
-          %button クレジットカードを登録する
-      = link_to root_path, class: "aaa" do
-        トップページに戻る
