@@ -21,9 +21,7 @@
           .Image-space__box--in
             出品画像を編集したい場合は画像ファイルを選択しなおしてください。
             = image.file_field :name
-            -#= image.hidden_field :id, value: img.id, name:"product[image][#{i}]"
-            -# =icon('fas', 'camera', class: "camera-icon")
-            -# %p クリックしてファイルをアップロード
+
     .Item-new
       .Item-new__name
         .text 商品名
