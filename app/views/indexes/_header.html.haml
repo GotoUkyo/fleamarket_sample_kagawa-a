@@ -1,7 +1,8 @@
 .body-header
   .up
     .logo
-      = image_tag src="/images/logo/logo.png", class: "logo__img"
+      = link_to root_path do
+        = image_tag src="/images/logo/logo.png", class: "logo__img"
     .Search-bar
       .Search-bar__inputBox
         = form_with url: search_items_path, method: :get, local: true do |f|

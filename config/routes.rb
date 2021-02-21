@@ -42,6 +42,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index] do
     collection do
+      get 'index', to: 'users#index'
       get 'show', to: 'users#show'
     end
   end
