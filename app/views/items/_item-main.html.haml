@@ -19,7 +19,7 @@
       = @item.postage.name
     -if user_signed_in? && current_user.id == @item.user_id
       .Buy-btn__edit
-        = link_to "商品を編集する",items_path,class: "Buy-btn__text" 
+        = link_to "商品を編集する",edit_item_path,class: "Buy-btn__text" 
       .Buy-btn__delete
         = link_to "商品を削除する", @item, method: :delete ,class: "Buy-btn__text"
     -else
