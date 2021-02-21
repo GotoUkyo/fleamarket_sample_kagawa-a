@@ -83,97 +83,101 @@ $color-sub4:rgb(211, 211, 211);
   }
 }
 
-  .usermypage_main{
-    width:700px;
-   
-    &__info{
-      background:$color-main;
-      text-align: center;
+.usermypage_main{
+  width:700px;
+
+  &__info{
+    background:$color-main;
+    text-align: center;
 
 
-      &_tab{
-        height: 70px;
-        width: 100%;
-        display: flex;
-        font-weight: bold;
-        background-color: $color-main;
+    &_tab{
+      height: 70px;
+      width: 100%;
+      display: flex;
+      font-weight: bold;
+      background-color: $color-main;
 
-        .tab-left{
-          width:100%;
-          line-height: 70px;
-          border-top: 2px solid rgb(56, 204, 197);
-        }
-      
-        .tab-right{
-          width:100%;
-          line-height: 70px;
-          background-color: $color-sub4;
-        }
+      .tab-left{
+        width:100%;
+        line-height: 70px;
+        border-top: 2px solid rgb(56, 204, 197);
+      }
+
+      .tab-right{
+        width:100%;
+        line-height: 70px;
+        background-color: $color-sub4;
       }
     }
   }
+}
 
-      .userpege_main_info_111{
-        width: 100%;
-        background-color: $color-main;
-        display: flex;
-        flex-direction: column;
-      }
+.userpege_main_info_111{
+  width: 100%;
+  background-color: $color-main;
+  display: flex;
+  flex-direction: column;
+}
 
-        .info_111-menu{
-          height: 60px;
-          border-bottom: 1px solid $color-sub;
-          //background-color: red;
-        }
+.info_111-menu{
+  height: 60px;
+  border-bottom: 1px solid $color-sub;
+}
 
-        .underpart{
-          height: 50px;
-          width: 95%;
-          border: solid 1px $color-main;
-          font-size: 13px;
-          text-align: center;
-          margin: 15px auto;
-          background: $color-sub4;
-          align-items: flex-end;
-          line-height: 50px;
-        }
-        
-      .usermypage_main__news{
-        width:100%;
-        margin-top: 50px;
-        background-color: $color-main;
-        padding: 16px, 0;
-        margin-bottom: 25px;
+.underpart{
+  height: 50px;
+  width: 95%;
+  border: solid 1px $color-main;
+  font-size: 13px;
+  text-align: center;
+  margin: 15px auto;
+  background: $color-sub4;
+  align-items: flex-end;
+  line-height: 50px;
+}
 
-        .news-title{
-          height: 60px;
-          line-height: 75px;
-          padding-left: 20px;
-        }
+.usermypage_main__news{
+  width: 100%;
+  margin-top: 50px;
+  background-color: $color-main;
+  padding: 16px, 0;
+  margin-bottom: 25px;
 
-        &-1{
-          display: flex;
-          padding-top: 15px;
-        }
-        &-main{
-          height: calc(100% - 92px);
-          background-color: $color-main;
-        }
-      }
+  .news-title{
+    height: 60px;
+    line-height: 75px;
+    padding-left: 20px;
+  }
 
-        .tab-left{
-          width:100%;
-          line-height: 70px;
-          border-top: 2px solid rgb(56, 204, 197);
-          background-color: $color-main;
-          text-align: center;
-          font-weight: bold;
-        }
+  &-1{
+    display: flex;
+    padding-top: 15px;
+  }
+  &-main{
+    height: 250px;
+    background-color: $color-main;
+    .news-text{
+      text-align: center;
+      line-height: 250px;
+      color: $color-sub3;
+    }
+  }
+}
+
+.tab-left{
+  width:100%;
+  line-height: 70px;
+  border-top: 2px solid rgb(56, 204, 197);
+  background-color: $color-main;
+  text-align: center;
+  font-weight: bold;
+}
  
-        .tab-right{
-          width:100%;
-          line-height: 70px;
-          background-color: $color-sub4;
-          text-align: center;
-          font-weight: bold;
-         }
+.tab-right{
+  width:100%;
+  line-height: 70px;
+  background-color: $color-sub4;
+  text-align: center;
+  font-weight: bold;
+}
