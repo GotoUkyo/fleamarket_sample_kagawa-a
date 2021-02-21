@@ -1,0 +1,92 @@
+$color-main: rgb(255, 255, 255);
+$color-sub: #f5f5f5;
+$color-sub1: rgb(243, 243, 243);
+$color-sub2:rgba(201, 201, 201, 0.555);
+$color-sub3:rgb(172, 172, 172);
+$color-sub4:rgb(211, 211, 211);
+
+* {
+  box-sizing: border-box;
+}
+
+@import "tops/tops-main-mixin";
+
+@mixin side-bar-style{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-sub;
+  background-color: $color-main;
+}
+
+.side-bar-body{
+  display: flex;
+  flex-direction: column;
+
+  .sidebar{
+    width:280px;
+
+    .usermypage_sidebar{
+      background:$color-main;
+
+      .nav{
+        @include side-bar-style;
+        &__text{
+          font-size: 13px;
+          padding-left: 20px;
+        }
+        &__mark{
+          padding: 0 15px 3px 0;
+        }
+      }
+    }
+
+    .mypage-side-bar{
+      margin-top: 50px;
+      &__title{
+        font-weight: bold;
+        padding-bottom: 5px;
+      }
+      .nav{
+        @include side-bar-style;
+        &__text{
+          font-size: 13px;
+          padding-left: 20px;
+        }
+        &__mark{
+          padding: 0 15px 3px 0;
+        }
+      }
+    }
+
+    .usermypage_sidebar1{
+      padding-top: 50px;
+      
+      .nav{
+        @include side-bar-style;
+        &__text{
+          font-size: 13px;
+          padding-left: 20px;
+        }
+        &__mark{
+          padding: 0 15px 3px 0;
+        }
+      }
+      .nav-delete{
+        @include side-bar-style;
+        width: 280px;
+        border: none;
+        &__text{
+          font-size: 13px;
+          padding-left: 15px;
+        }
+        &__mark{
+          font-size: 12px;
+          font-weight: bold;
+          padding: 0 8px 3px 0;
+        }
+      }
+    }
+  }
+}

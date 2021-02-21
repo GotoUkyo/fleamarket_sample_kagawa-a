@@ -7,77 +7,74 @@ $color-sub4:rgb(211, 211, 211);
 
 * {
   box-sizing: border-box;
-  // font-size: large;
 }
+
+@import "tops/tops-main-mixin";
 
 .usermypage{
   background-color: $color-sub;
   
   .usermypage_top{
-    height: 60px;
     width: 100%;
+    height: 50px;
     background-color: $color-main;
-    padding: 20px;
-    margin: 0 0 40px 0;
+    box-shadow: 0 4px 4px rgb(223, 223, 223);
+    line-height: 16px;
   }
 }
 
 .usermypage_contents{
-  width: 1100px;
-  margin: 0 auto;
+  width: 1050px;
+  margin: 40px auto 0 auto;
   background:$color-sub;
   display: flex;
   justify-content: space-between;
-
-  .sidebar{
-    width:280px;
-  }
-
-  .usermypage_sidebar{
-    height: 100px;
-    background:$color-main;
-    margin-bottom:50px;
-
-    .nav{
-      height: 50px;
-      display: flex;
-      padding: 0 25px;
-      align-items: center;
-      border-bottom: 1px solid $color-sub2;
-      }
-    }
-
-  .usermypage_sidebar1{
-    height: 100px;
-    
-    .nav{
-      height: 50px;
-      padding: 0 25px;
-      display: flex;
-      background: $color-main;
-      align-items: center;
-      border-bottom: 1px solid $color-sub2;
-      }
-  }
 }
 
 .usermypage_main_profile{
-width: 700px;
-height: 200px;
-text-align: center;
-margin-bottom: 40px;
-background-image: image-url(user-bg-92abc43dd6bd62c589748715160c55a1eb8a3900a0bdd5b44ee9058026e46754);
+  width: 700px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 40px;
+  background-image: image-url(user-bg-92abc43dd6bd62c589748715160c55a1eb8a3900a0bdd5b44ee9058026e46754);
 
   img{
     margin-top: 40px;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
   }
 
-  p{
+  .user-name{
     height: 20px;
+    font-weight: bold;
     text-align: center;
+  }
+  .user-count{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 10px;
+    .evaluation{
+      display: flex;
+      margin-right: 10px;
+      .p-b{
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-left: 10px;
+      }
     }
+    .listing{
+      display: flex;
+      margin-left: 10px;
+      .p-b{
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
 
   p{
     .image_tag{

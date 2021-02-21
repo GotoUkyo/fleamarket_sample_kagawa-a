@@ -1,42 +1,29 @@
+= render "indexes/header"
 - breadcrumb :mypage
 
 %main.usermypage
 
   .usermypage_top
-  = render "layouts/breadcrumbs"
+    = render "layouts/breadcrumbs"
 
 
   .usermypage_contents
-    .sidebar
-      .usermypage_sidebar
-        .nav
-          = current_user.nick_name
-          さんのマイページ
-        .nav 出品した商品＿売却済み
-      
-      .usermypage_sidebar1
-        %p 設定
 
-        .nav 支払い方法
-        -if ::Credit.where(user_id: current_user.id).exists?
-          = form_tag(controller: :credits, action: :show, method: :post) do
-            %button クレジットカードを削除する
-        - else
-          = form_tag(controller: :credits, action: :show, method: :post) do
-            %button クレジットカードを登録する
-        .nav
-          = button_to "ログアウト", destroy_user_session_path, method: :delete, class: "Btn__login logout"
-        = link_to root_path, class: "aaa" do
-          トップページに戻る
-
+    = render "side-bar"
 
     .usermypage_main
 
       .usermypage_main_profile
         = image_tag 'member_photo_noimage_thumb.png'
          
-        %P　フリマ
-        %P　評価 2 出品数　2
+        .user-name フリマ
+        .user-count
+          .evaluation
+            .p 評価
+            .p-b 2
+          .listing
+            .p 出品数
+            .p-b 2
         
       .usermypage_main__info
         .usermypage_main__info_tab1
@@ -54,3 +41,5 @@
           %p.underpart.under 過去の取引
           
         .usermypage_main__news-main
+
+= render "indexes/footer"
