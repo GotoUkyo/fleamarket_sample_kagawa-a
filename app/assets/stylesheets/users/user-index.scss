@@ -107,7 +107,7 @@ $color-sub4:rgb(211, 211, 211);
       .tab-right{
         width:100%;
         line-height: 70px;
-        background-color: $color-sub4;
+        background-color: $color-sub2;
       }
     }
   }
@@ -132,7 +132,7 @@ $color-sub4:rgb(211, 211, 211);
   font-size: 13px;
   text-align: center;
   margin: 15px auto;
-  background: $color-sub4;
+  background: $color-sub2;
   align-items: flex-end;
   line-height: 50px;
 }
@@ -177,7 +177,7 @@ $color-sub4:rgb(211, 211, 211);
 .tab-right{
   width:100%;
   line-height: 70px;
-  background-color: $color-sub4;
+  background-color: $color-sub2;
   text-align: center;
   font-weight: bold;
 }
