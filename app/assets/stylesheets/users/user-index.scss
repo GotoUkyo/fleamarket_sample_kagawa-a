@@ -57,7 +57,7 @@ $color-sub4:rgb(211, 211, 211);
     .evaluation{
       display: flex;
       margin-right: 10px;
-      .p-b{
+      .e-b{
         font-size: 15px;
         font-weight: bold;
         line-height: 20px;
@@ -67,7 +67,7 @@ $color-sub4:rgb(211, 211, 211);
     .listing{
       display: flex;
       margin-left: 10px;
-      .p-b{
+      .e-b{
         font-size: 15px;
         font-weight: bold;
         line-height: 20px;
@@ -87,54 +87,69 @@ $color-sub4:rgb(211, 211, 211);
     width:700px;
    
     &__info{
-      width:100%;
       background:$color-main;
-      padding-bottom: 45px;
       text-align: center;
 
-      &_tab1{
+
+      &_tab{
+        height: 70px;
         width: 100%;
         display: flex;
+        font-weight: bold;
         background-color: $color-main;
 
-        p{
+        .tab-left{
           width:100%;
-          height: 100%;
-          line-height: 50px;
+          line-height: 70px;
+          border-top: 2px solid rgb(56, 204, 197);
         }
       
-        .right{
+        .tab-right{
           width:100%;
-          height: 100%;
-          background-color: $color-sub3;
+          line-height: 70px;
+          background-color: $color-sub4;
         }
       }
     }
   }
 
       .userpege_main_info_111{
-        height: 300px;
         width: 100%;
         background-color: $color-main;
-        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
       }
+
+        .info_111-menu{
+          height: 60px;
+          border-bottom: 1px solid $color-sub;
+          //background-color: red;
+        }
 
         .underpart{
           height: 50px;
-          width: 80%;
+          width: 95%;
           border: solid 1px $color-main;
+          font-size: 13px;
           text-align: center;
-          margin: 0 auto;
+          margin: 15px auto;
           background: $color-sub4;
+          align-items: flex-end;
+          line-height: 50px;
         }
         
       .usermypage_main__news{
         width:100%;
-        height:475px;
         margin-top: 50px;
-        background:$color-sub1;
+        background-color: $color-main;
         padding: 16px, 0;
         margin-bottom: 25px;
+
+        .news-title{
+          height: 60px;
+          line-height: 75px;
+          padding-left: 20px;
+        }
 
         &-1{
           display: flex;
@@ -146,12 +161,19 @@ $color-sub4:rgb(211, 211, 211);
         }
       }
 
-        .underpart.right{
-          height: 50px;
+        .tab-left{
+          width:100%;
+          line-height: 70px;
+          border-top: 2px solid rgb(56, 204, 197);
           background-color: $color-main;
-          width: 50%;
+          text-align: center;
+          font-weight: bold;
         }
  
-        .underpart.under{
-          width: 50%;
+        .tab-right{
+          width:100%;
+          line-height: 70px;
+          background-color: $color-sub4;
+          text-align: center;
+          font-weight: bold;
          }
