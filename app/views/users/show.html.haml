@@ -1,7 +1,7 @@
 - breadcrumb :mypage
 = render "layouts/breadcrumbs"
 
--# if:クレジットカード情報が登録されていなければ実行、else:クレジットカード情報が登録されていれば実行
+-# if:クレジットカード情報が登録されていれば実行、else:クレジットカード情報が登録されていなければ実行
 = current_user.nick_name
 さんのマイページ
 -if ::Credit.where(user_id: current_user.id).exists?
