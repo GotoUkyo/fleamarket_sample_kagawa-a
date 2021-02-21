@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index ,:search]
   before_action :set_item, only: [:show, :destroy]
 
-
   def purchase
     @item = Item.find(params[:id])
     @address = Address.find(current_user.id)
