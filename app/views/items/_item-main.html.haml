@@ -18,7 +18,7 @@
     .Item__tax 
       = @item.postage.name
     -if user_signed_in? && current_user.id == @item.user_id
-      = link_to items_path,class: "Buy-btn__edit" do
+      = link_to edit_item_path,class: "Buy-btn__edit" do
         .Buy-btn__text 商品を編集する
       = link_to @item, method: :delete ,class: "Buy-btn__delete" do
         .Buy-btn__text 商品を削除する
