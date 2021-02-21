@@ -36,6 +36,8 @@ Rails.application.routes.draw do
       post 'show', to: 'credits#show'
       post 'register', to: 'credits#register'
       post 'delete', to: 'credits#delete'
+    end
+    member do
       post 'buy', to: 'credits#buy'
     end
   end
