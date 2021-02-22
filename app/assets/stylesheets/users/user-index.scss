@@ -1,0 +1,183 @@
+$color-main: rgb(255, 255, 255);
+$color-sub: #f5f5f5;
+$color-sub1: rgb(243, 243, 243);
+$color-sub2:rgba(201, 201, 201, 0.555);
+$color-sub3:rgb(172, 172, 172);
+$color-sub4:rgb(211, 211, 211);
+
+* {
+  box-sizing: border-box;
+}
+
+@import "tops/tops-main-mixin";
+
+.usermypage{
+  background-color: $color-sub;
+  
+  .usermypage_top{
+    width: 100%;
+    height: 50px;
+    background-color: $color-main;
+    box-shadow: 0 4px 4px rgb(223, 223, 223);
+    line-height: 16px;
+  }
+}
+
+.usermypage_contents{
+  width: 1020px;
+  margin: 40px auto 0 auto;
+  background:$color-sub;
+  display: flex;
+  justify-content: space-between;
+}
+
+.usermypage_main_profile{
+  width: 700px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 40px;
+  background-image: image-url(user-bg-92abc43dd6bd62c589748715160c55a1eb8a3900a0bdd5b44ee9058026e46754);
+
+  .mypage-p_img{
+    margin-top: 40px;
+    height: 60px;
+    width: 60px;
+  }
+
+  .mypage_user-name{
+    height: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .mypage_user-count{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 10px;
+    .evaluation{
+      display: flex;
+      margin-right: 10px;
+      .e-b{
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-left: 10px;
+      }
+    }
+    .listing{
+      display: flex;
+      margin-left: 10px;
+      .e-b{
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  p{
+    .image_tag{
+    height: 100px;
+    }
+  }
+}
+
+.usermypage_main{
+  width: 700px;
+
+  &__info{
+    background:$color-main;
+    text-align: center;
+
+
+    &_tab{
+      height: 70px;
+      width: 100%;
+      display: flex;
+      font-weight: bold;
+      background-color: $color-main;
+
+      .tab-left{
+        width:100%;
+        line-height: 70px;
+        border-top: 2px solid rgb(56, 204, 197);
+      }
+
+      .tab-right{
+        width:100%;
+        line-height: 70px;
+        background-color: $color-sub2;
+      }
+    }
+  }
+}
+
+.userpege_main_info_111{
+  width: 100%;
+  background-color: $color-main;
+  display: flex;
+  flex-direction: column;
+}
+
+.info_111-menu{
+  height: 75px;
+  border-bottom: 1px solid $color-sub;
+}
+
+.underpart{
+  height: 55px;
+  width: 95%;
+  border: solid 1px $color-main;
+  font-size: 13px;
+  text-align: center;
+  margin: 15px auto;
+  background: $color-sub2;
+  align-items: flex-end;
+  line-height: 55px;
+}
+
+.usermypage_main__news{
+  width: 100%;
+  margin-top: 50px;
+  background-color: rgb(252, 252, 252);
+  padding: 16px, 0;
+  margin-bottom: 25px;
+
+  .news-title{
+    height: 60px;
+    line-height: 75px;
+    padding-left: 20px;
+  }
+
+  &-1{
+    display: flex;
+    padding-top: 15px;
+  }
+  &-main{
+    height: 250px;
+    background-color: $color-main;
+    .news-text{
+      text-align: center;
+      line-height: 250px;
+      color: $color-sub3;
+    }
+  }
+}
+
+.tab-left{
+  width:100%;
+  line-height: 70px;
+  border-top: 2px solid rgb(56, 204, 197);
+  background-color: $color-main;
+  text-align: center;
+  font-weight: bold;
+}
+ 
+.tab-right{
+  width:100%;
+  line-height: 70px;
+  background-color: $color-sub2;
+  text-align: center;
+  font-weight: bold;
+}

@@ -25,7 +25,7 @@
           ブランドから探す
     .Btn
       - if user_signed_in?
-        = button_to "ログアウト", destroy_user_session_path, method: :delete, class: "Btn__login logout"
+        = button_to "ログアウト", destroy_user_session_path, method: :delete, class: "Btn__login logout-btn"
         = link_to "マイページ", users_path, class: "Btn__join"
       - else
         = link_to "ログイン", new_user_session_path, class: "Btn__login"
