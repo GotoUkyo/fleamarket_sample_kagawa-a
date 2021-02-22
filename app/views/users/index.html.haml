@@ -14,10 +14,10 @@
     .usermypage_main
 
       .usermypage_main_profile
-        = image_tag 'member_photo_noimage_thumb.png'
+        = image_tag 'member_photo_noimage_thumb.png', class: "mypage-p_img"
          
-        .user-name フリマ
-        .user-count
+        .mypage_user-name #{current_user.nick_name}
+        .mypage_user-count
           .evaluation
             .e-p 評価
             .e-b 2
