@@ -62,7 +62,7 @@
       - if @item.deal_state_id == 0 && @item.id != current_user.id
         - if ::Credit.where(user_id: current_user.id).exists?
           = form_tag(controller: :credits, action: :buy, method: :post) do
-            %button 購入
+            %button.bottom__message--button 購入
           -# クレジットカード情報が無いが、商品未購入状態かつ商品の出品者がログインユーザでない時
         - else
           クレジットカードを登録してください

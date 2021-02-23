@@ -5,6 +5,7 @@
   --items-show-gray: #f5f5f5;
   --items-show-white: #ffffff;
   --items-show-blue: #0099e8;
+  --items-show-green: #3CCACE;
 }
 
 .items-show-main
@@ -149,6 +150,16 @@
     {
       width: 100%;
       font-size: 14px;
+      &--button
+      {
+        text-decoration: none;
+        width: 375px;
+        height: 40px;
+        color: var(--items-show-white);
+        background-color: var(--items-show-green);
+        border-radius: 4px;
+        border: none;
+      }
     }
   }
 }
